@@ -1,0 +1,56 @@
+{
+	"name": "design-guide",
+	"version": "0.0.0",
+	"description": "The WYcreative Design Guide",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"start": "gulp",
+		"lint": "xo"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/WYcreative/design-guide.git"
+	},
+	"author": "WYcreative Engineering Team",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/WYcreative/design-guide/issues"
+	},
+	"homepage": "https://github.com/WYcreative/design-guide#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/core": "^7.18.2",
+		"@babel/preset-env": "^7.18.2",
+		"browser-sync": "^2.27.10",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0",
+		"gulp-imagemin": "^8.0.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-postcss": "^9.0.1",
+		"gulp-pug": "^5.0.0",
+		"gulp-sass": "^5.1.0",
+		"postcss": "^8.4.14",
+		"postcss-preset-env": "^7.7.1",
+		"sass": "^1.52.2",
+		"xo": "^0.49.0"
+	},
+	"browserslist": [
+		"defaults",
+		"not IE 11"
+	],
+	"babel": {
+		"presets": [
+			"@babel/env"
+		],
+		"only": [
+			"./src/**"
+		]
+	},
+	"xo": {
+		"envs": [
+			"browser",
+			"node"
+		]
+	}
+}
