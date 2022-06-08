@@ -1,0 +1,21 @@
+// Tokens
+@use "abstracts"
+
+.employee
+	display: flex
+	align-items: center
+
+	&__img
+		margin-right: 16px
+		width: 40px
+		height: 40px
+		border-radius: 50%
+		overflow: hidden
+
+		img
+			object-fit: cover
+
+	&__name
+		font-size: 16px
+		color: abstracts.$color-badass-black
+		letter-spacing: 0
