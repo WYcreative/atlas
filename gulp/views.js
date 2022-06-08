@@ -7,7 +7,11 @@ import config from '../config/index.js';
 const {src, dest} = gulp;
 
 function build() {
-	return src(config.src.views)
+	return src([
+		config.src.views,
+		'!**/_*/**',
+		'!**/_*',
+	])
 		.pipe(plumber())
 		.pipe(pug({
 			pretty: true,
