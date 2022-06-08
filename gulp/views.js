@@ -9,7 +9,9 @@ const {src, dest} = gulp;
 function build() {
 	return src(config.src.views)
 		.pipe(plumber())
-		.pipe(pug())
+		.pipe(pug({
+			pretty: true,
+		}))
 		.pipe(dest(config.build.views));
 }
 
