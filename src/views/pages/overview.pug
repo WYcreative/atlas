@@ -1,0 +1,13 @@
+extends ../layout/base
+
+block variables
+	- title = 'Overview'
+
+
+block append styles
+	link(href="/styles/overview.css" rel="stylesheet")
+
+
+block overview
+	include ../layout/sidebar
+	include ../modules/team
