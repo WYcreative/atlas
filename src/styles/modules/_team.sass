@@ -1,2 +1,12 @@
+@use "abstracts"
+
 .module-team
 	background: white
+
+	.employee
+		margin-bottom: 16px
+
+	@media (width >= abstracts.$breakpoint-lg)
+		&__wrapper
+			display: flex
+			justify-content: space-between
