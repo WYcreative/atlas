@@ -1,0 +1,7 @@
+mixin employee(name, surname, role)
+	a.employee(href="MSTeams:/l/chat/0/0?users="+name+"."+surname+"@wycreative.com")
+		picture.employee__img
+			img(src="../../assets/images/ph-employee.jpg" width="40" height="40")
+		.employee__info
+			.employee__name= name + ' ' + surname
+			.employee__role= role

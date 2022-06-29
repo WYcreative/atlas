@@ -1,0 +1,15 @@
+mixin dependencies(isAlph)
+	section.module.module-dependencies(class=(isAlph ? 'module--alph' : null))
+		.container
+			h3.heading-3
+				img(src="../../assets/images/shapes/purple.svg" width="24" height="24")
+				| Dependencies
+			.module-dependencies__row
+				.module-dependencies__column
+					h4.heading-4 Browsers
+					.module-dependencies__wrapper
+						img.module-dependencies__shape(src="../../assets/images/shapes/purple.svg" width="12" height="12")
+						span.module-dependencies__text Safari 13
+					.module-dependencies__wrapper
+						img.module-dependencies__shape(src="../../assets/images/shapes/purple.svg" width="12" height="12")
+						span.module-dependencies__text Safari 13

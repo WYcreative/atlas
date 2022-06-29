@@ -1,0 +1,46 @@
+mixin links(isAlph)
+	section.module.module-links(class=(isAlph ? 'module--alph' : null))
+		.container
+			h3.heading-3
+				img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
+				| Links
+			.module-links__row
+				.module-links__column
+					h4.heading-4 Design
+					.module-links__link-wrapper
+						button.module-links__button.js-copyLink
+							span.icon.icon-link
+								+symbol('icon-copy')
+						a.module-links__link.js-linkToCopy(href="#") TERA
+					.module-links__link-wrapper
+						button.module-links__button.js-copyLink
+							span.icon.icon-link
+								+symbol('icon-copy')
+						a.module-links__link.js-linkToCopy(href="#") Invision Desktop
+					.module-links__link-wrapper
+						button.module-links__button.js-copyLink
+							span.icon.icon-link
+								+symbol('icon-copy')
+						a.module-links__link.js-linkToCopy(href="#") Invision Mobile
+				.module-links__column
+					h4.heading-4 Development
+					.module-links__link-wrapper
+						button.module-links__button.js-copyLink
+							span.icon.icon-link
+								+symbol('icon-copy')
+						a.module-links__link.js-linkToCopy(href="#") Git
+					.module-links__link-wrapper
+						button.module-links__button.js-copyLink
+							span.icon.icon-link
+								+symbol('icon-copy')
+						a.module-links__link.js-linkToCopy(href="#") DEV
+					.module-links__link-wrapper
+						button.module-links__button.js-copyLink
+							span.icon.icon-link
+								+symbol('icon-copy')
+						a.module-links__link.js-linkToCopy(href="#") STAGE
+					.module-links__link-wrapper
+						button.module-links__button.js-copyLink
+							span.icon.icon-link
+								+symbol('icon-copy')
+						a.module-links__link.js-linkToCopy(href="#") PROD

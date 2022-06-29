@@ -1,0 +1,116 @@
+include ../_components/employee
+
+mixin team(isAlph)
+	section.module.module-team(class=(isAlph ? 'module--alph' : null))
+		-
+			const teamManagement = [
+				{
+					name:'Constança',
+					surname:'Ribeiro',
+					role:'Project Management'
+				},
+				{
+					name:'Artur',
+					surname:'Rocha',
+					role:'Account Management',
+				}
+			]
+
+			const teamDesign = [
+				{
+					name:'Filipe',
+					surname:'Gaspar',
+					role:'Design'
+				}
+			]
+
+			const teamDevelopment = [
+				{
+					name:'Rui',
+					surname:'Rosa',
+					role:'CTO'
+				},
+				{
+					name:'Abel',
+					surname:'Silva',
+					role:'FE'
+				},
+				{
+					name:'Oscar',
+					surname: 'Marcelo',
+					role:'FE'
+				},
+				{
+					name:'Hugo',
+					surname: 'Coutinho',
+					role:'FE'
+				},
+				{
+					name:'Madalena',
+					surname: 'Santos',
+					role:'FE'
+				},
+				{
+					name:'Marcelo',
+					surname: 'Santos',
+					role:'FE'
+				},
+				{
+					name:'Diogo',
+					surname: 'Oliveira',
+					role:'FE'
+				},
+				{
+					name:'Carlos',
+					surname: 'Pacheco',
+					role:'BE'
+				},
+				{
+					name:'Ricardo',
+					surname: 'Santos',
+					role:'BE'
+				},
+				{
+					name:'Nilson',
+					surname: 'Martins',
+					role:'BE'
+				},
+				{
+					name:'Fábio',
+					surname: 'Ferreira',
+					role:'BE'
+				},
+				{
+					name:'Pedro',
+					surname: 'Rodrigues',
+					role:'BE'
+				},
+				{
+					name:'João',
+					surname: 'Pacheco',
+					role:'BE'
+				}
+			]
+
+		.container
+			h3.heading-3
+				img(src="../../assets/images/shapes/orange.svg" width="24" height="24")
+				| Team
+			.module-team__wrapper
+				.module-team__management
+					h4.heading-4 Management
+					.module-team__wrapper-employee
+						each member in teamManagement
+							+employee(member.name, member.surname, member.role)
+
+				.module-team__design
+					h4.heading-4 Design
+					.module-team__wrapper-employee
+						each member in teamDesign
+							+employee(member.name, member.surname, member.role)
+
+				.module-team__development
+					h4.heading-4 Development
+					.module-team__wrapper-employee
+						each member in teamDevelopment
+							+employee(member.name, member.surname, member.role)

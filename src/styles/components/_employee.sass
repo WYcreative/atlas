@@ -4,6 +4,11 @@
 .employee
 	display: flex
 	align-items: center
+	padding: 12px 16px
+	background: abstracts.$color-chill-white
+	border-radius: 8px
+	border: 1px solid rgba(abstracts.$color-badass-black, 0.05)
+	transition: all 250ms ease-in-out
 
 	&__img
 		margin-right: 16px
@@ -26,4 +31,8 @@
 		letter-spacing: 0
 
 	@media (width >= abstracts.$breakpoint-lg)
-		//Media Query HERE
+		box-shadow: none
+
+		&:hover
+			box-shadow: 0 10px 60px rgba(abstracts.$color-badass-black, 0.2)
+			transform: translate(5px, 5px)

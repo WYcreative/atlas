@@ -1,0 +1,30 @@
+@use "abstracts"
+
+.module-dependencies
+	&__row
+		display: flex
+		justify-content: space-between
+
+	&__wrapper
+		display: flex
+		margin-bottom: 12px
+		align-items: center
+
+	&__shape
+		margin-right: 12px
+
+	&__img
+		display: inline-block
+		margin-right: 12px
+		width: 24px
+		height: 24px
+		border-radius: 50%
+		overflow: hidden
+
+		img
+			object-fit: cover
+
+	@media (width >= abstracts.$breakpoint-lg)
+		&__row
+			gap: 80px
+			justify-content: normal
