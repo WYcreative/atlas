@@ -1,0 +1,6 @@
+mixin link-copy(href, text)
+	.link-copy.js-linkCopy
+		button.link-copy__button.js-copyLink
+			span.icon.icon-link
+				+symbol('icon-copy')
+		a.link-copy__link.js-linkToCopy(href=href)= text
