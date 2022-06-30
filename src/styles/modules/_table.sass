@@ -1,0 +1,95 @@
+@use "abstracts"
+
+.module-table
+	padding: 0
+
+	.container
+		padding: 24px 0
+
+	table
+		width: 100%
+
+	th
+		padding: 0 10px 12px
+
+	td
+		padding: 0 10px
+
+	&__column
+		&-preview
+			width: 100px
+
+			img
+				object-fit: cover
+
+		&-link
+			a
+				position: relative
+				display: block
+				padding: 8px 0 4px
+				margin-bottom: 8px
+				width: fit-content
+				color: abstracts.$color-badass-black
+				vertical-align: middle
+
+				&::after
+					content: ''
+					position: absolute
+					right: 0
+					bottom: 0
+					left: 0
+					width: 100%
+					height: 1px
+					background-color: abstracts.$color-electric-blue
+					transition: width 250ms ease-in-out
+
+
+		&-state
+			.icon
+				position: relative
+				color: abstracts.$color-chill-white
+
+				&:after
+					content: ''
+					position: absolute
+					top: 50%
+					left: 50%
+					width: 40px
+					height: 40px
+					border-radius: 50%
+					transform: translate(-50%, -50%)
+					z-index: -1
+
+				&-emoji-satisfied
+					&:after
+						background: abstracts.$color-groovy-green
+
+				&-emoji-sad
+					&:after
+						background: abstracts.$color-juicy-orange
+
+
+
+
+	@media (width >= abstracts.$breakpoint-lg)
+		padding: 0 24px
+
+		.container
+			padding: 40px
+
+		&__column
+			&-preview
+				width: 200px
+
+				img
+					width: 200px
+					height: 100px
+
+			&-link
+				a
+					&::after
+						width: 0
+
+					&:hover
+						&::after
+							width: 100%

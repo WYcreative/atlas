@@ -1,0 +1,25 @@
+extends ../_layout/base
+include ../_abstracts/mixins/symbol
+include ../_components/link-copy
+
+block variables
+	- titlePage = 'Tokens - Color'
+
+block append styles
+	link(href="/styles/colors.css" rel="stylesheet")
+
+
+block main
+	section.module.module-title-text
+		.container
+			h1.heading-1 < Project Name >
+			h2.heading-2
+				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				| Colors
+			.rte
+				p List of all different colors used in the project. Each one has a SCSS variable assigned to it.
+
+	section.module.module-colors
+		.container
+			ul
+				li

@@ -1,3 +1,5 @@
+include ../_components/link-copy
+
 mixin links(isAlph)
 	section.module.module-links(class=(isAlph ? 'module--alph' : null))
 		.container
@@ -7,40 +9,12 @@ mixin links(isAlph)
 			.module-links__row
 				.module-links__column
 					h4.heading-4 Design
-					.module-links__link-wrapper
-						button.module-links__button.js-copyLink
-							span.icon.icon-link
-								+symbol('icon-copy')
-						a.module-links__link.js-linkToCopy(href="#") TERA
-					.module-links__link-wrapper
-						button.module-links__button.js-copyLink
-							span.icon.icon-link
-								+symbol('icon-copy')
-						a.module-links__link.js-linkToCopy(href="#") Invision Desktop
-					.module-links__link-wrapper
-						button.module-links__button.js-copyLink
-							span.icon.icon-link
-								+symbol('icon-copy')
-						a.module-links__link.js-linkToCopy(href="#") Invision Mobile
+					+link-copy("#", "TERA")
+					+link-copy("#", "Invision Desktop")
+					+link-copy("#", "Invision Mobile")
 				.module-links__column
 					h4.heading-4 Development
-					.module-links__link-wrapper
-						button.module-links__button.js-copyLink
-							span.icon.icon-link
-								+symbol('icon-copy')
-						a.module-links__link.js-linkToCopy(href="#") Git
-					.module-links__link-wrapper
-						button.module-links__button.js-copyLink
-							span.icon.icon-link
-								+symbol('icon-copy')
-						a.module-links__link.js-linkToCopy(href="#") DEV
-					.module-links__link-wrapper
-						button.module-links__button.js-copyLink
-							span.icon.icon-link
-								+symbol('icon-copy')
-						a.module-links__link.js-linkToCopy(href="#") STAGE
-					.module-links__link-wrapper
-						button.module-links__button.js-copyLink
-							span.icon.icon-link
-								+symbol('icon-copy')
-						a.module-links__link.js-linkToCopy(href="#") PROD
+					+link-copy("#", "Git")
+					+link-copy("#", "DEV")
+					+link-copy("#", "STAGE")
+					+link-copy("#", "PROD")
