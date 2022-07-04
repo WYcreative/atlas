@@ -21,11 +21,18 @@
 				color: abstracts.$color-chill-white
 
 			#{$block}__dropdown-button
+				transform: rotate(180deg)
+
 				svg
 					color: abstracts.$color-chill-white
 
 			#{$block}__submenu
+				max-height: 500px
 				opacity: 1
+				transition: max-height 250ms ease-in-out
+
+				*
+					pointer-events: auto
 
 	&__page-name
 		display: flex
@@ -60,9 +67,15 @@
 		object-fit: contain
 
 	&__submenu
-		padding-left: 20px
+		margin-bottom: 10px
+		padding-left: 40px
 		grid-column: 1 / -1
+		max-height: 0
 		opacity: 0
+		transition: none
+
+		*
+			pointer-events: none
 
 		a
 			display: block

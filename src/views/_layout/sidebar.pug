@@ -1,26 +1,26 @@
 include ../_abstracts/mixins/symbol
 
 mixin sidebar
-	header.sidebar
+	header.sidebar.js-slidebar
 		a.sidebar__logo-link(href="")
 			img.sidebar__logo(src="../assets/images/logo-wycreative.png" alt="Logo Client")
 		//-label.sidebar__search(for="search")
 			input.sidebar__search-input(type="text" placeholder="Search")
 		nav
 			ul.sidebar__menu
-				li.sidebar__list-item.sidebar__list-item--active
+				li.sidebar__list-item
 					a.sidebar__page-name(href="#")
 						span.sidebar__page-name-wrapper-icon
 							span.icon.icon-chevron
 								+symbol('icon-list')
 							| Overview
-				li.sidebar__list-item.sidebar__list-item--active
+				li.sidebar__list-item
 					a.sidebar__page-name(href="#")
 						span.sidebar__page-name-wrapper-icon
 							span.icon.icon-chevron
 								+symbol('icon-font')
 							| Tokens
-					button.sidebar__dropdown-button
+					button.sidebar__dropdown-button.js-toggleSubMenu
 						span.icon.icon-chevron
 							+symbol('icon-chevron')
 					ul.sidebar__submenu
@@ -38,8 +38,9 @@ mixin sidebar
 							span.icon.icon-chevron
 								+symbol('icon-box')
 							| Component
-						span.icon.icon-chevron
-							+symbol('icon-chevron')
+						button.sidebar__dropdown-button.js-toggleSubMenu
+							span.icon.icon-chevron
+								+symbol('icon-chevron')
 					ul.sidebar__submenu
 						li
 							a(href="") Button
@@ -51,8 +52,9 @@ mixin sidebar
 							span.icon.icon-chevron
 								+symbol('icon-view')
 							| Modules
-						span.icon.icon-chevron
-							+symbol('icon-chevron')
+						button.sidebar__dropdown-button.js-toggleSubMenu
+							span.icon.icon-chevron
+								+symbol('icon-chevron')
 					ul.sidebar__submenu
 						li
 							a(href="") Team
@@ -62,8 +64,9 @@ mixin sidebar
 							span.icon.icon-chevron
 								+symbol('icon-view')
 							| Templates
-						span.icon.icon-chevron
-							+symbol('icon-chevron')
+						button.sidebar__dropdown-button.js-toggleSubMenu
+							span.icon.icon-chevron
+								+symbol('icon-chevron')
 					ul.sidebar__submenu
 						li
 							a(href="") Homepage
