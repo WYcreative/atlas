@@ -1,0 +1,36 @@
+@use "abstracts"
+
+.module-fonts
+	padding: 0
+
+	.container
+		padding: 24px 0
+
+	table
+		margin-bottom: 60px
+		width: 100%
+
+	th
+		padding: 0 10px 12px
+
+	td
+		padding: 0 10px
+
+	.heading-3
+		padding: 0 24px
+
+	&__overflow
+		overflow-x: scroll
+
+	@media (width >= abstracts.$breakpoint-lg)
+		padding: 0 24px
+
+		.container
+			padding: 40px
+
+		.heading-3
+			padding: 0
+
+		&__overflow
+			overflow-x: initial
+

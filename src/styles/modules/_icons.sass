@@ -1,0 +1,26 @@
+@use "abstracts"
+
+.module-icons
+	ul
+		display: flex
+		gap: 20px
+		flex-wrap: wrap
+		justify-content: center
+		align-content: center
+
+	li
+		width: 100%
+		max-width: 200px
+		background: abstracts.$color-chill-white
+		border: 1px solid rgba(abstracts.$color-badass-black, 0.05)
+		border-radius: 20px
+
+	svg
+		width: 100%
+
+	@media (width >= abstracts.$breakpoint-lg)
+		ul
+			grid-template-columns: repeat(4, 1fr)
+
+		li
+			box-shadow: 0 10px 60px rgba(abstracts.$color-badass-black, 0.2)

@@ -1,0 +1,21 @@
+include ../_components/color-copy
+
+mixin colors
+	section.module.module-colors
+		.container
+			ul
+				-
+					const mainColors = [
+						{colorHex:'#FFC100', colorVar:'$color-creative-yellow'},
+						{colorHex:'#FF881F', colorVar:'$color-juicy-orange'},
+						{colorHex:'#968EFF', colorVar:'$color-funky-purple'},
+						{colorHex:'#3979FF', colorVar:'$color-electric-blue'},
+						{colorHex:'#1DBA72', colorVar:'$color-groovy-green'},
+						{colorHex:'#FFFFFF', colorVar:'$color-chill-white'},
+						{colorHex:'#CCCCCC', colorVar:'$color-cool-gray'},
+						{colorHex:'#000000', colorVar:'$color-badass-black'}
+					]
+
+				each color in mainColors
+					li.module-colors__item
+						+color-copy(color.colorHex, color.colorVar)

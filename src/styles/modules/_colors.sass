@@ -1,0 +1,17 @@
+@use "abstracts"
+
+.module-colors
+	ul
+		display: flex
+		gap: 20px
+		flex-wrap: wrap
+		justify-content: center
+		align-content: center
+
+	li
+		width: 100%
+		max-width: 200px
+
+	@media (width >= abstracts.$breakpoint-lg)
+		ul
+			grid-template-columns: repeat(4, 1fr)

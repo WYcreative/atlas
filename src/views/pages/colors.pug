@@ -1,6 +1,6 @@
 extends ../_layout/base
 include ../_abstracts/mixins/symbol
-include ../_components/link-copy
+include ../_modules/colors
 
 block variables
 	- titlePage = 'Tokens - Color'
@@ -19,7 +19,6 @@ block main
 			.rte
 				p List of all different colors used in the project. Each one has a SCSS variable assigned to it.
 
-	section.module.module-colors
-		.container
-			ul
-				li
+	+colors
+
+

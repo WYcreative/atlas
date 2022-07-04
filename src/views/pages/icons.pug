@@ -1,0 +1,25 @@
+extends ../_layout/base
+include ../_abstracts/mixins/symbol
+include ../_modules/icons
+
+block variables
+	- titlePage = 'Tokens - Icons'
+
+block append styles
+	link(href="/styles/icons.css" rel="stylesheet")
+
+
+block main
+	section.module.module-title-text
+		.container
+			h1.heading-1 < Project Name >
+			h2.heading-2
+				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				| Icons
+			.rte
+				p List of icons used in this project. They are split into icons that can be used in the content and the ones that can were used in the development.
+				p There are helper classes that allow change to the properties of an icon.
+
+	+icons
+
+

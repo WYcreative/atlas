@@ -1,0 +1,102 @@
+extends ../_layout/base
+include ../_abstracts/mixins/symbol
+
+block variables
+	- titlePage = 'Tokens - Typography'
+
+block append styles
+	link(href="/styles/fonts.css" rel="stylesheet")
+
+
+block main
+	section.module.module-title-text
+		.container
+			h1.heading-1 < Project Name >
+			h2.heading-2
+				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				| Typography
+			.rte
+				p List of text styles used in this project.
+
+	section.module.module-fonts
+		.container
+			h3.heading-3
+				img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
+				| Gilroy
+			div.module-fonts__overflow
+				table
+					thead
+						tr
+							th Font Family
+							th Font Size
+							th Line Height
+							th Letter Spacing
+							th Weight
+							th Style
+					tbody
+						tr
+							td
+								span Gilroy
+							td
+								span.only-desktop 52px
+								span.only-mobile 48px
+							td
+								span.only-desktop 56px
+								span.only-mobile 52px
+							td
+								span.only-desktop 0px
+								span.only-mobile 0px
+							td
+								span 600
+							td
+								span Display-1
+						tr
+							td
+								span Gilroy
+							td
+								span.only-desktop 50px
+								span.only-mobile 46px
+							td
+								span.only-desktop 54px
+								span.only-mobile 50px
+							td
+								span.only-desktop 0px
+								span.only-mobile 0px
+							td
+								span 600
+							td
+								span Display-2
+
+			h3.heading-3
+				img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
+				| MyriadPro
+			div.module-fonts__overflow
+				table
+					thead
+						tr
+							th Font Family
+							th Font Size
+							th Line Height
+							th Letter Spacing
+							th Weight
+							th Style
+					tbody
+						tr
+							td
+								span MyriadPro
+							td
+								span.only-desktop 52px
+								span.only-mobile 48px
+							td
+								span.only-desktop 56px
+								span.only-mobile 52px
+							td
+								span.only-desktop 0px
+								span.only-mobile 0px
+							td
+								span 600
+							td
+								span Heading-1
+
+
+
