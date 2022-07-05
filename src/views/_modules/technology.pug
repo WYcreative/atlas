@@ -20,8 +20,8 @@ mixin technology(isAlph)
 					.module-technology__wrapper
 						picture.module-technology__img
 							img(src="../../assets/images/ph-employee.jpg" width="24" height="24")
-						span.module-technology__text Node 14.18 or later
+						span.module-technology__text= 'Node ' + data.enviroments.node
 					.module-technology__wrapper
 						picture.module-technology__img
 							img(src="../../assets/images/ph-employee.jpg" width="24" height="24")
-						span.module-technology__text NPM 6 through 8
+						span.module-technology__text= 'Npm ' + data.enviroments.npm

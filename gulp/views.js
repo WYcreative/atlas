@@ -3,6 +3,7 @@ import plumber from 'gulp-plumber';
 import pug from 'gulp-pug';
 
 import config from '../config/index.js';
+import guide from '../config/guide.js';
 import {getDirectory} from './utilities.js';
 
 
@@ -18,6 +19,9 @@ function build() {
 		.pipe(plumber())
 		.pipe(pug({
 			pretty: true,
+			locals: {
+				data: guide,
+			},
 		}))
 		.pipe(dest(getDirectory(config.build.views)));
 }

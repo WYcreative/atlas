@@ -12,7 +12,7 @@ block append styles
 block main
 	section.module.module-title-text
 		.container
-			h1.heading-1 < Project Name >
+			h1.heading-1= data.name
 			h2.heading-2
 				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
 				| Modules
@@ -30,30 +30,25 @@ block main
 						th.heading-4(align="center") AC
 						th.heading-4(align="center") State
 				tbody
-					-
-						var state, emoji
-						state ? emoji= 'icon-emoji-satisfied' : 'icon-emoji-sad'
+					- let emoji
 
-						emoji= 'icon-emoji-satisfied'
-					tr
-						td.module-table__column-preview(align="center")
-							picture
-								img(src="../../assets/images/ph-employee.jpg" width="100" height="50")
-						td.module-table__column-link(align="center")
-							a(href="#" target="_blank") module-team
-						td.module-table__column-ac(align="center")
-							+link-copy("#", "Link")
-						td.module-table__column-state(align="center")
-							span.icon(class=emoji)
-								+symbol(emoji)
-					tr
-						td.module-table__column-preview(align="center")
-							picture
-								img(src="../../assets/images/ph-employee.jpg" width="100" height="50")
-						td.module-table__column-link(align="center")
-							a(href="#" target="_blank") module-links
-						td.module-table__column-ac(align="center")
-							+link-copy("#", "Link")
-						td.module-table__column-state(align="center")
-							span.icon(class=emoji)
-								+symbol(emoji)
+					each modules in data.modules
+						case modules.status
+							when 'done'
+								- emoji = 'icon-emoji-satisfied'
+							when 'wip'
+								- emoji = 'icon-emoji-sad'
+							default
+								- emoji = 'icon-emoji-sad'
+
+						tr
+							td.module-table__column-preview(align="center")
+								picture
+									img(src="../../assets/images/ph-employee.jpg" width="100" height="50")
+							td.module-table__column-link(align="center")
+								a(href="#" target="_blank")= 'module-' + modules.id
+							td.module-table__column-ac(align="center")
+								+link-copy(modules.url.task, "Link")
+							td.module-table__column-state(align="center")
+								span.icon(class=emoji)
+									+symbol(emoji)

@@ -56,8 +56,9 @@ mixin sidebar
 							span.icon.icon-chevron
 								+symbol('icon-chevron')
 					ul.sidebar__submenu
-						li
-							a(href="") Team
+						each modules in data.modules
+							li
+								a(href="")= modules.name
 				li.sidebar__list-item
 					a.sidebar__page-name(href="#")
 						span.sidebar__page-name-wrapper-icon

@@ -9,12 +9,12 @@ mixin links(isAlph)
 			.module-links__row
 				.module-links__column
 					h4.heading-4 Design
-					+link-copy("#", "TERA")
-					+link-copy("#", "Invision Desktop")
-					+link-copy("#", "Invision Mobile")
+					+link-copy(data.url.design, "Figma")
+					+link-copy(data.url.prototype.desktop, "Invision Desktop")
+					+link-copy(data.url.prototype.mobile, "Invision Mobile")
 				.module-links__column
 					h4.heading-4 Development
-					+link-copy("#", "Git")
-					+link-copy("#", "DEV")
-					+link-copy("#", "STAGE")
-					+link-copy("#", "PROD")
+					+link-copy(data.url.repository, "Repository")
+					+link-copy(data.url.dev, "DEV")
+					+link-copy(data.url.stage, "STAGE")
+					+link-copy(data.url.prod, "PROD")

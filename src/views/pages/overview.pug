@@ -15,12 +15,12 @@ block append styles
 block main
 	section.module.module-title-text
 		.container
-			h1.heading-1 < Project Name >
+			h1.heading-1= data.name
 			h2.heading-2
 				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
 				| Overview
 			.rte
-				p Dolorem ipsa iure facilis ipsa porro officia officia sit veritatis sint impedit animi temporibus. Omnis ipsam perferendis voluptate itaque.
+				p= data.description
 
 	+links
 
