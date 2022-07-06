@@ -165,7 +165,7 @@ const guide = {
 
 	],
 	modules: {
-		path: '../pages/',
+		path: '../modules/',
 		list: [
 			{
 				id: 'team',
@@ -248,9 +248,37 @@ const guide = {
 			},
 		],
 	},
-	templates: [
-
-	],
+	templates: {
+		path: '../pages/',
+		list: [
+			{
+				id: 'homepage',
+				name: 'Homepage',
+				description: 'lorem ipsum',
+				task: 'test.com',
+				status: 'done',
+				modules: [
+					{
+						name: 'team',
+						url: '#',
+					},
+					{
+						name: 'hero',
+						url: '#',
+					},
+				],
+				url: {
+					design: '',
+					prototype: {
+						desktop: '',
+						mobile: '',
+					},
+					task: '',
+				},
+				notes: 'lorem ipsum',
+			},
+		],
+	},
 };
 
 export default guide;

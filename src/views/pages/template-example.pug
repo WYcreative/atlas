@@ -9,16 +9,16 @@ block append styles
 	link(href="/styles/template-example.css" rel="stylesheet")
 
 block main
-	section.module.module-title-text.module--alph
+	section.module.module-title-text.module--half
 		.container
-			h1.heading-1= 'template-' + data.modules.list[0].id
+			h1.heading-1= 'template-' + data.templates.list[0].id
 			h2.heading-2
 				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
-				= data.modules.list[0].name
+				= data.templates.list[0].name
 			.rte
-				p= data.modules.list[0].description
+				p= data.templates.list[0].description
 
-	section.module.module-links.module--alph
+	section.module.module-links.module--half
 		.container
 			h3.heading-3
 				img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
@@ -26,13 +26,13 @@ block main
 			.module-links__row
 				.module-links__column
 					h4.heading-4 Design
-					+link-copy(data.modules.list[0].url.design, "Figma")
-					+link-copy(data.modules.list[0].url.prototype.desktop, "Invision Desktop")
-					+link-copy(data.modules.list[0].url.prototype.mobile, "Invision Mobile")
-					+link-copy(data.modules.list[0].url.task, "AC")
+					+link-copy(data.templates.list[0].url.design, "Figma")
+					+link-copy(data.templates.list[0].url.prototype.desktop, "Invision Desktop")
+					+link-copy(data.templates.list[0].url.prototype.mobile, "Invision Mobile")
+					+link-copy(data.templates.list[0].url.task, "AC")
 				.module-links__column
 					h4.heading-4 Status
-						case data.modules.list[0].status
+						case data.templates.list[0].status
 							when 'done'
 								- emoji = 'icon-emoji-satisfied'
 							when 'wip'
@@ -41,12 +41,12 @@ block main
 								- emoji = 'icon-emoji-sad'
 					span.icon(class=emoji)
 						+symbol(emoji)
-						= data.modules.list[0].status
+						= data.templates.list[0].status
 				.module-links__column
 					h4.heading-4 External Link
-					+link-copy(data.modules.path+data.modules.list[0].id, "External")
+					+link-copy(data.templates.path+data.templates.list[0].id, "External")
 
-	section.module.module-detail-info.module--alph
+	section.module.module-detail-info.module--half
 		.container
 			h3.heading-3
 				img(src="../../assets/images/shapes/orange.svg" width="24" height="24")
@@ -57,4 +57,4 @@ block main
 
 	section.module.module-iframe
 		.container
-			iframe(width='800', height='1000', src=data.modules.path+data.modules.list[0].id)
+			iframe(width='800', height='1000', src=data.templates.path+data.templates.list[0].id)

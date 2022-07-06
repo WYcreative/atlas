@@ -29,32 +29,23 @@ block main
 						th.heading-4(align="center") Modules
 						th.heading-4(align="center") State
 				tbody
-					-
-						var state, emoji
-						state ? emoji= 'icon-emoji-satisfied' : 'icon-emoji-sad'
+					each template in data.templates.list
+						case template.status
+							when 'done'
+								- emoji = 'icon-emoji-satisfied'
+							when 'wip'
+								- emoji = 'icon-emoji-sad'
+							default
+								- emoji = 'icon-emoji-sad'
 
-						emoji= 'icon-emoji-satisfied'
-					tr
-						td.module-table__column-link
-							a(href="#" target="_blank") Homepage
-						td.module-table__column-ac(align="center")
-							+link-copy("#", "Link")
-						td.module-table__column-links-modules(align="center")
-							a(href="#" target="_blank") module-team
-							a(href="#" target="_blank") module-team
-							a(href="#" target="_blank") module-team
-						td.module-table__column-state(align="center")
-							span.icon(class=emoji)
-								+symbol(emoji)
-					tr
-						td.module-table__column-link
-							a(href="#" target="_blank") Contacts
-						td.module-table__column-ac(align="center")
-							+link-copy("#", "Link")
-						td.module-table__column-links-modules(align="center")
-							a(href="#" target="_blank") module-team
-							a(href="#" target="_blank") module-team
-							a(href="#" target="_blank") module-team
-						td.module-table__column-state(align="center")
-							span.icon(class=emoji)
-								+symbol(emoji)
+						tr
+							td.module-table__column-link
+								a(href="#" target="_blank")= template.name
+							td.module-table__column-ac(align="center")
+								+link-copy(template.url.task, "Link")
+							td.module-table__column-links-modules(align="center")
+								each item in template.modules
+									a(href=item.url target="_blank")= item.name
+							td.module-table__column-state(align="center")
+								span.icon(class=emoji)
+									+symbol(emoji)
