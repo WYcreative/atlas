@@ -164,87 +164,90 @@ const guide = {
 	components: [
 
 	],
-	modules: [
-		{
-			id: 'hero',
-			name: 'Hero',
-			description: 'lorem ipsum',
-			task: 'test.com',
-			status: 'done',
-			components: [
-				'button',
-				'picture',
-			],
-			url: {
-				design: '',
-				prototype: {
-					desktop: '',
-					mobile: '',
+	modules: {
+		path: '../pages/',
+		list: [
+			{
+				id: 'team',
+				name: 'Team',
+				description: 'lorem ipsum',
+				task: 'test.com',
+				status: 'done',
+				components: [
+					'button',
+					'picture',
+				],
+				url: {
+					design: '',
+					prototype: {
+						desktop: '',
+						mobile: '',
+					},
+					task: '',
 				},
-				task: '',
+				code: '<div class="team">content</div>',
+				data: [
+					{
+						name: 'Name',
+						required: true,
+						type: [
+							'String',
+						],
+						description: 'Lorem Ipsum',
+					},
+					{
+						name: 'isPrimary',
+						required: false,
+						type: [
+							'Boolean',
+						],
+						description: 'Sit Dolor Amet',
+					},
+				],
+				notes: 'lorem ipsum',
 			},
-			code: '<div class="hero">content</div>',
-			data: [
-				{
-					name: 'Name',
-					required: true,
-					type: [
-						'String',
-					],
-					description: 'Lorem Ipsum',
+			{
+				id: 'slider',
+				name: 'Slider',
+				description: 'sit dolor amet',
+				task: 'test.com',
+				status: 'wip',
+				components: [
+					'button',
+					'picture',
+					'drag',
+				],
+				url: {
+					design: '',
+					prototype: {
+						desktop: '',
+						mobile: '',
+					},
+					task: '',
 				},
-				{
-					name: 'isPrimary',
-					required: false,
-					type: [
-						'Boolean',
-					],
-					description: 'Sit Dolor Amet',
-				},
-			],
-			notes: 'lorem ipsum',
-		},
-		{
-			id: 'slider',
-			name: 'Slider',
-			description: 'sit dolor amet',
-			task: 'test.com',
-			status: 'wip',
-			components: [
-				'button',
-				'picture',
-				'drag',
-			],
-			url: {
-				design: '',
-				prototype: {
-					desktop: '',
-					mobile: '',
-				},
-				task: '',
+				code: '<div class="slider">content</div>',
+				data: [
+					{
+						name: 'Name',
+						required: true,
+						type: [
+							'String',
+						],
+						description: 'Lorem Ipsum',
+					},
+					{
+						name: 'isPrimary',
+						required: false,
+						type: [
+							'Boolean',
+						],
+						description: 'Sit Dolor Amet',
+					},
+				],
+				notes: 'lorem ipsum',
 			},
-			code: '<div class="slider">content</div>',
-			data: [
-				{
-					name: 'Name',
-					required: true,
-					type: [
-						'String',
-					],
-					description: 'Lorem Ipsum',
-				},
-				{
-					name: 'isPrimary',
-					required: false,
-					type: [
-						'Boolean',
-					],
-					description: 'Sit Dolor Amet',
-				},
-			],
-			notes: 'lorem ipsum',
-		},
-	],
+		],
+	},
 	templates: [
 
 	],

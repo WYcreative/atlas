@@ -18,7 +18,7 @@ html
 
 	body
 		+sidebar
-		main
+		main(class= isFull ? 'main-full' : '')
 			block main
 
 	block scripts

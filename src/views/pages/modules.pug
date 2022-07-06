@@ -32,8 +32,8 @@ block main
 				tbody
 					- let emoji
 
-					each modules in data.modules
-						case modules.status
+					each item in data.modules.list
+						case item.status
 							when 'done'
 								- emoji = 'icon-emoji-satisfied'
 							when 'wip'
@@ -46,9 +46,9 @@ block main
 								picture
 									img(src="../../assets/images/ph-employee.jpg" width="100" height="50")
 							td.module-table__column-link(align="center")
-								a(href="#" target="_blank")= 'module-' + modules.id
+								a(href="#" target="_blank")= 'module-' + item.id
 							td.module-table__column-ac(align="center")
-								+link-copy(modules.url.task, "Link")
+								+link-copy(item.url.task, "Link")
 							td.module-table__column-state(align="center")
 								span.icon(class=emoji)
 									+symbol(emoji)
