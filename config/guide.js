@@ -161,9 +161,19 @@ const guide = {
 	tokens: [
 
 	],
-	components: [
-
-	],
+	components: {
+		path: '../components/',
+		list: [
+			{
+				id: 'button',
+				name: 'Button',
+			},
+			{
+				id: 'filter',
+				name: 'Filter',
+			},
+		],
+	},
 	modules: {
 		path: '../modules/',
 		list: [
@@ -252,8 +262,8 @@ const guide = {
 		path: '../pages/',
 		list: [
 			{
-				id: 'homepage',
-				name: 'Homepage',
+				id: 'template-example',
+				name: 'Template Example',
 				description: 'lorem ipsum',
 				task: 'test.com',
 				status: 'done',
