@@ -12,6 +12,43 @@
 	box-shadow: 0 0 40px rgb(abstracts.$color-badass-black, 50%)
 	z-index: 10
 
+	&__hamburger
+		position: fixed
+		display: inline-block
+		top: 24px
+		right: 16px
+		margin: 0
+		padding: 12px
+		cursor: pointer
+		overflow: visible
+
+		&-box
+			position: relative
+			display: inline-block
+			width: 40px
+			height: 24px
+
+		&-inner
+			top: 14px
+			right: 0
+
+		&-inner, &-inner:after, &-inner:before
+			position: absolute
+			width: 40px
+			height: 4px
+			border-radius: 4px
+			background-color: abstracts.$color-chill-white
+
+		&-inner:after, &-inner::before
+			content: ''
+			display: block
+
+		&-inner:after
+			top: -10px
+
+		&-inner:before
+			bottom: -10px
+
 	&__list-item
 		display: grid
 		grid-template-columns: 1fr auto
@@ -59,6 +96,7 @@
 	&__logo-link
 		display: block
 		margin-bottom: 32px
+		width: 70%
 		height: 50px
 
 	&__logo
@@ -101,3 +139,9 @@
 
 	@media (width >= abstracts.$breakpoint-lg)
 		width: 256px
+
+		&__hamburger
+			display: none
+
+		&__logo-link
+			width: 100%

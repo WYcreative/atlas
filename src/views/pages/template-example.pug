@@ -11,7 +11,7 @@ block append styles
 block main
 	section.module.module-title-text.module--half
 		.container
-			h1.heading-1= 'template-' + data.templates.list[0].id
+			h1.heading-1= data.templates.list[0].id
 			h2.heading-2
 				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
 				= data.templates.list[0].name
@@ -51,10 +51,13 @@ block main
 			h3.heading-3
 				img(src="../../assets/images/shapes/orange.svg" width="24" height="24")
 				| Components
+
+	section.module.module-detail-info.module--half
+		.container
 			h3.heading-3
-				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
 				| Additional Notes
 
 	section.module.module-iframe
 		.container
-			iframe(width='800', height='1000', src=data.templates.path+data.templates.list[0].id)
+			iframe(width='800', height='1000', src=data.templates.path+data.templates.list[0].id+'.html')

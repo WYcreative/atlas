@@ -2,6 +2,10 @@ include ../_abstracts/mixins/symbol
 
 mixin sidebar
 	header.sidebar.js-slidebar
+		button.sidebar__hamburger(type="button")
+			span.sidebar__hamburger-box
+				span.sidebar__hamburger-inner
+
 		a.sidebar__logo-link(href="")
 			img.sidebar__logo(src="../assets/images/logo-wycreative.png" alt="Logo Client")
 		//-label.sidebar__search(for="search")
@@ -42,10 +46,9 @@ mixin sidebar
 							span.icon.icon-chevron
 								+symbol('icon-chevron')
 					ul.sidebar__submenu
-						li
-							a(href="") Button
-						li
-							a(href="") Card
+						each component in data.components.list
+							li
+								a(href="")= component.name
 				li.sidebar__list-item
 					a.sidebar__page-name(href="#")
 						span.sidebar__page-name-wrapper-icon
@@ -56,7 +59,7 @@ mixin sidebar
 							span.icon.icon-chevron
 								+symbol('icon-chevron')
 					ul.sidebar__submenu
-						each modules in data.modules
+						each modules in data.modules.list
 							li
 								a(href="")= modules.name
 				li.sidebar__list-item
@@ -69,8 +72,9 @@ mixin sidebar
 							span.icon.icon-chevron
 								+symbol('icon-chevron')
 					ul.sidebar__submenu
-						li
-							a(href="") Homepage
+						each templates in data.templates.list
+							li
+								a(href="")= templates.name
 
 		a.sidebar__logo-wycreative(href="https://wycreative.com/" target="_blank")
 			img(src="../assets/images/logo-wycreative.png" alt="Logo WYcreative")

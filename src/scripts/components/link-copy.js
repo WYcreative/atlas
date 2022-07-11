@@ -7,7 +7,21 @@ function linkCopy() {
 
 		button.addEventListener('click', () => {
 			navigator.clipboard.writeText(href);
+			labelCall();
 		});
+	}
+
+	function labelCall() {
+		const body = document.querySelector('body');
+		const labelElement = document.createElement('div');
+
+		labelElement.innerHTML = 'Copied!';
+		labelElement.classList.add('copied-label');
+		body.append(labelElement);
+
+		setTimeout(() => {
+			labelElement.remove();
+		}, 1500);
 	}
 }
 
