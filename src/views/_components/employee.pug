@@ -1,7 +1,25 @@
 mixin employee(name, surname, role, email)
+	-
+		let linkExists = true;
+		fetch("https://wycreative.com/wycreative-assinaturas/team/"+name+"%20"+surname+".jpg")
+			.then(function (response) {
+				const status = response.status;
+
+				if (status === 404) {
+					linkExists = false;
+				}
+				else {
+					linkExists = true;
+				}
+
+				console.log(status);
+			});
 	a.employee(href="MSTeams:/l/chat/0/0?users="+email)
-		picture.employee__img
-			img(src="../../assets/images/ph-employee.jpg" width="40" height="40")
+		if linkExists
+			picture.employee__img
+				img(src="https://wycreative.com/wycreative-assinaturas/team/"+name+"%20"+surname+".jpg" width="337" height="161")
+		else
+			img(src="../../assets/images/shapes/orange.svg" width="24" height="24")
 		.employee__info
 			.employee__name= name + ' ' + surname
 			.employee__role= role
