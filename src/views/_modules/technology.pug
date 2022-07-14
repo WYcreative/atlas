@@ -4,24 +4,20 @@ mixin technology(ishalf)
 			h3.heading-3
 				img(src="../../assets/images/shapes/purple.svg" width="24" height="24")
 				| Technology Specifications
+
 			.module-technology__row
 				.module-tecnology__column
 					h4.heading-4 Browsers
-					.module-technology__wrapper
-						picture.module-technology__img
-							img(src="../../assets/images/ph-employee.jpg" width="24" height="24")
-						span.module-technology__text Safari 13
-					.module-technology__wrapper
-						picture.module-technology__img
-							img(src="../../assets/images/ph-employee.jpg" width="24" height="24")
-						span.module-technology__text Safari 13
+					each browser, id in data.browsers
+						.module-technology__wrapper
+							picture.module-technology__img
+								img(src="../../assets/images/ph-employee.jpg" width="24" height="24")
+							span.module-technology__text #{browser.name} #{browser.version ? browser.version : ''}
+
 				.module-tecnology__column
 					h4.heading-4 Environments
-					.module-technology__wrapper
-						picture.module-technology__img
-							img(src="../../assets/images/ph-employee.jpg" width="24" height="24")
-						span.module-technology__text= 'Node ' + data.enviroments.node
-					.module-technology__wrapper
-						picture.module-technology__img
-							img(src="../../assets/images/ph-employee.jpg" width="24" height="24")
-						span.module-technology__text= 'Npm ' + data.enviroments.npm
+					each environment, id in data.environments
+						.module-technology__wrapper
+							picture.module-technology__img
+								img(src="../../assets/images/ph-employee.jpg" width="24" height="24")
+							span.module-technology__text #{environment.name} #{environment.version}

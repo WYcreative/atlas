@@ -6,21 +6,11 @@ mixin team(ishalf)
 			h3.heading-3
 				img(src="../../assets/images/shapes/orange.svg" width="24" height="24")
 				| Team
+
 			.module-team__wrapper
-				.module-team__management
-					h4.heading-4 Management
-					.module-team__wrapper-employee
-						each member in data.team.management
-							+employee(member.name, member.surname, member.role, member.email)
-
-				.module-team__design
-					h4.heading-4 Design
-					.module-team__wrapper-employee
-						each member in data.team.design
-							+employee(member.name, member.surname, member.role, member.email)
-
-				.module-team__development
-					h4.heading-4 Development
-					.module-team__wrapper-employee
-						each member in data.team.development
-							+employee(member.name, member.surname, member.role, member.email)
+				each group in data.team
+					.module-team__management
+						h4.heading-4= group.name
+						.module-team__wrapper-employee
+							each member in group.list
+								+employee(member.name, member.surname, member.role, member.email)

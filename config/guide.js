@@ -14,127 +14,159 @@ const guide = {
 		stage: 'https://example.stage.byclients.com',
 		prod: 'https://example.com',
 	},
-	team: {
-		management: [
-			{
-				name: 'Joana',
-				surname: 'Correia',
-				role: 'Project Management',
-				email: 'joana.correia@wycreative.com',
-			},
-			{
-				name: 'César',
-				surname: 'Guerra',
-				role: 'Project Management',
-				email: 'cesar.guerra@wycreative.com',
-			},
-		],
-		design: [
-			{
-				name: 'Eduardo',
-				surname: 'Narciso',
-				role: 'UX/UI Designer',
-				email: 'eduardo.narciso@wycreative.com',
-			},
-		],
-		development: [
-			{
-				name: 'Rui',
-				surname: 'Rosa',
-				role: 'CTO',
-				email: 'rui.rosa@wycreative.com',
-			},
-			{
-				name: 'Abel',
-				surname: 'Silva',
-				role: 'FE',
-				email: 'abel.silva@wycreative.com',
-			},
-			{
-				name: 'Oscar',
-				surname: 'Marcelo',
-				role: 'FE',
-				email: 'oscar.marcelo@wycreative.com',
-			},
-			{
-				name: 'Hugo',
-				surname: 'Coutinho',
-				role: 'FE',
-				email: 'hugo.coutinho@wycreative.com',
-			},
-			{
-				name: 'Madalena',
-				surname: 'Santos',
-				role: 'FE',
-				email: 'madalena.santos@wycreative.com',
-			},
-			{
-				name: 'Marcelo',
-				surname: 'Santos',
-				role: 'FE',
-				email: 'marcelo.santos@wycreative.com',
-			},
-			{
-				name: 'Diogo',
-				surname: 'Oliveira',
-				role: 'FE',
-				email: 'diogo.oliveira@wycreative.com',
-			},
-			{
-				name: 'Carlos',
-				surname: 'Pacheco',
-				role: 'BE',
-				email: 'carlos.pacheco@wycreative.com',
-			},
-			{
-				name: 'Ricardo',
-				surname: 'Santos',
-				role: 'BE',
-				email: 'ricardo.santos@wycreative.com',
-			},
-			{
-				name: 'Nilson',
-				surname: 'Martins',
-				role: 'BE',
-				email: 'nilson.martins@wycreative.com',
-			},
-			{
-				name: 'Fábio',
-				surname: 'Ferreira',
-				role: 'BE',
-				email: 'fabio.ferreira@wycreative.com',
-			},
-			{
-				name: 'Pedro',
-				surname: 'Rodrigues',
-				role: 'BE',
-				email: 'pedro.rodrigues@wycreative.com',
-			},
-			{
-				name: 'João',
-				surname: 'Pacheco',
-				role: 'BE',
-				email: 'joao.pacheco@wycreative.com',
-			},
-		],
-	},
+	team: [
+		{
+			name: 'Management',
+			list: [
+				{
+					name: 'Joana',
+					surname: 'Correia',
+					role: 'Project Management',
+					email: 'joana.correia@wycreative.com',
+				},
+				{
+					name: 'César',
+					surname: 'Guerra',
+					role: 'Project Management',
+					email: 'cesar.guerra@wycreative.com',
+				},
+			],
+		},
+		{
+			name: 'Design',
+			list: [
+				{
+					name: 'Eduardo',
+					surname: 'Narciso',
+					role: 'UX/UI Designer',
+					email: 'eduardo.narciso@wycreative.com',
+				},
+			],
+		},
+		{
+			name: 'Development',
+			list: [
+				{
+					name: 'Rui',
+					surname: 'Rosa',
+					role: 'CTO',
+					email: 'rui.rosa@wycreative.com',
+				},
+				{
+					name: 'Abel',
+					surname: 'Silva',
+					role: 'FE',
+					email: 'abel.silva@wycreative.com',
+				},
+				{
+					name: 'Oscar',
+					surname: 'Marcelo',
+					role: 'FE',
+					email: 'oscar.marcelo@wycreative.com',
+				},
+				{
+					name: 'Hugo',
+					surname: 'Coutinho',
+					role: 'FE',
+					email: 'hugo.coutinho@wycreative.com',
+				},
+				{
+					name: 'Madalena',
+					surname: 'Santos',
+					role: 'FE',
+					email: 'madalena.santos@wycreative.com',
+				},
+				{
+					name: 'Marcelo',
+					surname: 'Santos',
+					role: 'FE',
+					email: 'marcelo.santos@wycreative.com',
+				},
+				{
+					name: 'Diogo',
+					surname: 'Oliveira',
+					role: 'FE',
+					email: 'diogo.oliveira@wycreative.com',
+				},
+				{
+					name: 'Carlos',
+					surname: 'Pacheco',
+					role: 'BE',
+					email: 'carlos.pacheco@wycreative.com',
+				},
+				{
+					name: 'Ricardo',
+					surname: 'Santos',
+					role: 'BE',
+					email: 'ricardo.santos@wycreative.com',
+				},
+				{
+					name: 'Nilson',
+					surname: 'Martins',
+					role: 'BE',
+					email: 'nilson.martins@wycreative.com',
+				},
+				{
+					name: 'Fábio',
+					surname: 'Ferreira',
+					role: 'BE',
+					email: 'fabio.ferreira@wycreative.com',
+				},
+				{
+					name: 'Pedro',
+					surname: 'Rodrigues',
+					role: 'BE',
+					email: 'pedro.rodrigues@wycreative.com',
+				},
+				{
+					name: 'João',
+					surname: 'Pacheco',
+					role: 'BE',
+					email: 'joao.pacheco@wycreative.com',
+				},
+			],
+		},
+	],
 	browsers: {
-		and_chr: '102',
-		and_ff: '101',
-		and_qq: '10.4',
-		ios_saf: '15.2-15.3',
+		chrome: {
+			name: 'Chrome',
+			version: 102,
+		},
+		firefox: {
+			name: 'Firefox',
+			version: 101,
+		},
+		qq: {
+			name: 'QQ Browser',
+			version: 10.4,
+		},
+		safari: {
+			name: 'Safari',
+			version: 15.2,
+		},
+		operaMini: {
+			name: 'Opera Mini',
+		},
 	},
-	enviroments: {
-		node: '18.3',
-		npm: '8',
+	environments: {
+		node: {
+			name: 'Node.js',
+			url: 'https://nodejs.org/en/',
+			version: '>=18',
+		},
+		npm: {
+			name: 'npm',
+			url: 'https://www.npmjs.com/',
+			version: '>=8.6',
+		},
 	},
 	dependencies: {
-		"@sindresorhus/slugify": "^2.1.0",
-		"chalk": "^5.0.1",
-		"semver": "^7.3.7",
-		"validate-npm-package-name": "^4.0.0",
-		"yeoman-generator": "^5.6.1",
-		"yosay": "^2.0.2",
+		'@sindresorhus/slugify': '^2.1.0',
+		chalk: '^5.0.1',
+		semver: '^7.3.7',
+		'validate-npm-package-name': '^4.0.0',
+		'yeoman-generator': '^5.6.1',
+		yosay: '^2.0.2',
 	},
 	timeline: {
 		design: {
@@ -181,7 +213,6 @@ const guide = {
 				id: 'team',
 				name: 'Team',
 				description: 'lorem ipsum',
-				task: 'test.com',
 				status: 'done',
 				components: [
 					'button',
@@ -220,7 +251,6 @@ const guide = {
 				id: 'slider',
 				name: 'Slider',
 				description: 'sit dolor amet',
-				task: 'test.com',
 				status: 'wip',
 				components: [
 					'button',
@@ -265,7 +295,6 @@ const guide = {
 				id: 'template-example',
 				name: 'Template Example',
 				description: 'lorem ipsum',
-				task: 'test.com',
 				status: 'done',
 				modules: [
 					{
