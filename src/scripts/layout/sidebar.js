@@ -1,4 +1,17 @@
 function sidebar() {
+	// Burguer Menu
+	const sidebar = document.querySelector('.js-slidebar');
+	const btnBurger = document.querySelector('.js-btnBurger');
+
+	btnBurger.addEventListener('click', (e) => {
+		const element = e.currentTarget;
+
+		sidebar.classList.toggle('sidebar--open');
+		element.classList.toggle('sidebar__hamburger--active');
+	});
+	// ---------------
+
+	// Toggle Sub Menu
 	const btnToggleSubMenu = document.querySelectorAll('.js-toggleSubMenu');
 
 	for (const btn of btnToggleSubMenu) {
@@ -8,6 +21,7 @@ function sidebar() {
 			listItem.classList.toggle('sidebar__list-item--active');
 		});
 	}
+	// ---------------
 }
 
 export default sidebar;

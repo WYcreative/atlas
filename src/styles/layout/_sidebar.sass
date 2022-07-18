@@ -4,13 +4,20 @@
 .sidebar
 	$block: &
 	position: fixed
-	inset: 0
+	top: 0
+	left: -100vw
+	right: 0
+	bottom: 0
 	width: 100vw
 	min-height: 100vh
 	padding: 24px
 	background: #171717
 	box-shadow: 0 0 40px rgb(abstracts.$color-badass-black, 50%)
 	z-index: 10
+	transition: left 500ms ease-in-out
+
+	&--open
+		left: 0
 
 	&__hamburger
 		position: fixed
@@ -21,6 +28,20 @@
 		padding: 12px
 		cursor: pointer
 		overflow: visible
+
+		&--active
+			#{$block}__hamburger-inner
+				background-color: abstracts.$color-chill-white
+				transform: rotate(45deg)
+
+			#{$block}__hamburger-inner
+				&::after
+					top: 0
+					background-color: abstracts.$color-chill-white
+					transform: rotate(-85deg)
+
+				&::before
+					opacity: 0
 
 		&-box
 			position: relative
@@ -37,7 +58,8 @@
 			width: 40px
 			height: 4px
 			border-radius: 4px
-			background-color: abstracts.$color-chill-white
+			background-color: abstracts.$color-badass-black
+			transition: rotate 250ms ease-in-out
 
 		&-inner:after, &-inner::before
 			content: ''
@@ -138,6 +160,7 @@
 			object-fit: contain
 
 	@media (width >= abstracts.$breakpoint-lg)
+		inset: 0
 		width: 256px
 
 		&__hamburger
