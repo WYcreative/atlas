@@ -190,9 +190,58 @@ const guide = {
 			end: new Date(),
 		},
 	},
-	tokens: [
-
-	],
+	tokens: {
+		colors: [
+			{
+				name: 'Yellow',
+				value: '#FFC100',
+				variable: '$color-creative-yellow',
+				type: 'color',
+			},
+			{
+				name: 'Orange',
+				value: '#FF881F',
+				variable: '$color-juicy-orange',
+				type: 'color',
+			},
+			{
+				name: 'Purple',
+				value: '#968EFF',
+				variable: '$color-funky-purple',
+				type: 'color',
+			},
+			{
+				name: 'Blue',
+				value: '#3979FF',
+				variable: '$color-electric-blue',
+				type: 'color',
+			},
+			{
+				name: 'Green',
+				value: '#1DBA72',
+				variable: '$color-groovy-green',
+				type: 'color',
+			},
+			{
+				name: 'White',
+				value: '#FFFFFF',
+				variable: '$color-chill-white',
+				type: 'color',
+			},
+			{
+				name: 'Gray',
+				value: '#CCCCCC',
+				variable: '$color-cool-gray',
+				type: 'color',
+			},
+			{
+				name: 'Black',
+				value: '#000000',
+				variable: '$color-badass-black',
+				type: 'color',
+			},
+		],
+	},
 	components: {
 		path: '../components/',
 		list: [
