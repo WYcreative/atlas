@@ -93,6 +93,59 @@ const guide = {
 				type: 'color',
 			},
 		],
+		typography: [
+			{
+				type: 'display-1',
+				fontFamily: 'Gilroy',
+				fontSize: {
+					desktop: '52px',
+					mobile: '48px',
+				},
+				lineHeight: {
+					desktop: '56px',
+					mobile: '52px',
+				},
+				letterSpacing: {
+					desktop: '0px',
+					mobile: '0px',
+				},
+				fontWeight: 600,
+			},
+			{
+				type: 'display-2',
+				fontFamily: 'Gilroy',
+				fontSize: {
+					desktop: '50px',
+					mobile: '46px',
+				},
+				lineHeight: {
+					desktop: '54px',
+					mobile: '50px',
+				},
+				letterSpacing: {
+					desktop: '0px',
+					mobile: '0px',
+				},
+				fontWeight: 600,
+			},
+			{
+				type: 'heading-1',
+				fontFamily: 'MyriadPro',
+				fontSize: {
+					desktop: '52px',
+					mobile: '48px',
+				},
+				lineHeight: {
+					desktop: '56px',
+					mobile: '52px',
+				},
+				letterSpacing: {
+					desktop: '0px',
+					mobile: '0px',
+				},
+				fontWeight: 600,
+			},
+		],
 	},
 	components: [
 		{
