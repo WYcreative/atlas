@@ -58,7 +58,7 @@ function generateFiles(data, options) {
 			data,
 		});
 
-		writeFileSync(join(destination, `${type}s.html`), indexResult);
+		writeFileSync(join(destination, `${type}s/index.html`), indexResult);
 
 		const template = pug.compileFile(resolve(__dirname, `../src/views/pages/${type}-example.pug`));
 
