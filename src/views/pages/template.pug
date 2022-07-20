@@ -48,7 +48,7 @@ block main
 						= template.status
 				.module-links__column
 					h4.heading-4 External Link
-					+link-copy(data.templates.path+template.id, "External")
+					+link-copy(join(data.templates.path, template.id), "External")
 
 	section.module.module-detail-info.module--half
 		.container
@@ -64,4 +64,4 @@ block main
 
 	section.module.module-iframe
 		.container
-			iframe(width='800', height='1000', src=data.templates.path+template.id+'.html')
+			iframe(width='800', height='1000', src=join(data.templates.path, template.id+'.html'))

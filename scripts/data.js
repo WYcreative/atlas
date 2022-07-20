@@ -1,4 +1,4 @@
-import {resolve, basename} from 'node:path/posix';
+import {basename} from 'node:path/posix';
 
 import {globbySync} from 'globby';
 import getMember from '@WYcreative/team';
@@ -54,8 +54,8 @@ function generateData(options) {
 		]);
 
 		data[type] = {
-			path: '',
-			list: [],
+			path: `../examples/${type}`,
+			list: options.guide[type] || [],
 		};
 
 		for (const file of files) {

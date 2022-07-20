@@ -64,6 +64,7 @@ function generateFiles(data, options) {
 
 		for (const object of data[`${type}s`].list) {
 			const result = template({
+				join,
 				data,
 				current: object.id,
 			});
