@@ -2,15 +2,11 @@ extends ../_layout/base
 include ../_components/link-copy
 
 block variables
-	- titlePage = 'Module Example'
+	- const module = data.modules.list.find(({id}) => id === current)
+	- titlePage = module.name
 	- isFull = true
 
-block append styles
-	link(href="/styles/module-example.css" rel="stylesheet")
-
 block main
-	- const module = data.modules.list.find(({id}) => id === current)
-
 	section.module.module-title-text.module--half
 		.container
 			h1.heading-1= 'module-' + module.id

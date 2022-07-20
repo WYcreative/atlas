@@ -2,15 +2,11 @@ extends ../_layout/base
 include ../_components/link-copy
 
 block variables
-	- titlePage = 'Template Example'
+	- const template = data.templates.list.find(({id}) => id === current)
+	- titlePage = template.name
 	- isFull = true
 
-block append styles
-	link(href="/styles/template-example.css" rel="stylesheet")
-
 block main
-	- const template = data.templates.list.find(({id}) => id === current)
-
 	section.module.module-title-text.module--half
 		.container
 			h1.heading-1= template.id
