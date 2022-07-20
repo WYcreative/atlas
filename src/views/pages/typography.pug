@@ -32,87 +32,73 @@ block main
 					}
 					const styleIndex = styles.findIndex(style => style.name === fontFamily);
 					styles[styleIndex].list.push(style);
-
-					console.log('style', styles);
 				}
 
-			h3.heading-3
-				img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
-				| Gilroy
-			div.module-typography__overflow
-				table
-					thead
-						tr
-							th Font Family
-							th Font Size
-							th Line Height
-							th Letter Spacing
-							th Weight
-							th(align="center") Style
-					tbody
-						tr
-							td
-								span Gilroy
-							td
-								span.only-desktop 52px
-								span.only-mobile 48px
-							td
-								span.only-desktop 56px
-								span.only-mobile 52px
-							td
-								span.only-desktop 0px
-								span.only-mobile 0px
-							td
-								span 600
-							td
-								span Display-1
-						tr
-							td
-								span Gilroy
-							td
-								span.only-desktop 50px
-								span.only-mobile 46px
-							td
-								span.only-desktop 54px
-								span.only-mobile 50px
-							td
-								span.only-desktop 0px
-								span.only-mobile 0px
-							td
-								span 600
-							td
-								span Display-2
-
-			h3.heading-3
-				img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
-				| MyriadPro
-			div.module-typography__overflow
-				table
-					thead
-						tr
-							th Font Family
-							th Font Size
-							th Line Height
-							th Letter Spacing
-							th Weight
-							th(align="center") Style
-					tbody
-						tr
-							td
-								span MyriadPro
-							td
-								span.only-desktop 52px
-								span.only-mobile 48px
-							td
-								span.only-desktop 56px
-								span.only-mobile 52px
-							td
-								span.only-desktop 0px
-								span.only-mobile 0px
-							td
-								span 600
-							td
-								span Heading-1
+				for (const fontStyle of styles) {
+					console.log('style', fontStyle);
+				}
 
 
+			each fontStyle in styles
+				h3.heading-3
+					img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
+					= fontStyle.name
 
+				h3.heading-4
+					img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
+					| Desktop
+				div.module-typography__overflow
+					table
+						thead
+							tr
+								th Font Family
+								th Font Size
+								th Line Height
+								th Letter Spacing
+								th Font Weight
+								th Style
+						tbody
+							each list in fontStyle.list
+								tr
+									td
+										span= list.fontFamily
+									td
+										span= list.fontSize.desktop
+									td
+										span= list.lineHeight.desktop
+									td
+										span= list.letterSpacing.desktop
+									td
+										span= list.fontWeight
+									td
+										span(style='font: ' + list.fontWeight + ' ' + list.fontSize.desktop + ' / ' + list.lineHeight.desktop + ' ' + list.fontFamily + '')= list.type
+
+				h3.heading-4
+					img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
+					| Mobile
+				div.module-typography__overflow
+					table
+						thead
+							tr
+								th Font Family
+								th Font Size
+								th Line Height
+								th Letter Spacing
+								th Font Weight
+								th Style
+						tbody
+							each list in fontStyle.list
+								tr
+									td
+										span= list.fontFamily
+									td
+										span= list.fontSize.mobile
+									td
+										span= list.lineHeight.mobile
+									td
+										span= list.letterSpacing.mobile
+									td
+										span= list.fontWeight
+									td
+										span(style='font: ' + list.fontWeight + ' ' + list.fontSize.mobile + ' / ' + list.lineHeight.mobile + ' ' + list.fontFamily + '')= list.type
+				hr
