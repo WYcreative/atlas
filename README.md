@@ -5,6 +5,7 @@
 ## Requirements
 
 - Node.js 18+
+- npm 8.6+
 - Gulp CLI 2+
 
 ## Installation

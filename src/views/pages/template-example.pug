@@ -9,14 +9,16 @@ block append styles
 	link(href="/styles/template-example.css" rel="stylesheet")
 
 block main
+	- const template = data.templates.list.find(({id}) => id === current)
+
 	section.module.module-title-text.module--half
 		.container
-			h1.heading-1= data.templates.list[0].id
+			h1.heading-1= template.id
 			h2.heading-2
 				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
-				= data.templates.list[0].name
+				= template.name
 			.rte
-				p= data.templates.list[0].description
+				p= template.description
 
 	section.module.module-links.module--half
 		.container
@@ -26,13 +28,19 @@ block main
 			.module-links__row
 				.module-links__column
 					h4.heading-4 Design
-					+link-copy(data.templates.list[0].url.design, "Figma")
-					+link-copy(data.templates.list[0].url.prototype.desktop, "Invision Desktop")
-					+link-copy(data.templates.list[0].url.prototype.mobile, "Invision Mobile")
-					+link-copy(data.templates.list[0].url.task, "AC")
+					if template.url
+						if template.url.design
+							+link-copy(template.url.design, "Figma")
+						if template.url.prototype
+							if template.url.prototype.desktop
+								+link-copy(template.url.prototype.desktop, "Invision Desktop")
+							if template.url.prototype.mobile
+								+link-copy(template.url.prototype.mobile, "Invision Mobile")
+						if template.url.task
+							+link-copy(template.url.task, "AC")
 				.module-links__column
 					h4.heading-4 Status
-						case data.templates.list[0].status
+						case template.status
 							when 'done'
 								- emoji = 'icon-emoji-satisfied'
 							when 'wip'
@@ -41,10 +49,10 @@ block main
 								- emoji = 'icon-emoji-sad'
 					span.icon(class=emoji)
 						+symbol(emoji)
-						= data.templates.list[0].status
+						= template.status
 				.module-links__column
 					h4.heading-4 External Link
-					+link-copy(data.templates.path+data.templates.list[0].id, "External")
+					+link-copy(data.templates.path+template.id, "External")
 
 	section.module.module-detail-info.module--half
 		.container
@@ -60,4 +68,4 @@ block main
 
 	section.module.module-iframe
 		.container
-			iframe(width='800', height='1000', src=data.templates.path+data.templates.list[0].id+'.html')
+			iframe(width='800', height='1000', src=data.templates.path+template.id+'.html')

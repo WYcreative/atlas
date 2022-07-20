@@ -9,14 +9,16 @@ block append styles
 	link(href="/styles/module-example.css" rel="stylesheet")
 
 block main
+	- const module = data.modules.list.find(({id}) => id === current)
+
 	section.module.module-title-text.module--half
 		.container
-			h1.heading-1= 'module-' + data.modules.list[0].id
+			h1.heading-1= 'module-' + module.id
 			h2.heading-2
 				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
-				= data.modules.list[0].name
+				= module.name
 			.rte
-				p= data.modules.list[0].description
+				p= module.description
 
 	section.module.module-links.module--half
 		.container
@@ -26,13 +28,19 @@ block main
 			.module-links__row
 				.module-links__column
 					h4.heading-4 Design
-					+link-copy(data.modules.list[0].url.design, "Figma")
-					+link-copy(data.modules.list[0].url.prototype.desktop, "Invision Desktop")
-					+link-copy(data.modules.list[0].url.prototype.mobile, "Invision Mobile")
-					+link-copy(data.modules.list[0].url.task, "AC")
+					if module.url
+						if module.url.design
+							+link-copy(module.url.design, "Figma")
+						if module.url.prototype
+							if module.url.prototype.desktop
+								+link-copy(module.url.prototype.desktop, "Invision Desktop")
+							if module.url.prototype.mobile
+								+link-copy(module.url.prototype.mobile, "Invision Mobile")
+						if module.url.task
+							+link-copy(module.url.task, "AC")
 				.module-links__column
 					h4.heading-4 Status
-						case data.modules.list[0].status
+						case module.status
 							when 'done'
 								- emoji = 'icon-emoji-satisfied'
 							when 'wip'
@@ -41,10 +49,10 @@ block main
 								- emoji = 'icon-emoji-sad'
 					span.icon(class=emoji)
 						+symbol(emoji)
-						= data.modules.list[0].status
+						= module.status
 				.module-links__column
 					h4.heading-4 External Link
-					+link-copy(data.modules.path+data.modules.list[0].id, "External")
+					+link-copy(data.modules.path+module.id, "External")
 
 	section.module.module-detail-info.module--half
 		.container
@@ -63,4 +71,4 @@ block main
 
 	section.module.module-iframe.module--half
 		.container
-			iframe(width='800', height='1000', src=data.modules.path+data.modules.list[0].id)
+			iframe(width='800', height='1000', src=data.modules.path+module.id)

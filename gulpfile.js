@@ -15,17 +15,20 @@ import * as watch from './gulp/watch.js';
 const {series, parallel} = gulp;
 
 
+const build = parallel(
+	styles.build,
+	fonts.build,
+	symbols.build,
+	images.build,
+	scripts.build,
+	libs.build,
+	views.build,
+);
+
+
 export default series(
 	clean,
-	parallel(
-		styles.build,
-		fonts.build,
-		symbols.build,
-		images.build,
-		scripts.build,
-		libs.build,
-		views.build,
-	),
+	build,
 	browser.build,
 	watch.build,
 );
@@ -43,7 +46,6 @@ export const dist = parallel(
 	images.dist,
 	scripts.dist,
 	libs.dist,
-	views.dist,
 );
 
 

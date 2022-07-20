@@ -48,7 +48,8 @@ block main
 							td.module-table__column-link(align="center")
 								a(href="#" target="_blank")= 'module-' + item.id
 							td.module-table__column-ac(align="center")
-								+link-copy(item.url.task, "Link")
+								if item.url && item.url.task
+									+link-copy(item.url.task, "Link")
 							td.module-table__column-state(align="center")
 								span.icon(class=emoji)
 									+symbol(emoji)

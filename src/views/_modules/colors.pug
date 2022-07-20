@@ -3,7 +3,8 @@ include ../_components/color-copy
 mixin colors
 	section.module.module-colors
 		.container
-			ul
-				each color in data.tokens.colors
-					li.module-colors__item
-						+color-copy(color.value, color.variable)
+			if data.tokens.colors
+				ul
+					each color in data.tokens.colors
+						li.module-colors__item
+							+color-copy(color.value, color.variable)

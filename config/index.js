@@ -1,43 +1,44 @@
 import {createRequire} from 'node:module';
+import {join} from 'node:path/posix';
+
 
 // TODO [2022-10-25]: Use import assertions once they become stable, assuming they will be when Node 18 enters LTS mode.
 const pkg = createRequire(import.meta.url)('../package.json');
 
-const src = './src/';
-const build = './build/';
-const dist = './dist/';
-
+const src = './src';
+const build = './build';
+const dist = './dist';
 
 const config = {
 	name: pkg.name,
 	src: {
-		styles: `${src}styles/**/*.s+(a|c)ss`,
-		fonts: `${src}fonts/**/*.woff2`,
-		symbols: `${src}symbols/**/*.svg`,
-		images: `${src}images/**/*.{png,jpg,jpeg,gif,svg}`,
-		scripts: `${src}scripts/**/*.js`,
-		views: `${src}views/**/*.pug`,
+		styles: join(src, 'styles/**/*.s@(a|c)ss'),
+		fonts: join(src, 'fonts/**/*.{woff?(2),@(o|t)tf}'),
+		symbols: join(src, 'symbols/**/*.svg'),
+		images: join(src, 'images/**/*.{png,jp?(e)g,gif,svg}'),
+		scripts: join(src, 'scripts/**/*.js'),
+		views: [
+			join(src, 'views/**/*.pug'),
+			'!**/_*/**',
+			'!**/_*',
+		],
 	},
 	build: {
 		base: build,
-		styles: `${build}assets/styles/**/*.css`,
-		fonts: `${build}assets/fonts/**/*.woff2`,
-		images: `${build}assets/images/**/*.{png,jpg,jpeg,gif,svg}`,
-		scripts: `${build}assets/scripts/**/*.js`,
-		libs: `${build}assets/libs/**`,
-		views: `${build}**/*.html`,
+		styles: join(build, 'assets/styles/**/*.css'),
+		fonts: join(build, 'assets/fonts/**/*.{woff?(2),@(o|t)tf}'),
+		images: join(build, 'assets/images/**/*.{png,jp?(e)g,gif,svg}'),
+		scripts: join(build, 'assets/scripts/**/*.js'),
+		libs: join(build, 'assets/libs/**'),
 	},
 	dist: {
 		base: dist,
-		styles: `${dist}assets/styles/**/*.css`,
-		fonts: `${dist}assets/fonts/**/*.woff2`,
-		images: `${dist}assets/images/**/*.{png,jpg,jpeg,gif,svg}`,
-		scripts: `${dist}assets/scripts/**/*.js`,
-		libs: `${dist}assets/libs/**`,
-		views: `${dist}**/*.html`,
+		styles: join(dist, 'assets/styles/**/*.css'),
+		fonts: join(dist, 'assets/fonts/**/*.{woff?(2),@(o|t)tf}'),
+		images: join(dist, 'assets/images/**/*.{png,jp?(e)g,gif,svg}'),
+		scripts: join(dist, 'assets/scripts/**/*.js'),
+		libs: join(dist, 'assets/libs/**'),
 	},
-	libs: {
-	}
 };
 
 

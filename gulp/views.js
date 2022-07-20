@@ -1,42 +1,35 @@
-import gulp from 'gulp';
-import plumber from 'gulp-plumber';
-import pug from 'gulp-pug';
+import {createRequire} from 'node:module';
 
 import config from '../config/index.js';
-import guide from '../config/guide.js';
-import {getDirectory} from './utilities.js';
+import guide from '../tests/guide.js';
+import generateGuide from '../scripts/index.js';
 
 
-const {src, dest} = gulp;
+// TODO [2022-10-25]: Use import assertions once they become stable, assuming they will be when Node 18 enters LTS mode.
+const pkg = createRequire(import.meta.url)('../package.json');
 
 
-function build() {
-	return src([
-		config.src.views,
-		'!**/_*/**',
-		'!**/_*',
-	])
-		.pipe(plumber())
-		.pipe(pug({
-			pretty: true,
-			locals: {
-				data: guide,
+function build(done) {
+	generateGuide({
+		package: pkg,
+		guide,
+		config: {
+			src: {
+				views: [
+					'./tests/views/**/*.pug',
+					...config.src.views.slice(1),
+				],
 			},
-		}))
-		.pipe(dest(getDirectory(config.build.views)));
-}
+		},
+		destination: config.build.base,
+	});
 
-
-function dist() {
-	return src(config.build.views)
-		.pipe(dest(getDirectory(config.dist.views)));
+	done();
 }
 
 
 build.displayName = 'views:build';
-dist.displayName = 'views:dist';
 
 export {
 	build,
-	dist,
 };

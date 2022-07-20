@@ -42,10 +42,12 @@ block main
 							td.module-table__column-link
 								a(href="#" target="_blank")= template.name
 							td.module-table__column-ac(align="center")
-								+link-copy(template.url.task, "Link")
+								if template.url && template.url.task
+									+link-copy(template.url.task, "Link")
 							td.module-table__column-links-modules(align="center")
-								each item in template.modules
-									a(href=item.url target="_blank")= item.name
+								if template.modules
+									each item in template.modules
+										a(href=item.url target="_blank")= item.name
 							td.module-table__column-state(align="center")
 								span.icon(class=emoji)
 									+symbol(emoji)
