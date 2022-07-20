@@ -20,6 +20,22 @@ block main
 
 	section.module.module-typography
 		.container
+			-
+				const styles = [];
+				for (const style of data.tokens.typography) {
+					const {fontFamily} = style;
+					if (typeof styles.find(style => style.name === fontFamily) === 'undefined') {
+						styles.push({
+							name: fontFamily,
+							list: [],
+						});
+					}
+					const styleIndex = styles.findIndex(style => style.name === fontFamily);
+					styles[styleIndex].list.push(style);
+
+					console.log('style', styles);
+				}
+
 			h3.heading-3
 				img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
 				| Gilroy
