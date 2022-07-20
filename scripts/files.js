@@ -19,6 +19,7 @@ function generateFiles(data, options) {
 		});
 	}
 
+
 	const assets = globbySync('assets/**', {
 		cwd: resolve(__dirname, '../build'),
 	});
@@ -33,19 +34,28 @@ function generateFiles(data, options) {
 		writeFileSync(join(destination, asset), readFileSync(resolve(__dirname, '../build', asset)));
 	}
 
+
 	const overview = pug.renderFile(resolve(__dirname, '../src/views/pages/overview.pug'), {
 		data,
 	});
 
 	writeFileSync(join(destination, 'index.html'), overview);
 
-	for (const type of ['colors', 'icons', 'typography']) {
+
+	if (!existsSync(join(destination, 'tokens'))) {
+		mkdirSync(join(destination, 'tokens'), {
+			recursive: true,
+		});
+	}
+
+	for (const type of Object.keys(data.tokens)) {
 		const result = pug.renderFile(resolve(__dirname, `../src/views/pages/${type}.pug`), {
 			data,
 		});
 
-		writeFileSync(join(destination, `${type}.html`), result);
+		writeFileSync(join(destination, 'tokens', `${type}.html`), result);
 	}
+
 
 	for (const type of [/* 'component', */'module', 'template']) {
 		if (!existsSync(join(destination, `${type}s`))) {

@@ -43,7 +43,7 @@ mixin sidebar
 							each tokenType in tokenTypes
 								if data.tokens[tokenType]
 									li
-										a(href=`/${tokenType}.html`)= tokenType.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
+										a(href=`/tokens/${tokenType}.html`)= tokenType.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
 
 				-
 					const objectTypes = [
