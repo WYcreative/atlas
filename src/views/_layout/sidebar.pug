@@ -6,75 +6,78 @@ mixin sidebar
 			span.sidebar__hamburger-box
 				span.sidebar__hamburger-inner
 
-		a.sidebar__logo-link(href="")
+		a.sidebar__logo-link(href="/")
 			img.sidebar__logo(src="../assets/images/logo-wycreative.png" alt="Logo Client")
+
 		//-label.sidebar__search(for="search")
 			input.sidebar__search-input(type="text" placeholder="Search")
+
 		nav
 			ul.sidebar__menu
 				li.sidebar__list-item
-					a.sidebar__page-name(href="#")
+					a.sidebar__page-name(href="/")
 						span.sidebar__page-name-wrapper-icon
 							span.icon.icon-chevron
 								+symbol('icon-list')
 							| Overview
-				li.sidebar__list-item
-					a.sidebar__page-name(href="#")
-						span.sidebar__page-name-wrapper-icon
-							span.icon.icon-chevron
-								+symbol('icon-font')
-							| Tokens
-					button.sidebar__dropdown-button.js-toggleSubMenu
-						span.icon.icon-chevron
-							+symbol('icon-chevron')
-					ul.sidebar__submenu
-						li
-							a(href="") Colors
-						li
-							a(href="") Sizes
-						li
-							a(href="") Typography
-						li
-							a(href="") Icons
-				li.sidebar__list-item
-					a.sidebar__page-name(href="#")
-						span.sidebar__page-name-wrapper-icon
-							span.icon.icon-chevron
-								+symbol('icon-box')
-							| Component
+
+				if data.tokens
+					li.sidebar__list-item
+						a.sidebar__page-name(href="/tokens")
+							span.sidebar__page-name-wrapper-icon
+								span.icon.icon-chevron
+									+symbol('icon-font')
+								| Tokens
 						button.sidebar__dropdown-button.js-toggleSubMenu
 							span.icon.icon-chevron
 								+symbol('icon-chevron')
-					ul.sidebar__submenu
-						each component in data.components.list
-							li
-								a(href="")= component.name
-				li.sidebar__list-item
-					a.sidebar__page-name(href="#")
-						span.sidebar__page-name-wrapper-icon
-							span.icon.icon-chevron
-								+symbol('icon-view')
-							| Modules
+						ul.sidebar__submenu
+							-
+								const tokenTypes = [
+									'colors',
+									'sizes',
+									'typography',
+									'icons',
+								]
+
+							each tokenType in tokenTypes
+								if data.tokens[tokenType]
+									li
+										a(href=`/${tokenType}.html`)= tokenType.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
+
+				-
+					const objectTypes = [
+						//- {
+						//- 	icon: 'box',
+						//- 	name: 'components'
+						//- },
+						{
+							icon: 'view',
+							name: 'modules'
+						},
+						{
+							icon: 'view',
+							name: 'templates'
+						},
+					]
+
+				each objectType in objectTypes
+					li.sidebar__list-item
+						a.sidebar__page-name(href=`/${objectType.name}`)
+							span.sidebar__page-name-wrapper-icon
+								span.icon.icon-chevron
+									+symbol(`icon-${objectType.icon}`)
+								= objectType.name.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
+
 						button.sidebar__dropdown-button.js-toggleSubMenu
 							span.icon.icon-chevron
 								+symbol('icon-chevron')
-					ul.sidebar__submenu
-						each modules in data.modules.list
-							li
-								a(href="")= modules.name
-				li.sidebar__list-item
-					a.sidebar__page-name(href="#")
-						span.sidebar__page-name-wrapper-icon
-							span.icon.icon-chevron
-								+symbol('icon-view')
-							| Templates
-						button.sidebar__dropdown-button.js-toggleSubMenu
-							span.icon.icon-chevron
-								+symbol('icon-chevron')
-					ul.sidebar__submenu
-						each templates in data.templates.list
-							li
-								a(href="")= templates.name
+
+						ul.sidebar__submenu
+							each object in data[objectType.name].list
+								li
+									a(href=`/${objectType.name}/${object.id}.html`)= object.name
+
 
 		a.sidebar__logo-wycreative(href="https://wycreative.com/" target="_blank")
 			img(src="../assets/images/logo-wycreative.png" alt="Logo WYcreative")
