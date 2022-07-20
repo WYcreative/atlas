@@ -61,7 +61,7 @@ function generateData(options) {
 		for (const file of files) {
 			const templateId = basename(file, '.pug');
 
-			let template = options.guide[type].find(({id}) => id === templateId);
+			let template = data[type].list.find(({id}) => id === templateId);
 
 			if (typeof template === 'undefined') {
 				template = {
@@ -69,9 +69,9 @@ function generateData(options) {
 					name: templateId.replace(/(?:^|([\s_-]+))(\S)/g, (_, p1, p2) => (p1 ? ' ' : '') + p2.toUpperCase()),
 					status: 'wip',
 				};
-			}
 
-			data[type].list.push(template);
+				data[type].list.push(template);
+			}
 		}
 	}
 
