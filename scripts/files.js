@@ -12,6 +12,8 @@ import {getDirectory} from './utilities.js';
 function generateFiles(data, options) {
 	const __dirname = fileURLToPath(new URL('.', import.meta.url));
 	const destination = resolve(options.destination);
+	const pagesDirectory = resolve(__dirname, '..', getDirectory(config.src.views[0]), 'pages');
+	const buildDirectory = resolve(__dirname, '../build');
 
 	if (!existsSync(destination)) {
 		mkdirSync(destination, {
@@ -21,7 +23,7 @@ function generateFiles(data, options) {
 
 
 	const assets = globbySync('assets/**', {
-		cwd: resolve(__dirname, '../build'),
+		cwd: buildDirectory,
 	});
 
 	for (const asset of assets) {
@@ -31,11 +33,11 @@ function generateFiles(data, options) {
 			});
 		}
 
-		writeFileSync(join(destination, asset), readFileSync(resolve(__dirname, '../build', asset)));
+		writeFileSync(join(destination, asset), readFileSync(join(buildDirectory, asset)));
 	}
 
 
-	const overview = pug.renderFile(resolve(__dirname, '../src/views/pages/overview.pug'), {
+	const overview = pug.renderFile(join(pagesDirectory, 'overview.pug'), {
 		data,
 	});
 
@@ -49,7 +51,7 @@ function generateFiles(data, options) {
 	}
 
 	for (const type of Object.keys(data.tokens)) {
-		const result = pug.renderFile(resolve(__dirname, `../src/views/pages/${type}.pug`), {
+		const result = pug.renderFile(join(pagesDirectory, `${type}.pug`), {
 			data,
 		});
 
@@ -64,13 +66,13 @@ function generateFiles(data, options) {
 			});
 		}
 
-		const indexResult = pug.renderFile(resolve(__dirname, `../src/views/pages/${type}s.pug`), {
+		const indexResult = pug.renderFile(join(pagesDirectory, `${type}s.pug`), {
 			data,
 		});
 
 		writeFileSync(join(destination, `${type}s/index.html`), indexResult);
 
-		const template = pug.compileFile(resolve(__dirname, `../src/views/pages/${type}.pug`));
+		const template = pug.compileFile(join(pagesDirectory, `${type}.pug`));
 
 		for (const object of data[`${type}s`].list) {
 			const result = template({
