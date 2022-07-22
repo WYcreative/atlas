@@ -1,9 +1,11 @@
 import linkCopy from './components/link-copy.js';
 import colorCopy from './components/color-copy.js';
+import styleCopy from './components/style-copy.js';
 import employee from './components/employee.js';
 import sidebar from './layout/sidebar.js';
 
 linkCopy();
 colorCopy();
+styleCopy();
 employee();
 sidebar();

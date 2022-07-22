@@ -34,11 +34,6 @@ block main
 					styles[styleIndex].list.push(style);
 				}
 
-				for (const fontStyle of styles) {
-					console.log('style', fontStyle);
-				}
-
-
 			each fontStyle in styles
 				h3.heading-3
 					img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
@@ -57,6 +52,7 @@ block main
 								th Letter Spacing
 								th Font Weight
 								th Style
+								th
 						tbody
 							each list in fontStyle.list
 								tr
@@ -72,7 +68,10 @@ block main
 										span= list.fontWeight
 									td
 										span(style='font: ' + list.fontWeight + ' ' + list.fontSize.desktop + ' / ' + list.lineHeight.desktop + ' ' + list.fontFamily + '')= list.type
-
+									td
+										button.link-copy__button.js-styleCopy(data-style='font: ' + list.fontWeight + ' ' + list.fontSize.desktop + ' / ' + list.lineHeight.desktop + ' ' + list.fontFamily + '')
+											span.icon.icon-link
+												+symbol('icon-copy')
 				h3.heading-4
 					img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
 					| Mobile
@@ -101,4 +100,8 @@ block main
 										span= list.fontWeight
 									td
 										span(style='font: ' + list.fontWeight + ' ' + list.fontSize.mobile + ' / ' + list.lineHeight.mobile + ' ' + list.fontFamily + '')= list.type
+									td
+										button.link-copy__button.js-styleCopy(data-style='font: ' + list.fontWeight + ' ' + list.fontSize.mobile + ' / ' + list.lineHeight.mobile + ' ' + list.fontFamily + '')
+											span.icon.icon-link
+												+symbol('icon-copy')
 				hr
