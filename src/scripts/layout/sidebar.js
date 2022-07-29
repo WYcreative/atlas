@@ -3,8 +3,8 @@ function sidebar() {
 	const sidebar = document.querySelector('.js-slidebar');
 	const btnBurger = document.querySelector('.js-btnBurger');
 
-	btnBurger.addEventListener('click', (e) => {
-		const element = e.currentTarget;
+	btnBurger.addEventListener('click', event => {
+		const element = event.currentTarget;
 
 		sidebar.classList.toggle('sidebar--open');
 		element.classList.toggle('sidebar__hamburger--active');
