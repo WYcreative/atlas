@@ -1,5 +1,5 @@
 {
-	"name": "design-guide",
+	"name": "@wycreative/design-guide",
 	"version": "0.0.0",
 	"description": "The WYcreative Design Guide",
 	"author": "WYcreative Engineering Team",
@@ -12,6 +12,13 @@
 		"./scripts",
 		"./src/views"
 	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/WYcreative/design-guide.git"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
 	"engines": {
 		"node": ">=18",
 		"npm": ">=8.6"
@@ -21,10 +28,12 @@
 		"serve": "gulp serve",
 		"test": "xo",
 		"dist": "gulp dist",
-		"clean": "gulp clean"
+		"clean": "gulp clean",
+		"prepublishOnly": "gulp deploy",
+		"release": "np"
 	},
 	"dependencies": {
-		"@wycreative/team": "github:WYcreative/team#v1.1.0",
+		"@wycreative/team": "^1.2.2",
 		"browserslist": "^4.21.1",
 		"globby": "^13.1.2",
 		"pug": "^3.0.2"
@@ -44,6 +53,7 @@
 		"gulp-sass": "^5.1.0",
 		"gulp-svgstore": "^9.0.0",
 		"gulp-uglify-es": "^3.0.0",
+		"np": "^7.6.2",
 		"postcss": "^8.4.14",
 		"postcss-preset-env": "^7.7.1",
 		"sass": "^1.53.0",
@@ -79,5 +89,8 @@
 				}
 			]
 		}
+	},
+	"np": {
+		"message": "DIST - v%s"
 	}
 }

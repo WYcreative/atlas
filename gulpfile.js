@@ -49,4 +49,11 @@ export const dist = parallel(
 );
 
 
+export const deploy = series(
+	clean,
+	build,
+	dist,
+);
+
+
 export {default as clean} from './gulp/clean.js';
