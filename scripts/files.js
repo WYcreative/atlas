@@ -13,7 +13,7 @@ function generateFiles(data, options) {
 	const __dirname = fileURLToPath(new URL('.', import.meta.url));
 	const destination = resolve(options.destination);
 	const pagesDirectory = resolve(__dirname, '..', getDirectory(config.src.views[0]), 'pages');
-	const buildDirectory = resolve(__dirname, '../build');
+	const distDirectory = resolve(__dirname, '../dist');
 
 	if (!existsSync(destination)) {
 		mkdirSync(destination, {
@@ -23,7 +23,7 @@ function generateFiles(data, options) {
 
 
 	const assets = globbySync('assets/**', {
-		cwd: buildDirectory,
+		cwd: distDirectory,
 	});
 
 	for (const asset of assets) {
@@ -33,7 +33,7 @@ function generateFiles(data, options) {
 			});
 		}
 
-		writeFileSync(join(destination, asset), readFileSync(join(buildDirectory, asset)));
+		writeFileSync(join(destination, asset), readFileSync(join(distDirectory, asset)));
 	}
 
 
