@@ -1,0 +1,16 @@
+include ../_abstracts/mixins/symbol
+
+mixin icon-copy(iconName, iconFile)
+	div.icon-copy.js-iconCopy
+		div.icon-copy__info
+			div.icon-copy__button-wrapper
+				button.icon-copy__button.js-copyName(data-icon-name= iconName)
+					span.icon.icon-link
+						+symbol('icon-copy')
+				span.icon-copy__text= iconName
+
+			div.icon-copy__button-wrapper
+				button.icon-copy__button.js-copyFile(data-icon-file= iconFile)
+					span.icon.icon-link
+						+symbol('icon-copy')
+				span.icon-copy__text= iconFile

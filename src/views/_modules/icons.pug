@@ -1,0 +1,17 @@
+include ../_components/icon-copy
+
+mixin icons
+	section.module.module-icons
+		.container
+			each file in data.tokens.icons
+				h3.heading-3
+					img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
+					= file.name.replace(/(?:^|([\s_-]+))(\S)/g, (_, p1, p2) => (p1 ? ' ' : '') + p2.toUpperCase())
+
+				ul
+					each icon in file.list
+						li.module-icons__item
+							+symbol(file.file, icon)
+							+icon-copy(icon, file.file + '#' + icon)
+
+				hr
