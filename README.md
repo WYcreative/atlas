@@ -68,6 +68,22 @@ The destination directory for the Design Guide generated files.
 
 ## Development
 
+### Installation
+
+With the repository cloned locally, open the terminal pointed to the repository's root and run:
+
+``` shell
+npm install
+```
+
+Then, to start the project, run:
+
+``` shell
+npm start
+```
+
+### Commands
+
 Command | Description
 ---|---
 `npm start` | Builds the project, starts the local server, and watches for changes.
