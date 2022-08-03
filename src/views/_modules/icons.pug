@@ -11,7 +11,7 @@ mixin icons
 				ul
 					each icon in file.list
 						li.module-icons__item
-							+symbol(file.file, icon)
+							+symbol('/examples/assets/images/' + file.file, icon)
 							+icon-copy(icon, file.file + '#' + icon)
 
 				hr
