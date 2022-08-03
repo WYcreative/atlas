@@ -2,7 +2,7 @@ import generateData from './data.js';
 import generateFiles from './files.js';
 
 
-function generate(options) {
+function generateGuide(options) {
 	if (typeof options !== 'object') {
 		throw new TypeError(`The argument 'options' is not an object. Got the ${typeof options} '${typeof options}'.`);
 	}
@@ -30,4 +30,4 @@ function generate(options) {
 	generateFiles(data, options);
 }
 
-export default generate;
+export default generateGuide;
