@@ -19,6 +19,7 @@ function build(done) {
 					'./tests/views/**/*.pug',
 					...config.src.views.slice(1),
 				],
+				symbols: './tests/symbols/**/*.svg',
 			},
 		},
 		destination: config.build.base,

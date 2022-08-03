@@ -1,4 +1,4 @@
-import {basename} from 'node:path/posix';
+import {basename, dirname, join} from 'node:path/posix';
 
 import {globbySync} from 'globby';
 import getMember from '@WYcreative/team';
@@ -45,6 +45,42 @@ function generateData(options) {
 		} else {
 			console.error(`No team member found for the email '${email}'.`);
 		}
+	}
+
+	const icons = globbySync('**/*.svg', {
+		cwd: getDirectory(options.config.src.symbols),
+	});
+
+	if (icons.length > 0) {
+		if (typeof data.tokens === 'undefined') {
+			data.tokens = {};
+		}
+
+		data.tokens.icons = [];
+	} else {
+		delete data.tokens?.icons;
+	}
+
+	for (const icon of icons) {
+		const id = basename(icon, '.svg');
+
+		let path = dirname(dirname(icon));
+		let name = basename(dirname(icon));
+
+		path = path === '.' ? '' : path;
+		name = name === '.' ? basename(getDirectory(options.config.src.symbols)) : name;
+
+		if (typeof data.tokens.icons.find(file => file.path === path && file.name === name) === 'undefined') {
+			data.tokens.icons.push({
+				name,
+				path,
+				file: join(path, `${name}.svg`),
+				list: [],
+			});
+		}
+
+		const fileIndex = data.tokens.icons.findIndex(file => file.path === path && file.name === name);
+		data.tokens.icons[fileIndex].list.push(id);
 	}
 
 	for (const type of ['components', 'modules', 'templates']) {
