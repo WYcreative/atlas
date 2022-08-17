@@ -16,30 +16,28 @@ const guide = {
 	},
 	timeline: {
 		design: {
-			start: new Date('2022-01-01'),
-			end: new Date('2022-01-01'),
+			start: '2022-01-01',
+			end: '2022-01-01',
 		},
-		development: {
-			frontend: {
-				start: new Date('2022-01-01'),
-				end: new Date('2022-01-01'),
-			},
-			backend: {
-				start: new Date('2022-01-01'),
-				end: new Date('2022-01-01'),
-			},
+		frontend: {
+			start: '2022-01-01',
+			end: '2022-01-01',
+		},
+		backend: {
+			start: '2022-01-01',
+			end: '2022-01-01',
 		},
 		stage: {
-			start: new Date('2022-01-01'),
-			end: new Date('2022-01-01'),
+			start: '2022-01-01',
+			end: '2022-01-01',
 		},
 		preproduction: {
-			start: new Date('2022-01-01'),
-			end: new Date('2022-01-01'),
+			start: '2022-01-01',
+			end: '2022-01-01',
 		},
 		production: {
-			start: new Date('2022-01-01'),
-			end: new Date('2022-01-01'),
+			start: '2022-01-01',
+			end: '2022-01-01',
 		},
 	},
 	tokens: {

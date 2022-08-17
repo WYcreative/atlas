@@ -47,6 +47,12 @@ function generateData(options) {
 		}
 	}
 
+	for (const [stageName, intervals] of Object.entries(data.timeline)) {
+		for (const [intervalName, date] of Object.entries(intervals)) {
+			data.timeline[stageName][intervalName] = new Date(date);
+		}
+	}
+
 	const icons = globbySync('**/*.svg', {
 		cwd: getDirectory(options.config.src.symbols),
 	});
