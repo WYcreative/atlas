@@ -10,9 +10,9 @@ const guide = {
 			mobile: 'https://prototype.com/mobile',
 		},
 		repository: 'https://dev.azure.com/Bycom/_git/example',
-		dev: 'https://example.dev.byclients.com',
+		development: 'https://example.dev.byclients.com',
 		stage: 'https://example.stage.byclients.com',
-		prod: 'https://example.com',
+		production: 'https://example.com',
 	},
 	timeline: {
 		design: {
