@@ -1,0 +1,15 @@
+mixin timeline
+	section.module.module-timeline
+		.container
+			h3.heading-3
+				img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
+				| Timeline
+
+			.module-timeline__row
+				.module-timeline__column
+					each dates, name in data.timeline
+						.module-timeline__wrapper
+							img.module-timeline__shape(src="../../assets/images/shapes/purple.svg" width="12" height="12")
+							span.module-timeline__text
+								strong= `${name}: `
+								span!= `${dates.start.toDateString()} &mdash; ${dates.end.toDateString()}`

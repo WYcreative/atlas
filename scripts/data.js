@@ -47,11 +47,27 @@ function generateData(options) {
 		}
 	}
 
-	for (const [stageName, intervals] of Object.entries(data.timeline)) {
+	const timeline = {};
+
+	for (let [stageName, intervals] of Object.entries(data.timeline)) {
+		if (stageName.startsWith('pre')) {
+			stageName = 'Pre-' + stageName.slice(3, 4).toUpperCase() + stageName.slice(4);
+		}
+
+		if (stageName.endsWith('end')) {
+			stageName = stageName.slice(0, -3) + '-End';
+		}
+
+		stageName = stageName.slice(0, 1).toUpperCase() + stageName.slice(1);
+
+		timeline[stageName] = {};
+
 		for (const [intervalName, date] of Object.entries(intervals)) {
-			data.timeline[stageName][intervalName] = new Date(date);
+			timeline[stageName][intervalName] = new Date(date);
 		}
 	}
+
+	data.timeline = timeline;
 
 	const icons = globbySync('**/*.svg', {
 		cwd: getDirectory(options.config.src.symbols),

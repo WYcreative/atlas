@@ -3,6 +3,7 @@ include ../_modules/team
 include ../_modules/links
 include ../_modules/technology
 include ../_modules/dependencies
+include ../_modules/timeline
 include ../_abstracts/mixins/symbol
 
 block variables
@@ -30,8 +31,4 @@ block main
 
 	+dependencies(true)
 
-	section.module.module-timeline
-		.container
-			h3.heading-3
-				img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
-				| Timeline
+	+timeline
