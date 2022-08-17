@@ -13,6 +13,10 @@ function generateEnvironments(environments) {
 
 
 const environmentsMap = {
+	'gulp-cli': {
+		name: 'Gulp CLI',
+		url: 'https://gulpjs.com/',
+	},
 	node: {
 		name: 'Node.js',
 		url: 'https://nodejs.org/en/',
