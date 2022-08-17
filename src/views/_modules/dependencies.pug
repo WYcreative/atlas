@@ -7,8 +7,11 @@ mixin dependencies(ishalf)
 			.module-dependencies__row
 				.module-dependencies__column
 					each version, name in data.dependencies
-						if version.startsWith('^')
-							- version = `${version.slice(1)} or later`
+						- const match = version.match(/^(?:\^|~|>=?)(.+)/)
+
+						if match
+							- version = `${match[1]} or later`
+
 						.module-dependencies__wrapper
 							img.module-dependencies__shape(src="../../assets/images/shapes/purple.svg" width="12" height="12")
 							span.module-dependencies__text= `${name} ${version}`
