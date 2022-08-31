@@ -1,5 +1,14 @@
+@use "sass:math"
 // Tokens
 @use "abstracts"
+
+$avatar-width: 337
+$avatar-height: 161
+$avatar-size: 130
+$avatar-offset-x: 2
+$avatar-offset-y: 16
+
+$employee-img-size: 40
 
 .employee
 	display: flex
@@ -12,16 +21,15 @@
 
 	&__img
 		margin-right: 16px
-		width: 40px
-		height: 40px
-		border-radius: 50%
+		width: $employee-img-size * 1px
+		height: $employee-img-size * 1px
 		overflow: hidden
 
 		img
 			position: relative
-			top: -10px
-			left: -5px
-			width: 340%
+			top: math.div($employee-img-size * $avatar-offset-y, $avatar-size) * -1px
+			left: math.div($employee-img-size * $avatar-offset-x, $avatar-size) * -1px
+			width: math.div($employee-img-size * $avatar-width, $avatar-size) * 1px
 			height: auto
 
 	&__name
