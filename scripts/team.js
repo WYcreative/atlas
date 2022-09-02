@@ -10,7 +10,10 @@ function generateTeam(team) {
 		if (memberData) {
 			const {team} = memberData;
 
-			delete memberData.team;
+			// Create a detatched object, since `delete` also changes the original reference of the package.
+			const member = {...memberData};
+
+			delete member.team;
 
 			if (typeof result.find(group => group.name === team) === 'undefined') {
 				result.push({
@@ -21,7 +24,7 @@ function generateTeam(team) {
 
 			const teamIndex = result.findIndex(group => group.name === team);
 
-			result[teamIndex].list.push(memberData);
+			result[teamIndex].list.push(member);
 		} else {
 			console.error(`No team member found for the email '${email}'.`);
 		}
