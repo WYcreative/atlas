@@ -128,7 +128,7 @@ const guide = {
 			},
 			{
 				type: 'heading-1',
-				fontFamily: 'MyriadPro',
+				fontFamily: 'Myriad Pro',
 				fontSize: {
 					desktop: '52px',
 					mobile: '48px',
