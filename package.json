@@ -61,8 +61,8 @@
 		"xo": "^0.52.3"
 	},
 	"browserslist": [
-		"defaults",
-		"not IE 11"
+		"defaults and last 2 years",
+		"not op_mob >= 0"
 	],
 	"babel": {
 		"presets": [
