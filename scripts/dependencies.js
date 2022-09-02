@@ -22,4 +22,5 @@ function generateDependencies(dependencies) {
 	return result;
 }
 
+
 export default generateDependencies;
