@@ -1,24 +1,23 @@
+@use 'sass:list'
 @use "abstracts"
 
 @font-face
-  font-family: abstracts.$fontGilroy
+  font-family: list.nth(abstracts.$fontGilroy, 1)
   font-weight: 400
   src: url(../fonts/Gilroy-Regular.otf)
 
 @font-face
-  font-family: abstracts.$fontGilroy
+  font-family: list.nth(abstracts.$fontGilroy, 1)
   font-weight: 700
   src: url(../fonts/Gilroy-Bold.otf)
 
 
 @font-face
-  font-family: abstracts.$fontMyriad
+  font-family: list.nth(abstracts.$fontMyriad, 1)
   font-weight: 400
   src: url(../fonts/MyriadPro-Regular.otf)
 
 @font-face
-  font-family: abstracts.$fontSandblast
+  font-family: list.nth(abstracts.$fontSandblast, 1)
   font-weight: 400
   src: url(../fonts/Sandblast.ttf)
-
-
