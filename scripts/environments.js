@@ -19,7 +19,7 @@ const environmentsMap = {
 	},
 	node: {
 		name: 'Node.js',
-		url: 'https://nodejs.org/en/',
+		url: 'https://nodejs.org/',
 	},
 	npm: {
 		name: 'npm',

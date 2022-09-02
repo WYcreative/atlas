@@ -2,7 +2,6 @@ extends ../_layout/base
 include ../_modules/team
 include ../_modules/links
 include ../_modules/technology
-include ../_modules/dependencies
 include ../_modules/timeline
 include ../_abstracts/mixins/symbol
 
@@ -27,8 +26,6 @@ block main
 
 	+team
 
-	+technology(true)
-
-	+dependencies(true)
+	+technology
 
 	+timeline

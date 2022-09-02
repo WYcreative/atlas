@@ -1,5 +1,5 @@
-mixin technology(ishalf)
-	section.module.module-technology(class=(ishalf ? 'module--half' : null))
+mixin technology
+	section.module.module-technology
 		.container
 			h3.heading-3
 				img(src="../../assets/images/shapes/purple.svg" width="24" height="24")
@@ -11,13 +11,36 @@ mixin technology(ishalf)
 					each browser, id in data.browsers
 						.module-technology__wrapper
 							picture.module-technology__img
-								img(src="../../assets/images/ph-employee.jpg" width="24" height="24")
-							span.module-technology__text #{browser.name} #{browser.version ? browser.version : ''}
+								img(src=`/assets/images/technology/${id}.png` width="24" height="24")
+							span.module-technology__text
+								a(href=browser.url target="_blank")= browser.name
+								= browser.version ? ` ${browser.version} or later` : ''
 
 				.module-tecnology__column
 					h4.heading-4 Environments
 					each environment, id in data.environments
+						- const match = environment.version.match(/^(?:\^|~|>=?)(.+)/)
+
+						if match
+							- environment.version = `${match[1]} or later`
+
 						.module-technology__wrapper
 							picture.module-technology__img
-								img(src="../../assets/images/ph-employee.jpg" width="24" height="24")
-							span.module-technology__text #{environment.name} #{environment.version}
+								img(src=`../../assets/images/technology/${id}.png` width="24" height="24")
+							span.module-technology__text
+								a(href=environment.url target="_blank")= environment.name
+								= ` ${environment.version}`
+
+				.module-dependencies__column
+					h4.heading-4 Dependencies
+					each dependency in data.dependencies
+						- const match = dependency.version.match(/^(?:\^|~|>=?)(.+)/)
+
+						if match
+							- dependency.version = `${match[1]} or later`
+
+						.module-dependencies__wrapper
+							img.module-dependencies__shape(src="../../assets/images/shapes/purple.svg" width="12" height="12")
+							span.module-dependencies__text
+								a(href=dependency.url target="_blank")= dependency.name
+								= ` ${dependency.version}`

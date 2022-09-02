@@ -5,6 +5,7 @@ import getMember from '@WYcreative/team';
 
 import generateBrowsers from './browsers.js';
 import generateEnvironments from './environments.js';
+import generateDependencies from './dependencies.js';
 import {getDirectory} from './utilities.js';
 
 
@@ -15,7 +16,7 @@ function generateData(options) {
 		lastUpdate: new Date(),
 		browsers: generateBrowsers(options.package.browserslist),
 		environments: generateEnvironments(options.package.engines),
-		dependencies: options.package.dependencies,
+		dependencies: generateDependencies(options.package.dependencies),
 	};
 
 	if (!data.description && options.package.description) {

@@ -12,7 +12,7 @@ function generateBrowsers(queries) {
 		const selectedBrowser = Object.entries(browsersMap).find(([_, {identifiers}]) => identifiers.includes(identifier));
 
 		const id = selectedBrowser[0];
-		const {name} = selectedBrowser[1];
+		const {name, url} = selectedBrowser[1];
 		const version = Math.min(
 			...pair[1]
 				.split('-')
@@ -23,6 +23,7 @@ function generateBrowsers(queries) {
 			if (!result[id]) {
 				result[id] = {
 					name,
+					url,
 				};
 			}
 
@@ -41,12 +42,14 @@ function generateBrowsers(queries) {
 const browsersMap = {
 	android: {
 		name: 'Android (WebView)',
+		url: 'https://play.google.com/store/apps/details?id=com.google.android.webview',
 		identifiers: [
 			'android',
 		],
 	},
 	chrome: {
 		name: 'Chrome',
+		url: 'https://www.google.com/chrome/',
 		identifiers: [
 			'chrome',
 			'chromeandroid',
@@ -55,18 +58,21 @@ const browsersMap = {
 	},
 	edge: {
 		name: 'Edge',
+		url: 'https://www.microsoft.com/edge',
 		identifiers: [
 			'edge',
 		],
 	},
 	electron: {
 		name: 'Electron',
+		url: 'https://www.electronjs.org/',
 		identifiers: [
 			'electron',
 		],
 	},
 	firefox: {
 		name: 'Firefox',
+		url: 'https://www.mozilla.org/firefox/',
 		identifiers: [
 			'firefox',
 			'ff',
@@ -76,24 +82,28 @@ const browsersMap = {
 	},
 	kaios: {
 		name: 'KaiOS Browser',
+		url: 'https://www.kaiostech.com/',
 		identifiers: [
 			'kaios',
 		],
 	},
 	node: {
 		name: 'Node.js',
+		url: 'https://nodejs.org/',
 		identifiers: [
 			'node',
 		],
 	},
 	opera: {
 		name: 'Opera',
+		url: 'https://www.opera.com/',
 		identifiers: [
 			'opera',
 		],
 	},
 	operaMini: {
 		name: 'Opera Mini',
+		url: 'https://www.opera.com/browsers/opera-mini',
 		identifiers: [
 			'operamini',
 			'op_mini',
@@ -101,18 +111,21 @@ const browsersMap = {
 	},
 	operaMobile: {
 		name: 'Opera Mobile',
+		url: 'https://www.opera.com/mobile',
 		identifiers: [
 			'op_mob',
 		],
 	},
 	qq: {
 		name: 'QQ Browser',
+		url: 'https://browser.qq.com/',
 		identifiers: [
 			'and_qq',
 		],
 	},
 	safari: {
 		name: 'Safari',
+		url: 'https://www.apple.com/safari/',
 		identifiers: [
 			'safari',
 			'iOS',
@@ -121,12 +134,14 @@ const browsersMap = {
 	},
 	samsung: {
 		name: 'Samsung Internet',
+		url: 'https://www.samsung.com/pt/apps/samsung-internet/',
 		identifiers: [
 			'samsung',
 		],
 	},
 	uc: {
 		name: 'UC Browser',
+		url: 'http://www.ucweb.com/',
 		identifiers: [
 			'ucandroid',
 			'and_uc',
