@@ -14,7 +14,7 @@ Properties marked with `*` are required.
   - `name` \* (__*String*__): The name of the project.
   - `description` (__*String*__): The description of the project.
   - `team` \* (__*Array*__): The list of the team member emails.
-  - `<Member Email>` (__*String*__): The member email. It should be present in [@wycreative/team](https://github.com/WYcreative/team).
+    - `<Member Email>` (__*String*__): The member email. It should be present in [@wycreative/team](https://github.com/WYcreative/team).
   - `url` \* (__*Object*__): The list of URLs for the project. All of the following URLs are optional.
     - `design` (__*String*__): The design URL, usually for a Figma o Sketch project.
     - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
@@ -24,9 +24,9 @@ Properties marked with `*` are required.
     - `stage` (__*String*__): The Stage environment URL.
     - `production` (__*String*__): The Production environment URL.
   - `timeline` \* (__*Object*__): The timeline of the stages and their interval dates. It can be added as much stages as needed.
-  - `<Stage Name>` (__*Object*__): A Stage of the project.
-    - `start` \* (__*String*__): The start date of the stage. It should be in the `YYYY-MM-DD` format.
-    - `end` \* (__*String*__): The start date of the stage. It should be in the `YYYY-MM-DD` format.
+    - `<Stage Name>` (__*Object*__): A Stage of the project.
+      - `start` \* (__*String*__): The start date of the stage. It should be in the `YYYY-MM-DD` format.
+      - `end` \* (__*String*__): The start date of the stage. It should be in the `YYYY-MM-DD` format.
 
 ## `tokens.js`
 
