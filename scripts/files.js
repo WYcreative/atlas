@@ -50,6 +50,12 @@ function generateFiles(data, options) {
 		});
 	}
 
+	const tokensIndexResult = pug.renderFile(join(pagesDirectory, 'tokens.pug'), {
+		data,
+	});
+
+	writeFileSync(join(destination, 'tokens/index.html'), tokensIndexResult);
+
 	for (const type of Object.keys(data.tokens)) {
 		const result = pug.renderFile(join(pagesDirectory, `${type}.pug`), {
 			data,

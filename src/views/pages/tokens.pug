@@ -1,0 +1,31 @@
+extends ../_layout/base
+include ../_abstracts/mixins/symbol
+
+block variables
+	- titlePage = 'Tokens'
+
+block append styles
+	link(href="/styles/tokens.css" rel="stylesheet")
+
+
+block main
+	section.module.module-title-text
+		.container
+			h1.heading-1= data.name
+			h2.heading-2
+				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				| Tokens
+			.rte
+				p List of all the tokens developed for the project.
+
+	section.module.module-table
+		.container
+			table
+				thead
+					tr
+						th.heading-4 Type
+				tbody
+					each tokenType in Object.keys(data.tokens)
+						tr
+							td.module-table__column-link
+								a(href=`/tokens/${tokenType}.html`)= tokenType.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
