@@ -250,10 +250,8 @@ const guide = {
 			],
 			url: {
 				design: '',
-				prototype: {
-					desktop: '',
-					mobile: '',
-				},
+				prototypeDesktop: '',
+				prototypeMobile: '',
 				task: '',
 			},
 			notes: 'lorem ipsum',

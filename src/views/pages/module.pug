@@ -9,7 +9,7 @@ block variables
 block main
 	section.module.module-title-text.module--half
 		.container
-			h1.heading-1= 'module-' + module.id
+			h1.heading-1= module.id
 			h2.heading-2
 				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
 				= module.name
@@ -26,14 +26,13 @@ block main
 					h4.heading-4 Design
 					if module.url
 						if module.url.design
-							+link-copy(module.url.design, "Figma")
-						if module.url.prototype
-							if module.url.prototype.desktop
-								+link-copy(module.url.prototype.desktop, "Invision Desktop")
-							if module.url.prototype.mobile
-								+link-copy(module.url.prototype.mobile, "Invision Mobile")
+							+link-copy(module.url.design, "Design")
+						if module.url.prototypeDesktop
+							+link-copy(module.url.prototypeDesktop, "Desktop Prototype")
+						if module.url.prototypeMobile
+							+link-copy(module.url.prototypeMobile, "Mobile Prototype")
 						if module.url.task
-							+link-copy(module.url.task, "AC")
+							+link-copy(module.url.task, "Task")
 				.module-links__column
 					h4.heading-4 Status
 						case module.status

@@ -26,14 +26,13 @@ block main
 					h4.heading-4 Design
 					if template.url
 						if template.url.design
-							+link-copy(template.url.design, "Figma")
-						if template.url.prototype
-							if template.url.prototype.desktop
-								+link-copy(template.url.prototype.desktop, "Invision Desktop")
-							if template.url.prototype.mobile
-								+link-copy(template.url.prototype.mobile, "Invision Mobile")
+							+link-copy(template.url.design, "Design")
+						if template.url.prototypeDesktop
+							+link-copy(template.url.prototypeDesktop, "Desktop Prototype")
+						if template.url.prototypeMobile
+							+link-copy(template.url.prototypeMobile, "Mobile Prototype")
 						if template.url.task
-							+link-copy(template.url.task, "AC")
+							+link-copy(template.url.task, "Task")
 				.module-links__column
 					h4.heading-4 Status
 						case template.status
