@@ -17,7 +17,7 @@ block main
 				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
 				| Templates
 			.rte
-				p List of all the templates developed for the project
+				p List of all the templates developed for the project.
 
 	section.module.module-table
 		.container
@@ -25,9 +25,9 @@ block main
 				thead
 					tr
 						th.heading-4 Name
-						th.heading-4(align="center") AC
+						th.heading-4(align="center") Task
 						th.heading-4(align="center") Modules
-						th.heading-4(align="center") State
+						th.heading-4(align="center") Status
 				tbody
 					each template in data.templates.list
 						case template.status
@@ -40,10 +40,12 @@ block main
 
 						tr
 							td.module-table__column-link
-								a(href="#" target="_blank")= template.name
+								a(href=`/templates/${template.id}.html`)= template.name
 							td.module-table__column-ac(align="center")
 								if template.url && template.url.task
 									+link-copy(template.url.task, "Link")
+								else
+									em None
 							td.module-table__column-links-modules(align="center")
 								if template.modules
 									each item in template.modules

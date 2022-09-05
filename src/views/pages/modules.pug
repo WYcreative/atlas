@@ -27,8 +27,8 @@ block main
 					tr
 						th.heading-4.module-table__column-preview(align="center") Preview
 						th.heading-4(align="center") Name
-						th.heading-4(align="center") AC
-						th.heading-4(align="center") State
+						th.heading-4(align="center") Task
+						th.heading-4(align="center") Status
 				tbody
 					- let emoji
 
@@ -46,10 +46,12 @@ block main
 								picture
 									img(src="../../assets/images/ph-employee.jpg" width="100" height="50")
 							td.module-table__column-link(align="center")
-								a(href="#" target="_blank")= 'module-' + item.id
+								a(href=`/modules/${item.id}.html`)= item.name
 							td.module-table__column-ac(align="center")
 								if item.url && item.url.task
 									+link-copy(item.url.task, "Link")
+								else
+									em None
 							td.module-table__column-state(align="center")
 								span.icon(class=emoji)
 									+symbol(emoji)
