@@ -49,7 +49,7 @@ block main
 							td.module-table__column-links-modules(align="center")
 								if template.modules
 									each item in template.modules
-										a(href=item.url target="_blank")= item.name
+										a(href=`/modules/${item}.html`)= item
 							td.module-table__column-state(align="center")
 								span.icon(class=emoji)
 									+symbol(emoji)

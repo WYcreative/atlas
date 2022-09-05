@@ -239,14 +239,8 @@ const guide = {
 			description: 'lorem ipsum',
 			status: 'done',
 			modules: [
-				{
-					name: 'team',
-					url: '#',
-				},
-				{
-					name: 'hero',
-					url: '#',
-				},
+				'team',
+				'hero',
 			],
 			url: {
 				design: '',
