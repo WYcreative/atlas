@@ -6,14 +6,18 @@ mixin links(ishalf)
 			h3.heading-3
 				img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
 				| Links
+
 			.module-links__row
 				.module-links__column
 					h4.heading-4 Design
-					+link-copy(data.url.design, "Figma")
-					+link-copy(data.url.prototype.desktop, "Invision Desktop")
-					+link-copy(data.url.prototype.mobile, "Invision Mobile")
+
+					+link-copy(data.url.design, "Design")
+					+link-copy(data.url.prototypeDesktop, "Desktop Prototype")
+					+link-copy(data.url.prototypeMobile, "Mobile Prototype")
+
 				.module-links__column
 					h4.heading-4 Development
+
 					+link-copy(data.url.repository, "Repository")
 					+link-copy(data.url.development, "DEV")
 					+link-copy(data.url.stage, "STAGE")
