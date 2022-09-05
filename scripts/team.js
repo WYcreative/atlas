@@ -4,6 +4,8 @@ import getMember from '@WYcreative/team';
 function generateTeam(team) {
 	const result = [];
 
+	team.sort();
+
 	for (const email of team) {
 		const memberData = getMember(email);
 
@@ -29,6 +31,8 @@ function generateTeam(team) {
 			console.error(`No team member found for the email '${email}'.`);
 		}
 	}
+
+	result.sort((a, b) => a.name < b.name ? -1 : 1);
 
 	return result;
 }

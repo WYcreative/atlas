@@ -2,13 +2,11 @@ import {members} from '@WYcreative/team';
 
 const guide = {
 	name: 'Example',
-	team: members.slice(0, 3).map(({email}) => email),
+	team: members.slice(0, 10).map(({email}) => email),
 	url: {
 		design: 'https://design.com',
-		prototype: {
-			desktop: 'https://prototype.com/desktop',
-			mobile: 'https://prototype.com/mobile',
-		},
+		prototypeDesktop: 'https://prototype.com/desktop',
+		prototypeMobile: 'https://prototype.com/mobile',
 		repository: 'https://dev.azure.com/Bycom/_git/example',
 		development: 'https://example.dev.byclients.com',
 		stage: 'https://example.stage.byclients.com',
