@@ -28,7 +28,7 @@ mixin sidebar
 								span.icon.icon-chevron
 									+symbol('icon-font')
 								| Tokens
-						button.sidebar__dropdown-button.js-toggleSubMenu
+						button.sidebar__dropdown-button.js-toggleSubMenu(data-id="tokens")
 							span.icon.icon-chevron
 								+symbol('icon-chevron')
 						ul.sidebar__submenu
@@ -69,7 +69,7 @@ mixin sidebar
 									+symbol(`icon-${objectType.icon}`)
 								= objectType.name.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
 
-						button.sidebar__dropdown-button.js-toggleSubMenu
+						button.sidebar__dropdown-button.js-toggleSubMenu(data-id=objectType.name)
 							span.icon.icon-chevron
 								+symbol('icon-chevron')
 

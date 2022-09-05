@@ -15,10 +15,25 @@ function sidebar() {
 	const btnToggleSubMenu = document.querySelectorAll('.js-toggleSubMenu');
 
 	for (const btn of btnToggleSubMenu) {
-		btn.addEventListener('click', () => {
-			const listItem = btn.closest('.sidebar__list-item');
+		const listItem = btn.closest('.sidebar__list-item');
+		const {id} = btn.dataset;
+		const storage = JSON.parse(localStorage.getItem('sidebarSubMenuToggles') || '{}');
 
-			listItem.classList.toggle('sidebar__list-item--active');
+		if (storage[id]) {
+			listItem.classList.add('sidebar__list-item--active');
+		}
+
+		btn.addEventListener('click', () => {
+			const status = listItem.classList.toggle('sidebar__list-item--active');
+			const storage = JSON.parse(localStorage.getItem('sidebarSubMenuToggles') || '{}');
+
+			if (status) {
+				storage[id] = true;
+			} else {
+				delete storage[id];
+			}
+
+			localStorage.setItem('sidebarSubMenuToggles', JSON.stringify(storage));
 		});
 	}
 	// ---------------
