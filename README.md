@@ -38,29 +38,29 @@ generateGuide({
 
 ## API
 
-### `generateGuide(package, guide, config, destination)`
+### `generateGuide(options)`
 
 Generates a Design Guide.
 
-#### `package`
+#### `options.package`
 
 Type: `Object`
 
 The `package.json` contents.
 
-#### `guide`
+#### `options.guide`
 
 Type `Object`
 
 The [Starter](https://github.com/@WYcreative/starter)'s `config/guide.js` export object with the Design Guide configurations.
 
-#### `config`
+#### `options.config`
 
 Type `Object`
 
 The [Starter](https://github.com/@WYcreative/starter)'s `config/index.js` export object with it's Gulp path configurations.
 
-#### `destination`
+#### `options.destination`
 
 Type: `String`
 
