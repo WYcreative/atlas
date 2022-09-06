@@ -28,6 +28,7 @@ block main
 						th.heading-4.module-table__column-preview(align="center") Preview
 						th.heading-4(align="center") Name
 						th.heading-4(align="center") Task
+						th.heading-4(align="center") Components
 						th.heading-4(align="center") Status
 				tbody
 					- let emoji
@@ -50,6 +51,13 @@ block main
 							td.module-table__column-ac(align="center")
 								if item.url && item.url.task
 									+link-copy(item.url.task, "Link")
+								else
+									em None
+							td.module-table__column-links-modules(align="center")
+								- console.log(item)
+								if item.components
+									each component in item.components
+										a(href=`/components/${component}.html`)= component
 								else
 									em None
 							td.module-table__column-state(align="center")

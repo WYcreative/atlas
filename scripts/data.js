@@ -38,7 +38,7 @@ function generateData(options) {
 	}
 
 	for (const type of ['components', 'modules', 'templates']) {
-		data[type] = generatePartials(type, data[type], options.config.src.views);
+		data[type] = generatePartials(type, data, options.config.src.views);
 	}
 
 	return data;

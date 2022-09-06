@@ -50,6 +50,8 @@ block main
 								if template.modules
 									each item in template.modules
 										a(href=`/modules/${item}.html`)= item
+								else
+									em None
 							td.module-table__column-state(align="center")
 								span.icon(class=emoji)
 									+symbol(emoji)

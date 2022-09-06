@@ -22,9 +22,10 @@ block main
 				img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
 				| Info
 			.module-links__row
-				.module-links__column
-					h4.heading-4 Design
-					if module.url
+				if module.url && Object.values(module.url).length > 0 && Object.values(module.url).some(url => url.length > 0)
+					.module-links__column
+						h4.heading-4 Links
+
 						if module.url.design
 							+link-copy(module.url.design, "Design")
 						if module.url.prototypeDesktop
@@ -47,23 +48,63 @@ block main
 						= module.status
 				.module-links__column
 					h4.heading-4 External Link
-					+link-copy(join(data.modules.path, module.id), "External")
+					+link-copy(join(data.modules.path, module.id + '.html'), "External")
 
 	section.module.module-detail-info.module--half
 		.container
-			h3.heading-3
-				img(src="../../assets/images/shapes/orange.svg" width="24" height="24")
-				| Components
-			h3.heading-3
-				img(src="../../assets/images/shapes/purple.svg" width="24" height="24")
-				| Code
-			h3.heading-3
-				img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
-				| Data
-			h3.heading-3
-				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
-				| Additional Notes
+			if module.components || module.code || module.data || module.notes
+				if module.components
+					h3.heading-3
+						img(src="../../assets/images/shapes/orange.svg" width="24" height="24")
+						| Components
+
+					ul
+						each id of module.components
+							- const component = data.components.list.find(component => component.id === id)
+
+							if component
+								li
+									a(href=`/components/${id}.html`)= component.name
+
+				if module.code
+					h3.heading-3
+						img(src="../../assets/images/shapes/purple.svg" width="24" height="24")
+						| Code
+
+					pre
+						code= module.code
+
+				if module.data
+					h3.heading-3
+						img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
+						| Data
+
+					table
+						thead
+							tr
+								th Name
+								th Required
+								th Type
+								th Description
+
+						tbody
+							each item in module.data
+								tr
+									th= item.name
+									td= item.required === true ? 'Yes' : 'No'
+									td= Array.isArray(item.type) ? item.type.join(', ') : item.type
+									td= item.description
+
+				if module.notes
+					h3.heading-3
+						img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+						| Additional Notes
+
+					div= module.notes
+
+			else
+				em No information to show.
 
 	section.module.module-iframe.module--half
 		.container
-			iframe(width='800', height='1000', src=join(data.modules.path, module.id))
+			iframe(width='800', height='1000', src=join(data.modules.path, module.id + '.html'))

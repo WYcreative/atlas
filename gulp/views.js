@@ -10,20 +10,24 @@ const pkg = createRequire(import.meta.url)('../package.json');
 
 
 function build(done) {
-	generateGuide({
-		package: pkg,
-		guide,
-		config: {
-			src: {
-				views: [
-					'./tests/views/**/*.pug',
-					...config.src.views.slice(1),
-				],
-				symbols: './tests/symbols/**/*.svg',
+	try {
+		generateGuide({
+			package: pkg,
+			guide,
+			config: {
+				src: {
+					views: [
+						'./tests/views/**/*.pug',
+						...config.src.views.slice(1),
+					],
+					symbols: './tests/symbols/**/*.svg',
+				},
 			},
-		},
-		destination: config.build.base,
-	});
+			destination: config.build.base,
+		});
+	} catch (error) {
+		console.error(' Skipping the generation of the Design Guide:\n', error);
+	}
 
 	done();
 }

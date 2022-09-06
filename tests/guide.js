@@ -165,10 +165,8 @@ const guide = {
 			],
 			url: {
 				design: '',
-				prototype: {
-					desktop: '',
-					mobile: '',
-				},
+				prototypeDesktop: 'test.com',
+				prototypeMobile: 'test.com',
 				task: '',
 			},
 			code: '<div class="team">content</div>',
@@ -204,10 +202,8 @@ const guide = {
 			],
 			url: {
 				design: '',
-				prototype: {
-					desktop: '',
-					mobile: '',
-				},
+				prototypeDesktop: '',
+				prototypeMobile: '',
 				task: '',
 			},
 			code: '<div class="slider">content</div>',

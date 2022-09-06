@@ -31,7 +31,7 @@ function generateBrowsers(queries) {
 				result[id].version = version;
 			}
 		} else {
-			console.error(`No browser name found for the '${identifier}' identifier.`);
+			throw new Error(`No browser name found for the '${identifier}' identifier.`);
 		}
 	}
 

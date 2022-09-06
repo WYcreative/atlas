@@ -28,7 +28,7 @@ function generateTeam(team) {
 
 			result[teamIndex].list.push(member);
 		} else {
-			console.error(`No team member found for the email '${email}'.`);
+			throw new Error(`No team member found for the email '${email}'.`);
 		}
 	}
 
