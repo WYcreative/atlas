@@ -28,7 +28,6 @@ function build(done) {
 					views: './build/**',
 				},
 			},
-			destination: config.build.base,
 		});
 	} catch (error) {
 		console.error(' Skipping the generation of the Design Guide:\n', error);

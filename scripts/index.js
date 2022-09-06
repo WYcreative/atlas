@@ -13,7 +13,7 @@ function generateGuide(options) {
 		}
 	}
 
-	for (const path of ['components', 'modules', 'templates', 'destination']) {
+	for (const path of ['components', 'modules', 'templates']) {
 		if (['string', 'undefined'].includes(typeof options[path]) === false) {
 			throw new TypeError(`The property '${path}' is not a string. Got the ${typeof options[path]} '${options[path]}'.`);
 		}

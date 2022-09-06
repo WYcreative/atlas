@@ -11,7 +11,7 @@ import {getDirectory} from './utilities.js';
 
 function generateFiles(data, options) {
 	const __dirname = fileURLToPath(new URL('.', import.meta.url));
-	const destination = resolve(options.destination);
+	const destination = resolve(options.config.build.base);
 	const pagesDirectory = resolve(__dirname, '..', getDirectory(config.src.views[0]), 'pages');
 	const distDirectory = resolve(__dirname, '../dist');
 	const pugOptions = {

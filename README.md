@@ -32,7 +32,6 @@ generateGuide({
 	package: pkg,
 	guide,
 	config,
-	destination: './build/',
 });
 ```
 
@@ -52,19 +51,13 @@ The `package.json` contents.
 
 Type `Object`
 
-The [Starter](https://github.com/@WYcreative/starter)'s `config/guide.js` export object with the Design Guide configurations.
+The [Starter](https://github.com/@WYcreative/starter)'s `config/*.js` export objects with the Design Guide configurations in a single object.
 
 #### `options.config`
 
 Type `Object`
 
 The [Starter](https://github.com/@WYcreative/starter)'s `config/index.js` export object with it's Gulp path configurations.
-
-#### `options.destination`
-
-Type: `String`
-
-The destination directory for the Design Guide generated files.
 
 ## Development
 
