@@ -54,7 +54,6 @@ block main
 								else
 									em None
 							td.module-table__column-links-modules(align="center")
-								- console.log(item)
 								if item.components
 									each component in item.components
 										a(href=`/components/${component}.html`)= component
