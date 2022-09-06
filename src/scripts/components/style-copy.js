@@ -4,8 +4,6 @@ function styleCopy() {
 	for (const btn of btnStyleCopy) {
 		const buttonDataStyle = btn.dataset.style;
 
-		console.log('btn', btn);
-
 		btn.addEventListener('click', () => {
 			navigator.clipboard.writeText(buttonDataStyle);
 			labelCall();
