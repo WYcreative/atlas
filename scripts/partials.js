@@ -5,10 +5,10 @@ import {globbySync} from 'globby';
 import {getDirectory} from './utilities.js';
 
 
-function generatePartials(type, data, viewsPaths) {
+function generatePartials(type, data, options) {
 	const files = globbySync([
-		`${getDirectory(viewsPaths[0])}/${type}/**/*.pug`,
-		...viewsPaths.slice(1),
+		`${getDirectory(options.config.src.views[0])}/${type}/**/*.pug`,
+		...options.config.src.views.slice(1),
 	]);
 
 	for (const {id} of data[type]) {
