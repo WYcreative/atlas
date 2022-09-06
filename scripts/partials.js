@@ -1,4 +1,4 @@
-import {basename} from 'node:path/posix';
+import {basename, relative, join} from 'node:path/posix';
 
 import {globbySync} from 'globby';
 
@@ -18,7 +18,7 @@ function generatePartials(type, data, options) {
 	}
 
 	const result = {
-		path: `../examples/${type}`,
+		path: `/${relative(options.config.build.base, join(getDirectory(options.config.build.views), type))}`,
 		list: data[type] || [],
 	};
 

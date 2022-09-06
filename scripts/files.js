@@ -1,5 +1,5 @@
 import {fileURLToPath} from 'node:url';
-import {resolve, join, dirname} from 'node:path';
+import {resolve, relative, join, dirname} from 'node:path';
 import {existsSync, mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 
 import {globbySync} from 'globby';
@@ -14,6 +14,13 @@ function generateFiles(data, options) {
 	const destination = resolve(options.destination);
 	const pagesDirectory = resolve(__dirname, '..', getDirectory(config.src.views[0]), 'pages');
 	const distDirectory = resolve(__dirname, '../dist');
+	const pugOptions = {
+		relative,
+		join,
+		getDirectory,
+		data,
+		config: options.config,
+	};
 
 	if (!existsSync(destination)) {
 		mkdirSync(destination, {
@@ -37,9 +44,7 @@ function generateFiles(data, options) {
 	}
 
 
-	const overview = pug.renderFile(join(pagesDirectory, 'overview.pug'), {
-		data,
-	});
+	const overview = pug.renderFile(join(pagesDirectory, 'overview.pug'), pugOptions);
 
 	writeFileSync(join(destination, 'index.html'), overview);
 
@@ -50,16 +55,12 @@ function generateFiles(data, options) {
 		});
 	}
 
-	const tokensIndexResult = pug.renderFile(join(pagesDirectory, 'tokens.pug'), {
-		data,
-	});
+	const tokensIndexResult = pug.renderFile(join(pagesDirectory, 'tokens.pug'), pugOptions);
 
 	writeFileSync(join(destination, 'tokens/index.html'), tokensIndexResult);
 
 	for (const type of Object.keys(data.tokens)) {
-		const result = pug.renderFile(join(pagesDirectory, `${type}.pug`), {
-			data,
-		});
+		const result = pug.renderFile(join(pagesDirectory, `${type}.pug`), pugOptions);
 
 		writeFileSync(join(destination, 'tokens', `${type}.html`), result);
 	}
@@ -72,9 +73,7 @@ function generateFiles(data, options) {
 			});
 		}
 
-		const indexResult = pug.renderFile(join(pagesDirectory, `${type}s.pug`), {
-			data,
-		});
+		const indexResult = pug.renderFile(join(pagesDirectory, `${type}s.pug`), pugOptions);
 
 		writeFileSync(join(destination, `${type}s/index.html`), indexResult);
 
@@ -82,8 +81,7 @@ function generateFiles(data, options) {
 
 		for (const object of data[`${type}s`].list) {
 			const result = template({
-				join,
-				data,
+				...pugOptions,
 				current: object.id,
 			});
 

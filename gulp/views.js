@@ -22,6 +22,11 @@ function build(done) {
 					],
 					symbols: './tests/symbols/**/*.svg',
 				},
+				build: {
+					base: './build',
+					images: './build/assets/images/**',
+					views: './build/**',
+				},
 			},
 			destination: config.build.base,
 		});
