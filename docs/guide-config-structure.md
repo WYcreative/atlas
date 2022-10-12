@@ -16,7 +16,7 @@ Properties marked with `*` are required.
   - `team` \* (__*Array*__): The list of the team member emails.
     - `<Member Email>` (__*String*__): The member email. It should be present in [@wycreative/team](https://github.com/WYcreative/team).
   - `url` \* (__*Object*__): The list of URLs for the project. All of the following URLs are optional.
-    - `design` (__*String*__): The design URL, usually for a Figma o Sketch project.
+    - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
     - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
     - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
     - `repository` (__*String*__): The git repository URL.
@@ -55,7 +55,7 @@ Properties marked with `*` are required.
     - `description` (__*String*__): The module's description.
     - `status` \* (__*String*__): The module's status. It accepts `wip`, and `done`.
     - `url` (__*Object*__): The list of URLs for the module.
-      - `design` (__*String*__): The design URL, usually for a Figma o Sketch project.
+      - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
       - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
       - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
       - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
@@ -72,7 +72,7 @@ Properties marked with `*` are required.
     - `description` (__*String*__): The template's description.
     - `status` \* (__*String*__): The template's status. It accepts `wip`, and `done`.
     - `url` (__*Object*__): The list of URLs for the template.
-      - `design` (__*String*__): The design URL, usually for a Figma o Sketch project.
+      - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
       - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
       - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
       - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
@@ -96,7 +96,7 @@ Properties marked with `*` are required.
         - `email` (__*String*__): The member's email.
         - `role` (__*String*__): The member's role.
 - `url` (__*Object*__): The list of URLs for the project.
-  - `design` (__*String*__): The design URL, usually for a Figma o Sketch project.
+  - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
   - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
   - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
   - `repository` (__*String*__): The git repository URL.
@@ -137,7 +137,7 @@ Properties marked with `*` are required.
       - `description` (__*String*__): The module's description.
       - `status` (__*String*__): The module's status.
       - `url` (__*Object*__): The list of URLs for the module.
-        - `design` (__*String*__): The design URL, usually for a Figma o Sketch project.
+        - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
         - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
         - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
         - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
@@ -153,7 +153,7 @@ Properties marked with `*` are required.
       - `description` (__*String*__): The template's description.
       - `status` (__*String*__): The template's status.
       - `url` (__*Object*__): The list of URLs for the template.
-        - `design` (__*String*__): The design URL, usually for a Figma o Sketch project.
+        - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
         - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
         - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
         - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
