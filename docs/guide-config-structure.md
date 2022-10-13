@@ -143,6 +143,13 @@ Properties marked with `*` are required.
         - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
       - `components` (__*Array*__): The list of components used in the module.
         - `<Component ID>` (__*String*__): The component ID.
+      - `code` (__*String*__): The template code for the module.
+      - `data` (__*Array*__): The list of data entries for the module.
+        - `{}` A data entry.
+          - `name` (__*String*__): The data entry name.
+          - `required` (__*Boolean*__): Wether the data entry is required in the module.
+          - `type` (__*Array*__): The list of accepted data types.
+          - `description` (__*String*__): The data entry description.
       - `notes` (__*String*__): Additional notes for the module.
 - `templates` (__*Object*__): The project's templates.
   - `path` (__*String*__): The path where the examples' HTML files are located in the project.
