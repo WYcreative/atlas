@@ -44,7 +44,19 @@ Properties marked with `*` are required.
     - `id` \* (__*String*__): The component ID.
     - `name` \* (__*String*__): The component's name.
     - `description` (__*String*__): The component's description.
-    - *(TODO: Additional properties)*
+    - `status` \* (__*String*__): The component's status. It accepts `wip`, and `done`.
+    - `url` (__*Object*__): The list of URLs for the module.
+      - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
+      - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
+      - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
+      - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
+    - `data` (__*Array*__): The list of data entries for the component.
+      - `{}` A data entry.
+        - `name` (__*String*__): The data entry name.
+        - `required` (__*Boolean*__): Wether the data entry is required in the component.
+        - `type` (__*Array*__): The list of accepted data types.
+        - `description` (__*String*__): The data entry description.
+    - `notes` (__*String*__): Additional notes for the module.
 
 ## `modules.js`
 
@@ -61,6 +73,12 @@ Properties marked with `*` are required.
       - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
     - `components` (__*Array*__): The list of components used in the module.
       - `<Module ID>` (__*String*__): The module ID. It should be one of the components defined in `components.js`, or a Pug file with the same ID as filename should be present in `./FrontEnd/src/views/components` as fallback.
+    - `data` (__*Array*__): The list of data entries for the module.
+      - `{}` A data entry.
+        - `name` (__*String*__): The data entry name.
+        - `required` (__*Boolean*__): Wether the data entry is required in the module.
+        - `type` (__*Array*__): The list of accepted data types.
+        - `description` (__*String*__): The data entry description.
     - `notes` (__*String*__): Additional notes for the module.
 
 ## `templates.js`
@@ -127,7 +145,24 @@ Properties marked with `*` are required.
 - `components` (__*Object*__): The project's components.
   - `path` (__*String*__): The path where the examples' HTML files are located in the project.
   - `list` (__*Array*__): The list of components.
-    - *(TODO: Component properties)*
+    - `{}` A component
+      - `id` (__*String*__): The component ID.
+      - `name` (__*String*__): The component's name.
+      - `description` (__*String*__): The component's description.
+      - `status` (__*String*__): The component's status.
+      - `url` (__*Object*__): The list of URLs for the component.
+        - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
+        - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
+        - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
+        - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
+      - `code` (__*String*__): The template code for the component.
+      - `data` (__*Array*__): The list of data entries for the component.
+        - `{}` A data entry.
+          - `name` (__*String*__): The data entry name.
+          - `required` (__*Boolean*__): Wether the data entry is required in the component.
+          - `type` (__*Array*__): The list of accepted data types.
+          - `description` (__*String*__): The data entry description.
+      - `notes` (__*String*__): Additional notes for the component.
 - `modules` (__*Object*__): The project's modules.
   - `path` (__*String*__): The path where the examples' HTML files are located in the project.
   - `list` (__*Array*__): The list of modules.

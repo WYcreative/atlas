@@ -1,0 +1,51 @@
+extends ../_layout/base
+include ../_abstracts/mixins/symbol
+include ../_components/link-copy
+
+block variables
+	- titlePage = 'Components'
+
+block append styles
+	link(href="/styles/components.css" rel="stylesheet")
+
+
+block main
+	section.module.module-title-text
+		.container
+			h1.heading-1= data.name
+			h2.heading-2
+				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				| Components
+			.rte
+				p List of all developed components.
+				p These components must be used independently of the template in which they are inserted.
+
+	section.module.module-table
+		.container
+			table
+				thead
+					tr
+						th.heading-4.module-table__column-preview(align="center") Preview
+						th.heading-4(align="center") Name
+						th.heading-4(align="center") Status
+				tbody
+					- let emoji
+
+					each item in data.components.list
+						case item.status
+							when 'done'
+								- emoji = 'icon-emoji-satisfied'
+							when 'wip'
+								- emoji = 'icon-emoji-sad'
+							default
+								- emoji = 'icon-emoji-sad'
+
+						tr
+							td.module-table__column-preview(align="center")
+								picture
+									img(src="../../assets/images/ph-employee.jpg" width="100" height="50")
+							td.module-table__column-link(align="center")
+								a(href=`/components/${item.id}.html`)= item.name
+							td.module-table__column-state(align="center")
+								span.icon(class=emoji)
+									+symbol(emoji)

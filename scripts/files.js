@@ -66,7 +66,7 @@ function generateFiles(data, options) {
 	}
 
 
-	for (const type of [/* 'component', */'module', 'template']) {
+	for (const type of ['component', 'module', 'template']) {
 		if (!existsSync(join(destination, `${type}s`))) {
 			mkdirSync(join(destination, `${type}s`), {
 				recursive: true,

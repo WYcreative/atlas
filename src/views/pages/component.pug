@@ -1,0 +1,97 @@
+extends ../_layout/base
+include ../_components/link-copy
+
+block variables
+	- const component = data.components.list.find(({id}) => id === current)
+	- titlePage = component.name
+	- isFull = true
+
+block main
+	section.module.module-title-text.module--half
+		.container
+			h1.heading-1= component.id
+			h2.heading-2
+				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				= component.name
+			.rte
+				p= component.description
+
+	section.module.module-links.module--half
+		.container
+			h3.heading-3
+				img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
+				| Info
+			.module-links__row
+				if component.url && Object.values(component.url).length > 0 && Object.values(component.url).some(url => url.length > 0)
+					.module-links__column
+						h4.heading-4 Links
+
+						if component.url.design
+							+link-copy(component.url.design, "Design")
+						if component.url.prototypeDesktop
+							+link-copy(component.url.prototypeDesktop, "Desktop Prototype")
+						if component.url.prototypeMobile
+							+link-copy(component.url.prototypeMobile, "Mobile Prototype")
+						if component.url.task
+							+link-copy(component.url.task, "Task")
+				.module-links__column
+					h4.heading-4 Status
+						case component.status
+							when 'done'
+								- emoji = 'icon-emoji-satisfied'
+							when 'wip'
+								- emoji = 'icon-emoji-sad'
+							default
+								- emoji = 'icon-emoji-sad'
+					span.icon(class=emoji)
+						+symbol(emoji)
+						= component.status
+				.module-links__column
+					h4.heading-4 External Link
+					+link-copy(join(data.components.path, component.id + '.html'), "External")
+
+	section.module.module-detail-info.module--half
+		.container
+			if component.code || component.data || component.notes
+				if component.code
+					h3.heading-3
+						img(src="../../assets/images/shapes/purple.svg" width="24" height="24")
+						| Code
+
+					pre
+						code= component.code
+
+				if component.data
+					h3.heading-3
+						img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
+						| Data
+
+					table
+						thead
+							tr
+								th Name
+								th Required
+								th Type
+								th Description
+
+						tbody
+							each item in component.data
+								tr
+									th= item.name
+									td= item.required === true ? 'Yes' : 'No'
+									td= Array.isArray(item.type) ? item.type.join(', ') : item.type
+									td= item.description
+
+				if component.notes
+					h3.heading-3
+						img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+						| Additional Notes
+
+					div= component.notes
+
+			else
+				em No information to show.
+
+	section.module.module-iframe.module--half
+		.container
+			iframe(width='800', height='1000', src=join(data.components.path, component.id + '.html'))

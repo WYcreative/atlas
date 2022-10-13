@@ -147,6 +147,33 @@ const guide = {
 		{
 			id: 'button',
 			name: 'Button',
+			status: 'done',
+			url: {
+				design: '',
+				prototypeDesktop: 'test.com',
+				prototypeMobile: 'test.com',
+				task: '',
+			},
+			code: '<div class="button">content</div>',
+			data: [
+				{
+					name: 'Name',
+					required: true,
+					type: [
+						'String',
+					],
+					description: 'Lorem Ipsum',
+				},
+				{
+					name: 'isPrimary',
+					required: false,
+					type: [
+						'Boolean',
+					],
+					description: 'Sit Dolor Amet',
+				},
+			],
+			notes: 'lorem ipsum',
 		},
 		{
 			id: 'filter',
