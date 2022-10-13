@@ -141,9 +141,9 @@ Properties marked with `*` are required.
         - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
         - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
         - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
-    - `components` (__*Array*__): The list of components used in the module.
-      - `<Component ID>` (__*String*__): The component ID.
-    - `notes` (__*String*__): Additional notes for the module.
+      - `components` (__*Array*__): The list of components used in the module.
+        - `<Component ID>` (__*String*__): The component ID.
+      - `notes` (__*String*__): Additional notes for the module.
 - `templates` (__*Object*__): The project's templates.
   - `path` (__*String*__): The path where the examples' HTML files are located in the project.
   - `list` (__*Array*__): The list of templates.
@@ -157,6 +157,6 @@ Properties marked with `*` are required.
         - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
         - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
         - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
-    - `modules` (__*Array*__): The list of modules used in the template.
-      - `<Module ID>` (__*String*__): The module ID.
-    - `notes` (__*String*__): Additional notes for the template.
+      - `modules` (__*Array*__): The list of modules used in the template.
+        - `<Module ID>` (__*String*__): The module ID.
+      - `notes` (__*String*__): Additional notes for the template.
