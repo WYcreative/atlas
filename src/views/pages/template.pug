@@ -56,11 +56,28 @@ block main
 				img(src="../../assets/images/shapes/orange.svg" width="24" height="24")
 				| Modules
 
+			if template.modules
+				ul
+					each id of template.modules
+						- const component = data.modules.list.find(component => component.id === id)
+
+						if component
+							li
+								a(href=`/modules/${id}.html`)= component.name
+			else
+				em No information to show.
+
 	section.module.module-detail-info.module--half
 		.container
 			h3.heading-3
 				img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
 				| Additional Notes
+
+			div
+				if template.notes
+					= template.notes
+				else
+					em No information to show.
 
 	section.module.module-iframe
 		.container
