@@ -48,7 +48,7 @@ block main
 						= component.status
 				.module-links__column
 					h4.heading-4 External Link
-					+link-copy(join(data.components.path, component.id + '.html'), "External")
+					+link-copy(join('/design-guide', data.components.path, component.id + '.html'), "External")
 
 	section.module.module-detail-info.module--half
 		.container
