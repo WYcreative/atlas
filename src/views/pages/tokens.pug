@@ -5,7 +5,7 @@ block variables
 	- titlePage = 'Tokens'
 
 block append styles
-	link(href="/styles/tokens.css" rel="stylesheet")
+	link(href="/design-guide/styles/tokens.css" rel="stylesheet")
 
 
 block main
@@ -13,7 +13,7 @@ block main
 		.container
 			h1.heading-1= data.name
 			h2.heading-2
-				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 				| Tokens
 			.rte
 				p List of all the tokens developed for the project.
@@ -28,4 +28,4 @@ block main
 					each tokenType in Object.keys(data.tokens)
 						tr
 							td.module-table__column-link
-								a(href=`/tokens/${tokenType}.html`)= tokenType.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
+								a(href=`/design-guide/tokens/${tokenType}.html`)= tokenType.replace(/(?:^|\s)\S/g, match => match.toUpperCase())

@@ -11,7 +11,7 @@ block main
 		.container
 			h1.heading-1= module.id
 			h2.heading-2
-				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 				= module.name
 			.rte
 				p= module.description
@@ -19,7 +19,7 @@ block main
 	section.module.module-links.module--half
 		.container
 			h3.heading-3
-				img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
+				img(src="/design-guide/assets/images/shapes/blue.svg" width="24" height="24")
 				| Info
 			.module-links__row
 				if module.url && Object.values(module.url).length > 0 && Object.values(module.url).some(url => url.length > 0)
@@ -55,7 +55,7 @@ block main
 			if module.components || module.code || module.data || module.notes
 				if module.components
 					h3.heading-3
-						img(src="../../assets/images/shapes/orange.svg" width="24" height="24")
+						img(src="/design-guide/assets/images/shapes/orange.svg" width="24" height="24")
 						| Components
 
 					ul
@@ -64,11 +64,11 @@ block main
 
 							if component
 								li
-									a(href=`/components/${id}.html`)= component.name
+									a(href=`/design-guide/components/${id}.html`)= component.name
 
 				if module.code
 					h3.heading-3
-						img(src="../../assets/images/shapes/purple.svg" width="24" height="24")
+						img(src="/design-guide/assets/images/shapes/purple.svg" width="24" height="24")
 						| Code
 
 					pre
@@ -76,7 +76,7 @@ block main
 
 				if module.data
 					h3.heading-3
-						img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
+						img(src="/design-guide/assets/images/shapes/yellow.svg" width="24" height="24")
 						| Data
 
 					table
@@ -97,7 +97,7 @@ block main
 
 				if module.notes
 					h3.heading-3
-						img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+						img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 						| Additional Notes
 
 					div= module.notes
@@ -107,4 +107,4 @@ block main
 
 	section.module.module-iframe.module--half
 		.container
-			iframe(width='800', height='1000', src=join(data.modules.path, module.id + '.html'))
+			iframe(width='800', height='1000', src=join('design-guide', data.modules.path, module.id + '.html'))

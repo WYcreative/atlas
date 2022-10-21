@@ -6,7 +6,7 @@ block variables
 	- titlePage = 'Templates'
 
 block append styles
-	link(href="/styles/templates.css" rel="stylesheet")
+	link(href="/design-guide/styles/templates.css" rel="stylesheet")
 
 
 block main
@@ -14,7 +14,7 @@ block main
 		.container
 			h1.heading-1= data.name
 			h2.heading-2
-				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 				| Templates
 			.rte
 				p List of all the templates developed for the project.
@@ -40,7 +40,7 @@ block main
 
 						tr
 							td.module-table__column-link
-								a(href=`/templates/${template.id}.html`)= template.name
+								a(href=`/design-guide/templates/${template.id}.html`)= template.name
 							td.module-table__column-ac(align="center")
 								if template.url && template.url.task
 									+link-copy(template.url.task, "Link")
@@ -49,7 +49,7 @@ block main
 							td.module-table__column-links-modules(align="center")
 								if template.modules
 									each item in template.modules
-										a(href=`/modules/${item}.html`)= item
+										a(href=`/design-guide/modules/${item}.html`)= item
 								else
 									em None
 							td.module-table__column-state(align="center")

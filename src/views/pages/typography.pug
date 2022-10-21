@@ -5,7 +5,7 @@ block variables
 	- titlePage = 'Tokens - Typography'
 
 block append styles
-	link(href="/styles/typography.css" rel="stylesheet")
+	link(href="/design-guide/styles/typography.css" rel="stylesheet")
 
 
 block main
@@ -13,7 +13,7 @@ block main
 		.container
 			h1.heading-1= data.name
 			h2.heading-2
-				img(src="../../assets/images/shapes/green.svg" width="24" height="24")
+				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 				| Typography
 			.rte
 				p List of text styles used in this project.
@@ -36,11 +36,11 @@ block main
 
 			each fontStyle in styles
 				h3.heading-3
-					img(src="../../assets/images/shapes/yellow.svg" width="24" height="24")
+					img(src="/design-guide/assets/images/shapes/yellow.svg" width="24" height="24")
 					= fontStyle.name
 
 				h3.heading-4
-					img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
+					img(src="/design-guide/assets/images/shapes/blue.svg" width="24" height="24")
 					| Desktop
 				div.module-typography__overflow
 					table
@@ -73,7 +73,7 @@ block main
 											span.icon.icon-link
 												+symbol('icon-copy')
 				h3.heading-4
-					img(src="../../assets/images/shapes/blue.svg" width="24" height="24")
+					img(src="/design-guide/assets/images/shapes/blue.svg" width="24" height="24")
 					| Mobile
 				div.module-typography__overflow
 					table

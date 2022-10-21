@@ -2,7 +2,7 @@ mixin technology
 	section.module.module-technology
 		.container
 			h3.heading-3
-				img(src="../../assets/images/shapes/purple.svg" width="24" height="24")
+				img(src="/design-guide/assets/images/shapes/purple.svg" width="24" height="24")
 				| Technology Specifications
 
 			.module-technology__row
@@ -11,7 +11,7 @@ mixin technology
 					each browser, id in data.browsers
 						.module-technology__wrapper
 							picture.module-technology__img
-								img(src=`/assets/images/technology/${id}.png` width="24" height="24")
+								img(src=`/design-guide/assets/images/technology/${id}.png` width="24" height="24")
 							span.module-technology__text
 								a(href=browser.url target="_blank")= browser.name
 								= browser.version ? ` ${browser.version} or later` : ''
@@ -26,7 +26,7 @@ mixin technology
 
 						.module-technology__wrapper
 							picture.module-technology__img
-								img(src=`../../assets/images/technology/${id}.png` width="24" height="24")
+								img(src=`/design-guide/assets/images/technology/${id}.png` width="24" height="24")
 							span.module-technology__text
 								a(href=environment.url target="_blank")= environment.name
 								= ` ${environment.version}`
@@ -40,7 +40,7 @@ mixin technology
 							- dependency.version = `${match[1]} or later`
 
 						.module-dependencies__wrapper
-							img.module-dependencies__shape(src="../../assets/images/shapes/purple.svg" width="12" height="12")
+							img.module-dependencies__shape(src="/design-guide/assets/images/shapes/purple.svg" width="12" height="12")
 							span.module-dependencies__text
 								a(href=dependency.url target="_blank")= dependency.name
 								= ` ${dependency.version}`
