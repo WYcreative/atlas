@@ -87,14 +87,6 @@
 				svg
 					color: abstracts.$color-chill-white
 
-			#{$block}__submenu
-				max-height: 500px
-				opacity: 1
-				transition: max-height 250ms ease-in-out
-
-				*
-					pointer-events: auto
-
 	&__page-name
 		display: flex
 		padding: 10px 0
@@ -140,12 +132,9 @@
 		margin-bottom: 10px
 		padding-left: 40px
 		grid-column: 1 / -1
-		max-height: 0
-		opacity: 0
-		transition: none
 
-		*
-			pointer-events: none
+		#{$block}__list-item:not(#{$block}__list-item--active) &
+			display: none
 
 		a
 			display: block
