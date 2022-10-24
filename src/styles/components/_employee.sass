@@ -11,6 +11,8 @@ $avatar-offset-y: 16
 $employee-img-size: 40
 
 .employee
+	$block: &
+
 	display: flex
 	align-items: center
 	padding: 12px 16px
@@ -18,8 +20,13 @@ $employee-img-size: 40
 	border-radius: 8px
 	border: 1px solid rgba(abstracts.$color-badass-black, 0.05)
 	transition: all 250ms ease-in-out
+	position: relative
+
+	&--muted
+		background: rgba(abstracts.$color-badass-black, 0.025)
 
 	&__img
+		border-radius: 50%
 		margin-right: 16px
 		width: $employee-img-size * 1px
 		height: $employee-img-size * 1px
@@ -42,9 +49,24 @@ $employee-img-size: 40
 		color: rgba(abstracts.$color-badass-black, 0.5)
 		letter-spacing: 0
 
+	&__tag
+		border-radius: 2em
+		color: abstracts.$color-chill-white
+		background: abstracts.$color-funky-purple
+		padding: 0 5px
+		position: absolute
+		top: -.5em
+		right: -.5em
+		text-transform: uppercase
+		font:
+			weight: 700
+			size: 8px
+		letter-spacing: .05em
+
 	@media (width >= abstracts.$breakpoint-lg)
 		box-shadow: none
 
-		&:hover
-			box-shadow: 0 10px 60px rgba(abstracts.$color-badass-black, 0.2)
-			transform: translate(5px, 5px)
+		&:not(&--muted)
+			&:hover
+				box-shadow: 0 10px 60px rgba(abstracts.$color-badass-black, 0.2)
+				transform: translate(5px, 5px)

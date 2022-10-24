@@ -13,4 +13,4 @@ mixin team(ishalf)
 						h4.heading-4= group.name
 						.module-team__wrapper-employee
 							each member in group.list
-								+employee(member.name, member.surname, member.role, member.email)
+								+employee(member)

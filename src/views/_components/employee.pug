@@ -1,7 +1,10 @@
-mixin employee(name, surname, role, email)
-	a.employee(href="MSTeams:/l/chat/0/0?users="+email)
+mixin employee(data)
+	#{data.available === false ? 'div' : 'a'}.employee(class=(data.available === false ? 'employee--muted' : null) href=(data.available === false ? null : 'MSTeams:/l/chat/0/0?users=' + data.email))
 		picture.employee__img
-			img(src="https://wycreative.com/wycreative-assinaturas/team/"+name+"%20"+surname+".jpg" width="337" height="161")
+			img(src="https://wycreative.com/wycreative-assinaturas/team/"+data.name+"%20"+data.surname+".jpg" width="337" height="161")
 		.employee__info
-			.employee__name= name + ' ' + surname
-			.employee__role= role
+			.employee__name= data.name + ' ' + data.surname
+			.employee__role= data.role
+
+		if data.available === false
+			.employee__tag Unavailable
