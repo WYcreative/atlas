@@ -3,7 +3,7 @@ function linkCopy() {
 
 	for (const linkCopy of linkCopies) {
 		const button = linkCopy.querySelector('.js-copyLink');
-		const href = linkCopy.querySelector('.js-linkToCopy').getAttribute('href');
+		const {href} = linkCopy.querySelector('.js-linkToCopy');
 
 		button.addEventListener('click', () => {
 			navigator.clipboard.writeText(href);
