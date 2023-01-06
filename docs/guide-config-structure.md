@@ -23,10 +23,6 @@ Properties marked with `*` are required.
     - `development` (__*String*__): The Development environment URL.
     - `stage` (__*String*__): The Stage environment URL.
     - `production` (__*String*__): The Production environment URL.
-  - `timeline` \* (__*Object*__): The timeline of the stages and their interval dates. It can be added as much stages as needed.
-    - `<Stage Name>` (__*Object*__): A Stage of the project.
-      - `start` \* (__*String*__): The start date of the stage. It should be in the `YYYY-MM-DD` format.
-      - `end` \* (__*String*__): The start date of the stage. It should be in the `YYYY-MM-DD` format.
 
 ## `tokens.js`
 
@@ -121,10 +117,6 @@ Properties marked with `*` are required.
   - `development` (__*String*__): The Development environment URL.
   - `stage` (__*String*__): The Stage environment URL.
   - `production` (__*String*__): The Production environment URL.
-- `timeline` (__*Object*__): The timeline of the stages and their interval dates.
-  - `<Stage Name>` (__*Object*__): A Stage of the project. This property name is capitalized. If it starts with a `pre` prefix, it is renamed to `Pre-`. If it ends with a `end` suffix, it is be renamed to `-End`.
-    - `start` (__*Date*__): The start date of the stage.
-    - `end` (__*Date*__): The start date of the stage.
 - `environments` (__*Object*__): The list of Front-End environments used in the project. Sourced from the project's `package.json`'s `engines`.
   - `<Environment ID>` (__*Object*__): The environment ID.
     - `name` (__*String*__): The environment's name.

@@ -12,32 +12,6 @@ const guide = {
 		stage: 'https://example.stage.byclients.com',
 		production: 'https://example.com',
 	},
-	timeline: {
-		design: {
-			start: '2022-01-01',
-			end: '2022-01-01',
-		},
-		frontend: {
-			start: '2022-01-01',
-			end: '2022-01-01',
-		},
-		backend: {
-			start: '2022-01-01',
-			end: '2022-01-01',
-		},
-		stage: {
-			start: '2022-01-01',
-			end: '2022-01-01',
-		},
-		preproduction: {
-			start: '2022-01-01',
-			end: '2022-01-01',
-		},
-		production: {
-			start: '2022-01-01',
-			end: '2022-01-01',
-		},
-	},
 	tokens: {
 		colors: [
 			{

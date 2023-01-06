@@ -2,7 +2,6 @@ import generateBrowsers from './browsers.js';
 import generateEnvironments from './environments.js';
 import generateDependencies from './dependencies.js';
 import generateTeam from './team.js';
-import generateTimeline from './timeline.js';
 import generateIcons from './icons.js';
 import generatePartials from './partials.js';
 
@@ -22,8 +21,6 @@ function generateData(options) {
 	}
 
 	data.team = generateTeam(options.guide.team);
-
-	data.timeline = generateTimeline(data.timeline);
 
 	if (typeof data.tokens === 'undefined') {
 		data.tokens = {};
