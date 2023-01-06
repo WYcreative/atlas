@@ -5,6 +5,7 @@ const guide = {
 	team: members.slice(0, 10).map(({email}) => email),
 	url: {
 		design: 'https://design.com',
+		designLibrary: 'https://designlibrary.com',
 		prototypeDesktop: 'https://prototype.com/desktop',
 		prototypeMobile: 'https://prototype.com/mobile',
 		repository: 'https://dev.azure.com/Bycom/_git/example',
@@ -123,7 +124,8 @@ const guide = {
 			name: 'Button',
 			status: 'done',
 			url: {
-				design: '',
+				design: 'test.com',
+				designLibrary: 'test.com',
 				prototypeDesktop: 'test.com',
 				prototypeMobile: 'test.com',
 				task: '',
@@ -165,7 +167,8 @@ const guide = {
 				'picture',
 			],
 			url: {
-				design: '',
+				design: 'test.com',
+				designLibrary: 'test.com',
 				prototypeDesktop: 'test.com',
 				prototypeMobile: 'test.com',
 				task: '',
@@ -240,7 +243,8 @@ const guide = {
 				'hero',
 			],
 			url: {
-				design: '',
+				design: 'test.com',
+				designLibrary: 'test.com',
 				prototypeDesktop: '',
 				prototypeMobile: '',
 				task: '',
