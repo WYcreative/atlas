@@ -35,6 +35,10 @@ function generateData(options) {
 	}
 
 	for (const type of ['components', 'modules', 'templates']) {
+		if (typeof data[type] === 'undefined') {
+			data[type] = [];
+		}
+
 		data[type] = generatePartials(type, data, options);
 	}
 
