@@ -4,7 +4,7 @@ Most of the data required to generate a Design Guide instance comes from an obje
 
 When using the [Starter](https://github.com/WYcreative/starter), this data is usually split info multiple files, located in `./FrontEnd/config/guide`.
 
-The following is the documentation of the expected `./FrontEnd/config/guide/*.js` exportable objects in a project that uses the Design Guide, followed by the `generateGuide()`'s generated object.
+The following is the documentation of the expected `./FrontEnd/config/guide/**.js` exportable objects in a project that uses the Design Guide, followed by the `generateGuide()`'s generated object.
 
 Properties marked with `*` are required.
 
@@ -25,78 +25,78 @@ Properties marked with `*` are required.
     - `stage` (__*String*__): The Stage environment URL.
     - `production` (__*String*__): The Production environment URL.
 
-## `tokens.js`
+## `tokens/*.js`
 
-- `{}`
-  - `colors` (__*Array*__): The list of color tokens.
-    - *(TODO: Color properties)*
-  - `typography` (__*Array*__): The list of typography tokens.
-    - *(TODO: Typography properties)*
-  - *(TODO: Additional properties)*
+### Colors
+- `colors` (__*Array*__): The list of color tokens.
+  - *(TODO: Color properties)*
+### Typography
+- `typography` (__*Array*__): The list of typography tokens.
+  - *(TODO: Typography properties)*
 
-## `components.js`
+### Others
+*(TODO)*
 
-- `[]`
-  - `{}` A component.
-    - `id` \* (__*String*__): The component ID.
-    - `name` \* (__*String*__): The component's name.
-    - `description` (__*String*__): The component's description.
-    - `status` \* (__*String*__): The component's status. It accepts `wip`, and `done`.
-    - `url` (__*Object*__): The list of URLs for the module.
-      - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
-      - `designLibrary` (__*String*__): The design library URL, usually for a Figma or Sketch project.
-      - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
-      - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
-      - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
-    - `data` (__*Array*__): The list of data entries for the component.
-      - `{}` A data entry.
-        - `name` (__*String*__): The data entry name.
-        - `required` (__*Boolean*__): Wether the data entry is required in the component.
-        - `type` (__*Array*__): The list of accepted data types.
-        - `description` (__*String*__): The data entry description.
-    - `notes` (__*String*__): Additional notes for the module.
+## `components/*.js`
 
-## `modules.js`
+- `{}` A component.
+  - `id` \* (__*String*__): The component ID.
+  - `name` \* (__*String*__): The component's name.
+  - `description` (__*String*__): The component's description.
+  - `status` \* (__*String*__): The component's status. It accepts `wip`, and `done`.
+  - `url` (__*Object*__): The list of URLs for the module.
+    - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
+    - `designLibrary` (__*String*__): The design library URL, usually for a Figma or Sketch project.
+    - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
+    - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
+    - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
+  - `data` (__*Array*__): The list of data entries for the component.
+    - `{}` A data entry.
+      - `name` (__*String*__): The data entry name.
+      - `required` (__*Boolean*__): Wether the data entry is required in the component.
+      - `type` (__*Array*__): The list of accepted data types.
+      - `description` (__*String*__): The data entry description.
+  - `notes` (__*String*__): Additional notes for the module.
 
-- `[]`
-  - `{}` A module.
-    - `id` \* (__*String*__): The module ID.
-    - `name` \* (__*String*__): The module's name.
-    - `description` (__*String*__): The module's description.
-    - `status` \* (__*String*__): The module's status. It accepts `wip`, and `done`.
-    - `url` (__*Object*__): The list of URLs for the module.
-      - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
-      - `designLibrary` (__*String*__): The design library URL, usually for a Figma or Sketch project.
-      - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
-      - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
-      - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
-    - `components` (__*Array*__): The list of components used in the module.
-      - `<Module ID>` (__*String*__): The module ID. It should be one of the components defined in `components.js`, or a Pug file with the same ID as filename should be present in `./FrontEnd/src/views/components` as fallback.
-    - `data` (__*Array*__): The list of data entries for the module.
-      - `{}` A data entry.
-        - `name` (__*String*__): The data entry name.
-        - `required` (__*Boolean*__): Wether the data entry is required in the module.
-        - `type` (__*Array*__): The list of accepted data types.
-        - `description` (__*String*__): The data entry description.
-    - `notes` (__*String*__): Additional notes for the module.
+## `modules/*.js`
 
-## `templates.js`
+- `{}` A module.
+  - `id` \* (__*String*__): The module ID.
+  - `name` \* (__*String*__): The module's name.
+  - `description` (__*String*__): The module's description.
+  - `status` \* (__*String*__): The module's status. It accepts `wip`, and `done`.
+  - `url` (__*Object*__): The list of URLs for the module.
+    - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
+    - `designLibrary` (__*String*__): The design library URL, usually for a Figma or Sketch project.
+    - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
+    - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
+    - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
+  - `components` (__*Array*__): The list of components used in the module.
+    - `<Module ID>` (__*String*__): The module ID. It should be one of the components defined in `components.js`, or a Pug file with the same ID as filename should be present in `./FrontEnd/src/views/components` as fallback.
+  - `data` (__*Array*__): The list of data entries for the module.
+    - `{}` A data entry.
+      - `name` (__*String*__): The data entry name.
+      - `required` (__*Boolean*__): Wether the data entry is required in the module.
+      - `type` (__*Array*__): The list of accepted data types.
+      - `description` (__*String*__): The data entry description.
+  - `notes` (__*String*__): Additional notes for the module.
 
-- `[]`
-  - `{}` A template.
-    - `id` \* (__*String*__): The template ID.
-    - `name` \* (__*String*__): The template's name.
-    - `description` (__*String*__): The template's description.
-    - `status` \* (__*String*__): The template's status. It accepts `wip`, and `done`.
-    - `url` (__*Object*__): The list of URLs for the template.
-      - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
-      - `designLibrary` (__*String*__): The design library URL, usually for a Figma or Sketch project.
-      - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
-      - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
-      - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
-    - `modules` (__*Array*__): The list of modules used in the template.
-      - `<Module ID>` (__*String*__): The module ID. It should be one of the modules defined in `modules.js`, or a Pug file with the same ID as filename should be present in `./FrontEnd/src/views/modules` as fallback.
-    - `notes` (__*String*__): Additional notes for the template.
+## `templates/*.js`
+
+- `{}` A template.
+  - `id` \* (__*String*__): The template ID.
+  - `name` \* (__*String*__): The template's name.
+  - `description` (__*String*__): The template's description.
+  - `status` \* (__*String*__): The template's status. It accepts `wip`, and `done`.
+  - `url` (__*Object*__): The list of URLs for the template.
+    - `design` (__*String*__): The design URL, usually for a Figma or Sketch project.
+    - `designLibrary` (__*String*__): The design library URL, usually for a Figma or Sketch project.
+    - `prototypeDesktop` (__*String*__): The desktop prototype URL, usually for an InVision project.
+    - `prototypeMobile` (__*String*__): The mobile prototype URL, usually for an InVision project.
+    - `task` (__*String*__): The task URL, usually for an ActiveCollab project.
+  - `modules` (__*Array*__): The list of modules used in the template.
+    - `<Module ID>` (__*String*__): The module ID. It should be one of the modules defined in `modules.js`, or a Pug file with the same ID as filename should be present in `./FrontEnd/src/views/modules` as fallback.
+  - `notes` (__*String*__): Additional notes for the template.
 
 ## Compiled object, returned by `generateGuide()`.
 
