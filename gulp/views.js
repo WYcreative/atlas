@@ -5,7 +5,7 @@ import guide from '../tests/guide.js';
 import generateGuide from '../scripts/index.js';
 
 
-// TODO [2022-10-25]: Use import assertions once they become stable, assuming they will be when Node 18 enters LTS mode.
+// TODO: Use import assertions once they become stable.
 const pkg = createRequire(import.meta.url)('../package.json');
 
 
