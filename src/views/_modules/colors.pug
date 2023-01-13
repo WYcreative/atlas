@@ -1,10 +1,40 @@
 include ../_components/color-copy
 
+
 mixin colors
+	-
+		const colors = data.tokens.colors
+		let noCategoryColors = []
+		let categorizedColors = []
+
+		for (const color in colors) {
+			if (typeof colors[color] === 'string')
+				noCategoryColors.push({[color]: colors[color]});
+			else
+				categorizedColors.push({[color]: colors[color]});
+		}
+
 	section.module.module-colors
 		.container
 			if data.tokens.colors
+				h3.heading-3
+					img(src="/design-guide/assets/images/shapes/yellow.svg" width="24" height="24")
+					| Uncategorized Colours
 				ul
-					each color in data.tokens.colors
+					each color in noCategoryColors
+						- const key = Object.keys(color)[0];
 						li.module-colors__item
-							+color-copy(color.value, color.variable)
+							+color-copy(color[key], key)
+
+				each color in categorizedColors
+					- const key = Object.keys(color)[0];
+
+					h3.heading-3
+						img(src="/design-guide/assets/images/shapes/yellow.svg" width="24" height="24")
+						=key + " Colours"
+
+					- const innerColours = color[key]
+					ul
+						each innerColor, val in innerColours
+							li.module-colors__item
+								+color-copy(innerColor, val)

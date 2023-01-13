@@ -7,7 +7,11 @@ block variables
 block append styles
 	link(href="/design-guide/styles/typography.css" rel="stylesheet")
 
-
+	-
+		let uncategorizedTypo = []
+		const checkEntry = (entry) => {
+			console.log(Object.entries(entry));
+		}
 block main
 	section.module.module-title-text
 		.container
@@ -22,7 +26,8 @@ block main
 		.container
 			-
 				const styles = [];
-				for (const style of data.tokens.typography) {
+				for (const [key, style] of Object.entries(data.tokens.typography)) {
+					checkEntry(style)
 					const {fontFamily} = style;
 					if (typeof styles.find(style => style.name === fontFamily) === 'undefined') {
 						styles.push({
