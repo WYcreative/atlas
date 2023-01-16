@@ -1,10 +1,40 @@
 include ../_components/color-copy
 
+
+
 mixin colors
+
 	section.module.module-colors
 		.container
 			if data.tokens.colors
-				ul
-					each color in data.tokens.colors
-						li.module-colors__item
-							+color-copy(color.value, color.variable)
+				-
+					const colors = {}
+					const uncategorizedColors = {
+						name: 'Uncategorized Colors',
+						list: {},
+					}
+
+				each value, key in data.tokens.colors
+					if typeof value == 'string'
+						- uncategorizedColors.list[key] = value
+
+					else
+						-
+							colors[key] = {
+								name: key.replace(/(?:^|\s)\S/g, match => match.toUpperCase()),
+								list: value,
+							}
+
+				- colors['uncategorized'] = uncategorizedColors
+
+				each group, category in colors
+					h3.heading-3
+						img(src="/design-guide/assets/images/shapes/yellow.svg" width="24" height="24")
+						= group.name
+
+					ul
+						each color, name in group.list
+							li.module-colors__item
+								+color-copy((category === 'uncategorized' ? '' : `${category} `) + name, color)
+
+					hr

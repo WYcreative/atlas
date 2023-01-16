@@ -1,16 +1,19 @@
 include ../_abstracts/mixins/symbol
 
-mixin color-copy(colorHex, colorVar)
-	div.color-copy.js-colorCopy(style="background-color: " + colorHex)
-		div.color-copy__info
-			div.color-copy__button-wrapper
-				button.color-copy__button.js-copyHex(data-color-hex= colorHex)
-					span.icon.icon-link
-						+symbol('icon-copy')
-				span.color-copy__text= colorHex
 
+
+mixin color-copy(colorVar, colorHex)
+	div.color-copy.js-colorCopy
+		.color-copy__preview(style="background-color: " + colorHex)
+		div.color-copy__info
 			div.color-copy__button-wrapper
 				button.color-copy__button.js-copyVar(data-color-var= colorVar)
 					span.icon.icon-link
 						+symbol('icon-copy')
 				span.color-copy__text= colorVar
+
+			div.color-copy__button-wrapper
+				button.color-copy__button.js-copyHex(data-color-hex= colorHex)
+					span.icon.icon-link
+						+symbol('icon-copy')
+				span.color-copy__text= colorHex

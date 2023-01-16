@@ -14,56 +14,22 @@ const guide = {
 		production: 'https://example.com',
 	},
 	tokens: {
-		colors: [
-			{
-				name: 'Yellow',
-				value: '#FFC100',
-				variable: '$color-creative-yellow',
-				type: 'color',
+		colors: {
+			'creative-yellow': '#FFC100',
+			'juicy-orange': '#FF881F',
+			'funky-purple': '#968EFF',
+			'electric-blue': '#3979FF',
+			'groovy-green': '#1DBA72',
+			neutrals: {
+				'chill-white': '#FFFFFF',
+				'cool-gray': '#CCCCCC',
+				'badass-black': '#000000',
 			},
-			{
-				name: 'Orange',
-				value: '#FF881F',
-				variable: '$color-juicy-orange',
-				type: 'color',
+			transparents: {
+				transparent: 'rgba(0, 0, 0, 0)',
+				'half-white': 'rgba(255, 255, 255, 0.5)',
 			},
-			{
-				name: 'Purple',
-				value: '#968EFF',
-				variable: '$color-funky-purple',
-				type: 'color',
-			},
-			{
-				name: 'Blue',
-				value: '#3979FF',
-				variable: '$color-electric-blue',
-				type: 'color',
-			},
-			{
-				name: 'Green',
-				value: '#1DBA72',
-				variable: '$color-groovy-green',
-				type: 'color',
-			},
-			{
-				name: 'White',
-				value: '#FFFFFF',
-				variable: '$color-chill-white',
-				type: 'color',
-			},
-			{
-				name: 'Gray',
-				value: '#CCCCCC',
-				variable: '$color-cool-gray',
-				type: 'color',
-			},
-			{
-				name: 'Black',
-				value: '#000000',
-				variable: '$color-badass-black',
-				type: 'color',
-			},
-		],
+		},
 		typography: [
 			{
 				type: 'display-1',
