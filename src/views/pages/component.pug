@@ -13,8 +13,9 @@ block main
 			h2.heading-2
 				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 				= component.name
-			.rte
-				p= component.description
+
+			if component.description
+				.rte!= markdown(component.description)
 
 	section.module.module-links.module--half
 		.container
@@ -87,7 +88,7 @@ block main
 						img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 						| Additional Notes
 
-					div= component.notes
+					.rte!= markdown(component.notes)
 
 			else
 				em No information to show.

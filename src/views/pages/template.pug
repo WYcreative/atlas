@@ -13,8 +13,9 @@ block main
 			h2.heading-2
 				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 				= template.name
-			.rte
-				p= template.description
+
+			if template.description
+				.rte!= markdown(template.description)
 
 	section.module.module-links.module--half
 		.container
@@ -75,11 +76,7 @@ block main
 				img(src="/design-guide/assets/images/shapes/yellow.svg" width="24" height="24")
 				| Additional Notes
 
-			div
-				if template.notes
-					= template.notes
-				else
-					em No information to show.
+			.rte!= markdown(data.notes || '*No information to show.*')
 
 	section.module.module-iframe
 		.container

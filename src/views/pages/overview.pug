@@ -18,8 +18,9 @@ block main
 			h2.heading-2
 				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 				| Overview
-			.rte
-				p= data.description
+
+			if data.description
+				.rte!= markdown(data.description)
 
 	+links
 

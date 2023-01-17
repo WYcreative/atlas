@@ -13,8 +13,9 @@ block main
 			h2.heading-2
 				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 				= module.name
-			.rte
-				p= module.description
+
+			if module.description
+				.rte!= markdown(module.description)
 
 	section.module.module-links.module--half
 		.container
@@ -100,7 +101,7 @@ block main
 						img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
 						| Additional Notes
 
-					div= module.notes
+					.rte!= markdown(module.notes)
 
 			else
 				em No information to show.
