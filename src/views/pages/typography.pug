@@ -4,6 +4,8 @@ include ../_abstracts/mixins/symbol
 block variables
 	- titlePage = 'Tokens - Typography'
 
+
+
 block append styles
 	link(href="/design-guide/styles/typography.css" rel="stylesheet")
 
@@ -20,88 +22,58 @@ block main
 
 	section.module.module-typography
 		.container
+
 			-
-				const styles = [];
-				for (const style of data.tokens.typography) {
-					const {fontFamily} = style;
-					if (typeof styles.find(style => style.name === fontFamily) === 'undefined') {
-						styles.push({
-							name: fontFamily,
-							list: [],
-						});
-					}
-					const styleIndex = styles.findIndex(style => style.name === fontFamily);
-					styles[styleIndex].list.push(style);
-				}
+				const levelColors = [
+					'yellow',
+					'blue',
+					'purple',
+					'orange',
+				]
 
-			each fontStyle in styles
-				h3.heading-3
-					img(src="/design-guide/assets/images/shapes/yellow.svg" width="24" height="24")
-					= fontStyle.name
+			mixin walkStyles(name, path, group, level = 0)
 
-				h3.heading-4
-					img(src="/design-guide/assets/images/shapes/blue.svg" width="24" height="24")
-					| Desktop
-				div.module-typography__overflow
-					table
-						thead
-							tr
-								th Font Family
-								th Font Size
-								th Line Height
-								th Letter Spacing
-								th Font Weight
-								th Style
-								th
-						tbody
-							each list in fontStyle.list
+				#{`h${3 + level}`}(class=`heading-${3 + level}`)
+					img(src=`/design-guide/assets/images/shapes/${levelColors[level]}.svg` width="24" height="24")
+					= name.replace(/(?:^|([\s_-]+))(\S)/g, (_, p1, p2) => (p1 ? ' ' : '') + p2.toUpperCase())
+
+				if typeof Object.values(group)[0] === 'object'
+
+					each subgroup, subname in group
+						- const token = (typeof path === 'string' && path.length > 0 ? `${path} ` : '') + subname
+
+						+walkStyles(subname, token, subgroup, level + 1)
+
+				else
+					div.module-typography__overflow
+						table
+							tbody
 								tr
+									-
+										const properties = {
+											fontSize: 'font-size',
+											textDecoration: 'text-decoration',
+											fontFamily: 'font-family',
+											fontWeight: 'font-weight',
+											fontStyle: 'font-style',
+											fontStretch: 'font-stretch',
+											letterSpacing: 'letter-spacing',
+											lineHeight: 'line-height',
+											textCase: 'text-transform',
+										}
+
 									td
-										span= list.fontFamily
+										each value, property in group
+											= `${properties[property]}: ${value}`
+											br
 									td
-										span= list.fontSize.desktop
+										- const preview = path.replace(/(?:^|([\s_-]+))(\S)/g, (_, p1, p2) => (p1 ? ' ' : '') + p2.toUpperCase())
+										span(style=Object.entries(group).map(([property, value]) => `${properties[property]}: ${value}`).join('; '))= preview
 									td
-										span= list.lineHeight.desktop
-									td
-										span= list.letterSpacing.desktop
-									td
-										span= list.fontWeight
-									td
-										span(style='font: ' + list.fontWeight + ' ' + list.fontSize.desktop + ' / ' + list.lineHeight.desktop + ' ' + list.fontFamily + '')= list.type
-									td
-										button.link-copy__button.js-styleCopy(data-style='font: ' + list.fontWeight + ' ' + list.fontSize.desktop + ' / ' + list.lineHeight.desktop + ' ' + list.fontFamily + '')
+										button.link-copy__button.js-styleCopy(data-style=path)
 											span.icon.icon-link
 												+symbol('icon-copy')
-				h3.heading-4
-					img(src="/design-guide/assets/images/shapes/blue.svg" width="24" height="24")
-					| Mobile
-				div.module-typography__overflow
-					table
-						thead
-							tr
-								th Font Family
-								th Font Size
-								th Line Height
-								th Letter Spacing
-								th Font Weight
-								th Style
-						tbody
-							each list in fontStyle.list
-								tr
-									td
-										span= list.fontFamily
-									td
-										span= list.fontSize.mobile
-									td
-										span= list.lineHeight.mobile
-									td
-										span= list.letterSpacing.mobile
-									td
-										span= list.fontWeight
-									td
-										span(style='font: ' + list.fontWeight + ' ' + list.fontSize.mobile + ' / ' + list.lineHeight.mobile + ' ' + list.fontFamily + '')= list.type
-									td
-										button.link-copy__button.js-styleCopy(data-style='font: ' + list.fontWeight + ' ' + list.fontSize.mobile + ' / ' + list.lineHeight.mobile + ' ' + list.fontFamily + '')
-											span.icon.icon-link
-												+symbol('icon-copy')
-				hr
+
+
+			each group, name in data.tokens.typography
+				+walkStyles(name, name, group)

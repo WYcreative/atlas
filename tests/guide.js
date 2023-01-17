@@ -30,59 +30,77 @@ const guide = {
 				'half-white': 'rgba(255, 255, 255, 0.5)',
 			},
 		},
-		typography: [
-			{
-				type: 'display-1',
-				fontFamily: 'Gilroy',
-				fontSize: {
-					desktop: '52px',
-					mobile: '48px',
+		typography: {
+			displays: {
+				'display-1': {
+					desktop: {
+						fontFamily: 'Gilroy',
+						fontSize: '52px',
+						lineHeight: '1.0769230769',
+						letterSpacing: '0',
+						fontWeight: '600',
+					},
+					mobile: {
+						fontFamily: 'Gilroy',
+						fontSize: '48px',
+						lineHeight: '1.1666666667',
+						letterSpacing: '0',
+						fontWeight: '600',
+					},
 				},
-				lineHeight: {
-					desktop: '56px',
-					mobile: '52px',
+				'display-2': {
+					desktop: {
+						fontFamily: 'Gilroy',
+						fontSize: '50px',
+						lineHeight: '1.08',
+						letterSpacing: '0',
+						fontWeight: '600',
+					},
+					mobile: {
+						fontFamily: 'Gilroy',
+						fontSize: '46px',
+						lineHeight: '1.0869565217',
+						letterSpacing: '0',
+						fontWeight: '600',
+					},
 				},
-				letterSpacing: {
-					desktop: '0px',
-					mobile: '0px',
-				},
-				fontWeight: 600,
 			},
-			{
-				type: 'display-2',
-				fontFamily: 'Gilroy',
-				fontSize: {
-					desktop: '50px',
-					mobile: '46px',
+			'heading-1': {
+				desktop: {
+					fontFamily: 'Myriad Pro',
+					fontSize: '52px',
+					lineHeight: '1.0769230769',
+					letterSpacing: '0',
+					fontWeight: '600',
+					textDecoration: 'none',
+					textCase: 'none',
+					fontStyle: 'normal',
+					fontStretch: 'normal',
 				},
-				lineHeight: {
-					desktop: '54px',
-					mobile: '50px',
+				mobile: {
+					fontFamily: 'Myriad Pro',
+					fontSize: '48px',
+					lineHeight: '1.0833333333',
+					letterSpacing: '0',
+					fontWeight: '600',
+					textDecoration: 'none',
+					textCase: 'none',
+					fontStyle: 'normal',
+					fontStretch: 'normal',
 				},
-				letterSpacing: {
-					desktop: '0px',
-					mobile: '0px',
-				},
-				fontWeight: 600,
 			},
-			{
-				type: 'heading-1',
-				fontFamily: 'Myriad Pro',
-				fontSize: {
-					desktop: '52px',
-					mobile: '48px',
-				},
-				lineHeight: {
-					desktop: '56px',
-					mobile: '52px',
-				},
-				letterSpacing: {
-					desktop: '0px',
-					mobile: '0px',
-				},
-				fontWeight: 600,
+			cta: {
+				fontFamily: 'sans-serif',
+				fontSize: '16px',
+				lineHeight: '1',
+				letterSpacing: '0',
+				fontWeight: '700',
+				textDecoration: 'none',
+				textCase: 'none',
+				fontStyle: 'normal',
+				fontStretch: 'normal',
 			},
-		],
+		},
 	},
 	components: [
 		{
