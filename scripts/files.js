@@ -4,6 +4,7 @@ import {existsSync, mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 
 import {globbySync} from 'globby';
 import pug from 'pug';
+import {parse as markdown} from 'marked';
 
 import config from '../config/index.js';
 import {getDirectory} from './utilities.js';
@@ -17,6 +18,7 @@ function generateFiles(data, options) {
 	const pugOptions = {
 		relative,
 		join,
+		markdown,
 		getDirectory,
 		data,
 		config: options.config,

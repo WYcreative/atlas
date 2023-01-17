@@ -37,6 +37,7 @@
 		"@wycreative/team": "^1.7.0",
 		"browserslist": "^4.21.4",
 		"globby": "^13.1.2",
+		"marked": "^4.2.12",
 		"pug": "^3.0.2"
 	},
 	"devDependencies": {

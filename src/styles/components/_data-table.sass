@@ -1,0 +1,25 @@
+@use "abstracts"
+
+.data-table
+	border-collapse: collapse
+	width: 100%
+
+	th,
+	td
+		border: 1px solid abstracts.$color-cool-gray
+		padding: 4px
+		vertical-align: text-top
+
+	.required
+		&::after
+			content: '*'
+			color: red
+			font-weight: bold
+
+	p:not(:first-child)
+		margin-top: 16px
+
+	code
+		border: 1px solid abstracts.$color-cool-gray
+			radius: 5px
+		background: rgba(abstracts.$color-cool-gray, .5)

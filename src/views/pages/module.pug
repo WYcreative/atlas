@@ -81,21 +81,19 @@ block main
 						img(src="/design-guide/assets/images/shapes/yellow.svg" width="24" height="24")
 						| Data
 
-					table
+					table.data-table
 						thead
 							tr
 								th Name
-								th Required
 								th Type
 								th Description
 
 						tbody
 							each item in module.data
 								tr
-									th= item.name
-									td= item.required === true ? 'Yes' : 'No'
+									th(class=(item.required === true ? 'required' : null))= item.name
 									td= Array.isArray(item.type) ? item.type.join(', ') : item.type
-									td= item.description
+									td!= markdown(item.description)
 
 				if module.notes
 					h3.heading-3

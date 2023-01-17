@@ -117,20 +117,39 @@ const guide = {
 			code: '<div class="button">content</div>',
 			data: [
 				{
-					name: 'Name',
+					name: 'Class Modifier',
+					required: true,
+					type: [
+						'String',
+						'Array',
+					],
+					description: [
+						'It accepts `button--primary`, `button--secondary`, `button--tertiary`, `button--icon`, `button--facebook`, and `button--google` in addition to the main class `button`.',
+						'',
+						'It also accepts a `button--small` in conjunction with any of the previous modifiers.',
+					].join('\n'),
+				},
+				{
+					name: 'Icon',
+					type: [
+						'String',
+					],
+					description: 'The icon ID, to be used as `href` hash of the `.button__icon use` element.',
+				},
+				{
+					name: 'Text',
 					required: true,
 					type: [
 						'String',
 					],
-					description: 'Lorem Ipsum',
+					description: 'The button text.',
 				},
 				{
-					name: 'isPrimary',
-					required: false,
+					name: 'Arrow',
 					type: [
-						'Boolean',
+						'String',
 					],
-					description: 'Sit Dolor Amet',
+					description: 'The button arrow. It should only be shown if there is no button icon.',
 				},
 			],
 			notes: 'lorem ipsum',
