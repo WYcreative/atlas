@@ -1,7 +1,7 @@
 {
-	"name": "@wycreative/design-guide",
+	"name": "@wycreative/atlas",
 	"version": "0.5.3",
-	"description": "The WYcreative Design Guide",
+	"description": "Atlas, the WYcreative Engineering Team project documentation app.",
 	"author": "WYcreative Engineering Team",
 	"license": "ISC",
 	"type": "module",
@@ -14,7 +14,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/WYcreative/design-guide.git"
+		"url": "git+https://github.com/WYcreative/atlas.git"
 	},
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com"

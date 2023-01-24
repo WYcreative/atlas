@@ -2,12 +2,12 @@ import generateData from './data.js';
 import generateFiles from './files.js';
 
 
-function generateGuide(options) {
+function generateAtlas(options) {
 	if (typeof options !== 'object') {
 		throw new TypeError(`The argument 'options' is not an object. Got the ${typeof options} '${typeof options}'.`);
 	}
 
-	for (const property of ['package', 'config', 'guide']) {
+	for (const property of ['package', 'config', 'atlas']) {
 		if (typeof options[property] !== 'object') {
 			throw new TypeError(`The property '${property}' is not an object. Got the ${typeof options[property]} '${options[property]}'.`);
 		}
@@ -30,4 +30,4 @@ function generateGuide(options) {
 	generateFiles(data, options);
 }
 
-export default generateGuide;
+export default generateAtlas;

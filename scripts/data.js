@@ -8,7 +8,7 @@ import generatePartials from './partials.js';
 
 function generateData(options) {
 	const data = {
-		...options.guide,
+		...options.atlas,
 		version: options.package.version,
 		lastUpdate: new Date(),
 		browsers: generateBrowsers(options.package.browserslist),
@@ -20,7 +20,7 @@ function generateData(options) {
 		data.description = options.package.description;
 	}
 
-	data.team = generateTeam(options.guide.team);
+	data.team = generateTeam(options.atlas.team);
 
 	if (typeof data.tokens === 'undefined') {
 		data.tokens = {};

@@ -1,6 +1,6 @@
 import {members} from '@WYcreative/team';
 
-const guide = {
+const atlas = {
 	name: 'Example',
 	team: members.slice(0, 10).map(({email}) => email),
 	url: {
@@ -257,4 +257,4 @@ const guide = {
 	],
 };
 
-export default guide;
+export default atlas;

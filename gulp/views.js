@@ -1,8 +1,8 @@
 import {createRequire} from 'node:module';
 
 import config from '../config/index.js';
-import guide from '../tests/guide.js';
-import generateGuide from '../scripts/index.js';
+import atlas from '../tests/atlas.js';
+import generateAtlas from '../scripts/index.js';
 
 
 // TODO: Use import assertions once they become stable.
@@ -11,9 +11,9 @@ const pkg = createRequire(import.meta.url)('../package.json');
 
 function build(done) {
 	try {
-		generateGuide({
+		generateAtlas({
 			package: pkg,
-			guide,
+			atlas,
 			config: {
 				src: {
 					views: [
@@ -30,7 +30,7 @@ function build(done) {
 			},
 		});
 	} catch (error) {
-		console.error(' Skipping the generation of the Design Guide:\n', error);
+		console.error(' Skipping the generation of Atlas:\n', error);
 	}
 
 	done();

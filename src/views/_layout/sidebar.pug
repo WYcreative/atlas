@@ -6,8 +6,8 @@ mixin sidebar
 			span.sidebar__hamburger-box
 				span.sidebar__hamburger-inner
 
-		a.sidebar__logo-link(href="/design-guide/index.html")
-			img.sidebar__logo(src="/design-guide/assets/images/logo-wycreative.png" alt="Logo Client")
+		a.sidebar__logo-link(href="/atlas/index.html")
+			img.sidebar__logo(src="/atlas/assets/images/logo-wycreative.png" alt="Logo Client")
 
 		//-label.sidebar__search(for="search")
 			input.sidebar__search-input(type="text" placeholder="Search")
@@ -15,7 +15,7 @@ mixin sidebar
 		nav.sidebar__menu-wrapper
 			ul.sidebar__menu
 				li.sidebar__list-item
-					a.sidebar__page-name(href="/design-guide/index.html")
+					a.sidebar__page-name(href="/atlas/index.html")
 						span.sidebar__page-name-wrapper-icon
 							span.icon.icon-chevron
 								+symbol('icon-list')
@@ -23,7 +23,7 @@ mixin sidebar
 
 				if data.tokens
 					li.sidebar__list-item
-						a.sidebar__page-name(href="/design-guide/tokens/index.html")
+						a.sidebar__page-name(href="/atlas/tokens/index.html")
 							span.sidebar__page-name-wrapper-icon
 								span.icon.icon-chevron
 									+symbol('icon-font')
@@ -43,7 +43,7 @@ mixin sidebar
 							each tokenType in tokenTypes
 								if data.tokens[tokenType]
 									li
-										a(href=`/design-guide/tokens/${tokenType}.html`)= tokenType.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
+										a(href=`/atlas/tokens/${tokenType}.html`)= tokenType.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
 
 				-
 					const objectTypes = [
@@ -81,4 +81,4 @@ mixin sidebar
 
 
 		a.sidebar__logo-wycreative(href="https://wycreative.com/" target="_blank")
-			img(src="/design-guide/assets/images/logo-wycreative.png" alt="Logo WYcreative")
+			img(src="/atlas/assets/images/logo-wycreative.png" alt="Logo WYcreative")

@@ -1,4 +1,4 @@
-# WYcreative Design Guide
+# WYcreative's Atlas
 
 > ⚠️ This is a Work In Progress. Don't use this is production.
 
@@ -14,32 +14,32 @@ Due to this package being private, npm has to retrieve it from GitHub Packages r
 For that to be possible, a [personal access token](https://github.com/settings/tokens) with `read:packages` scope is required. Read [GitHub's documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-with-a-personal-access-token) for additional information.
 
 ``` shell
-npm install @wycreative/design-guide
+npm install @wycreative/atlas
 ```
 
 ## Usage
 
-### Generate a Design Guide
+### Generate an Atlas instance
 
 ``` js
-import generateGuide from '@wycreative/design-guide';
+import generateAtlas from '@wycreative/atlas';
 
 import pkg from './package.json' assert {type: 'json'};
-import guide from './config/guide.js';
+import atlas from './config/atlas.js';
 import config from './config/index.js';
 
-generateGuide({
+generateAtlas({
 	package: pkg,
-	guide,
+	atlas,
 	config,
 });
 ```
 
 ## API
 
-### `generateGuide(options)`
+### `generateAtlas(options)`
 
-Generates a Design Guide.
+Generates an Atlas instance.
 
 #### `options.package`
 
@@ -47,11 +47,11 @@ Type: `Object`
 
 The `package.json` contents.
 
-#### `options.guide`
+#### `options.atlas`
 
 Type `Object`
 
-The [Starter](https://github.com/@WYcreative/starter)'s `config/*.js` export objects with the Design Guide configurations in a single object.
+The [Starter](https://github.com/@WYcreative/starter)'s `config/*.js` export objects with Atlas configurations in a single object.
 
 #### `options.config`
 

@@ -11,7 +11,7 @@ block main
 		.container
 			h1.heading-1= template.id
 			h2.heading-2
-				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
+				img(src="/atlas/assets/images/shapes/green.svg" width="24" height="24")
 				= template.name
 
 			if template.description
@@ -20,7 +20,7 @@ block main
 	section.module.module-links.module--half
 		.container
 			h3.heading-3
-				img(src="/design-guide/assets/images/shapes/blue.svg" width="24" height="24")
+				img(src="/atlas/assets/images/shapes/blue.svg" width="24" height="24")
 				| Info
 			.module-links__row
 				if template.url && Object.values(template.url).length > 0 && Object.values(template.url).some(url => url.length > 0)
@@ -51,12 +51,12 @@ block main
 						= template.status
 				.module-links__column
 					h4.heading-4 External Link
-					+link-copy(join('/design-guide', data.templates.path, template.id + '.html'), "External")
+					+link-copy(join('/atlas', data.templates.path, template.id + '.html'), "External")
 
 	section.module.module-detail-info.module--half
 		.container
 			h3.heading-3
-				img(src="/design-guide/assets/images/shapes/orange.svg" width="24" height="24")
+				img(src="/atlas/assets/images/shapes/orange.svg" width="24" height="24")
 				| Modules
 
 			if template.modules
@@ -66,18 +66,18 @@ block main
 
 						if component
 							li
-								a(href=`/design-guide/modules/${id}.html`)= component.name
+								a(href=`/atlas/modules/${id}.html`)= component.name
 			else
 				em No information to show.
 
 	section.module.module-detail-info.module--half
 		.container
 			h3.heading-3
-				img(src="/design-guide/assets/images/shapes/yellow.svg" width="24" height="24")
+				img(src="/atlas/assets/images/shapes/yellow.svg" width="24" height="24")
 				| Additional Notes
 
 			.rte!= markdown(data.notes || '*No information to show.*')
 
 	section.module.module-iframe
 		.container
-			iframe(width='800', height='1000', src=join('/design-guide', data.templates.path, template.id + '.html'))
+			iframe(width='800', height='1000', src=join('/atlas', data.templates.path, template.id + '.html'))

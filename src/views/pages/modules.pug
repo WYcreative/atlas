@@ -6,7 +6,7 @@ block variables
 	- titlePage = 'Modules'
 
 block append styles
-	link(href="/design-guide/styles/modules.css" rel="stylesheet")
+	link(href="/atlas/styles/modules.css" rel="stylesheet")
 
 
 block main
@@ -14,7 +14,7 @@ block main
 		.container
 			h1.heading-1= data.name
 			h2.heading-2
-				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
+				img(src="/atlas/assets/images/shapes/green.svg" width="24" height="24")
 				| Modules
 			.rte
 				p List of all developed modules.
@@ -45,9 +45,9 @@ block main
 						tr
 							td.module-table__column-preview(align="center")
 								picture
-									img(src="/design-guide/assets/images/ph-employee.jpg" width="100" height="50")
+									img(src="/atlas/assets/images/ph-employee.jpg" width="100" height="50")
 							td.module-table__column-link(align="center")
-								a(href=`/design-guide/modules/${item.id}.html`)= item.name
+								a(href=`/atlas/modules/${item.id}.html`)= item.name
 							td.module-table__column-ac(align="center")
 								if item.url && item.url.task
 									+link-copy(item.url.task, "Link")
@@ -56,7 +56,7 @@ block main
 							td.module-table__column-links-modules(align="center")
 								if item.components
 									each component in item.components
-										a(href=`/design-guide/components/${component}.html`)= component
+										a(href=`/atlas/components/${component}.html`)= component
 								else
 									em None
 							td.module-table__column-state(align="center")

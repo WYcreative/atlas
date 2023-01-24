@@ -1,10 +1,10 @@
-# `guide/*.js` Configuration Structure
+# `atlas/*.js` Configuration Structure
 
-Most of the data required to generate a Design Guide instance comes from an object that is passed to the `options` parameter's `guide` property of the `generateGuide()` method.
+Most of the data required to generate an Atlas instance comes from an object that is passed to the `options` parameter's `atlas` property of the `generateAtlas()` method.
 
-When using the [Starter](https://github.com/WYcreative/starter), this data is usually split info multiple files, located in `./FrontEnd/config/guide`.
+When using the [Starter](https://github.com/WYcreative/starter), this data is usually split info multiple files, located in `./FrontEnd/config/atlas`.
 
-The following is the documentation of the expected `./FrontEnd/config/guide/**.js` exportable objects in a project that uses the Design Guide, followed by the `generateGuide()`'s generated object.
+The following is the documentation of the expected `./FrontEnd/config/atlas/**.js` exportable objects in a project that uses Atlas, followed by the `generateAtlas()`'s generated object.
 
 Properties marked with `*` are required.
 
@@ -98,12 +98,12 @@ Properties marked with `*` are required.
     - `<Module ID>` (__*String*__): The module ID. It should be one of the modules defined in `modules.js`, or a Pug file with the same ID as filename should be present in `./FrontEnd/src/views/modules` as fallback.
   - `notes` (__*String*__): Additional notes for the template.
 
-## Compiled object, returned by `generateGuide()`.
+## Compiled object, returned by `generateAtlas()`
 
 - `name` (__*String*__): The name of the project.
 - `description` (__*String*__): The description of the project. If not defined, it will use the `package.json`'s `description` as fallback.
 - `version` (__*String*__): The project SemVer version. Sourced from the project's `package.json`'s `version`.
-- `lastUpdate` (__*Date*__): The date/time of the last time the project was updated. Corresponds to the last time the Design Guide was generated.
+- `lastUpdate` (__*Date*__): The date/time of the last time the project was updated. Corresponds to the last time Atlas was generated.
 - `team` (__*Array*__): The list of project teams containing their respective members.
   - `{}`: A project team.
     - `name` (__*String*__): The name of the team.

@@ -7,7 +7,7 @@ block variables
 
 
 block append styles
-	link(href="/design-guide/styles/typography.css" rel="stylesheet")
+	link(href="/atlas/styles/typography.css" rel="stylesheet")
 
 
 block main
@@ -15,7 +15,7 @@ block main
 		.container
 			h1.heading-1= data.name
 			h2.heading-2
-				img(src="/design-guide/assets/images/shapes/green.svg" width="24" height="24")
+				img(src="/atlas/assets/images/shapes/green.svg" width="24" height="24")
 				| Typography
 			.rte
 				p List of text styles used in this project.
@@ -34,7 +34,7 @@ block main
 			mixin walkStyles(name, path, group, level = 0)
 
 				#{`h${3 + level}`}(class=`heading-${3 + level}`)
-					img(src=`/design-guide/assets/images/shapes/${levelColors[level]}.svg` width="24" height="24")
+					img(src=`/atlas/assets/images/shapes/${levelColors[level]}.svg` width="24" height="24")
 					= name.replace(/(?:^|([\s_-]+))(\S)/g, (_, p1, p2) => (p1 ? ' ' : '') + p2.toUpperCase())
 
 				if typeof Object.values(group)[0] === 'object'
