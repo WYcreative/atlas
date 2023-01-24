@@ -51,13 +51,13 @@ The `package.json` contents.
 
 Type `Object`
 
-The [Starter](https://github.com/@WYcreative/starter)'s `config/*.js` export objects with Atlas configurations in a single object.
+The [Genesis](https://github.com/@WYcreative/genesis)'s `config/*.js` export objects with Atlas configurations in a single object.
 
 #### `options.config`
 
 Type `Object`
 
-The [Starter](https://github.com/@WYcreative/starter)'s `config/index.js` export object with it's Gulp path configurations.
+The [Genesis](https://github.com/@WYcreative/genesis)'s `config/index.js` export object with it's Gulp path configurations.
 
 ## Development
 

@@ -2,7 +2,7 @@
 
 Most of the data required to generate an Atlas instance comes from an object that is passed to the `options` parameter's `atlas` property of the `generateAtlas()` method.
 
-When using the [Starter](https://github.com/WYcreative/starter), this data is usually split info multiple files, located in `./FrontEnd/config/atlas`.
+When using the [Genesis](https://github.com/WYcreative/genesis), this data is usually split info multiple files, located in `./FrontEnd/config/atlas`.
 
 The following is the documentation of the expected `./FrontEnd/config/atlas/**.js` exportable objects in a project that uses Atlas, followed by the `generateAtlas()`'s generated object.
 
