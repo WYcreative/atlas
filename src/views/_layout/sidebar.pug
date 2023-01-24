@@ -62,21 +62,22 @@ mixin sidebar
 					]
 
 				each objectType in objectTypes
-					li.sidebar__list-item
-						a.sidebar__page-name(href=`/design-guide/${objectType.name}/index.html`)
-							span.sidebar__page-name-wrapper-icon
+					if data[objectType.name] && Array.isArray(data[objectType.name].list) && data[objectType.name].list.length > 0
+						li.sidebar__list-item
+							a.sidebar__page-name(href=`/${objectType.name}`)
+								span.sidebar__page-name-wrapper-icon
+									span.icon.icon-chevron
+										+symbol(`icon-${objectType.icon}`)
+									= objectType.name.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
+
+							button.sidebar__dropdown-button.js-toggleSubMenu
 								span.icon.icon-chevron
-									+symbol(`icon-${objectType.icon}`)
-								= objectType.name.replace(/(?:^|\s)\S/g, match => match.toUpperCase())
+									+symbol('icon-chevron')
 
-						button.sidebar__dropdown-button.js-toggleSubMenu(data-id=objectType.name)
-							span.icon.icon-chevron
-								+symbol('icon-chevron')
-
-						ul.sidebar__submenu
-							each object in data[objectType.name].list
-								li
-									a(href=`/design-guide/${objectType.name}/${object.id}.html`)= object.name
+							ul.sidebar__submenu
+								each object in data[objectType.name].list
+									li
+										a(href=`/${objectType.name}/${object.id}.html`)= object.name
 
 
 		a.sidebar__logo-wycreative(href="https://wycreative.com/" target="_blank")

@@ -69,25 +69,27 @@ function generateFiles(data, options) {
 
 
 	for (const type of ['component', 'module', 'template']) {
-		if (!existsSync(join(destination, `${type}s`))) {
-			mkdirSync(join(destination, `${type}s`), {
-				recursive: true,
-			});
-		}
+		if (data[`${type}s`]?.list?.length > 0) {
+			if (!existsSync(join(destination, `${type}s`))) {
+				mkdirSync(join(destination, `${type}s`), {
+					recursive: true,
+				});
+			}
 
-		const indexResult = pug.renderFile(join(pagesDirectory, `${type}s.pug`), pugOptions);
+			const indexResult = pug.renderFile(join(pagesDirectory, `${type}s.pug`), pugOptions);
 
-		writeFileSync(join(destination, `${type}s/index.html`), indexResult);
+			writeFileSync(join(destination, `${type}s/index.html`), indexResult);
 
-		const template = pug.compileFile(join(pagesDirectory, `${type}.pug`));
+			const template = pug.compileFile(join(pagesDirectory, `${type}.pug`));
 
-		for (const object of data[`${type}s`].list) {
-			const result = template({
-				...pugOptions,
-				current: object.id,
-			});
+			for (const object of data[`${type}s`].list) {
+				const result = template({
+					...pugOptions,
+					current: object.id,
+				});
 
-			writeFileSync(join(destination, `${type}s`, `${object.id}.html`), result);
+				writeFileSync(join(destination, `${type}s`, `${object.id}.html`), result);
+			}
 		}
 	}
 }
