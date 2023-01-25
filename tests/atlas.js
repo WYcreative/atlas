@@ -133,6 +133,7 @@ const atlas = {
 					name: 'Icon',
 					type: [
 						'String',
+						'components/picture',
 					],
 					description: 'The icon ID, to be used as `href` hash of the `.button__icon use` element.',
 				},
@@ -220,6 +221,14 @@ const atlas = {
 					required: true,
 					type: [
 						'String',
+					],
+					description: 'Lorem Ipsum',
+				},
+				{
+					name: 'Image',
+					required: true,
+					type: [
+						'components/picture',
 					],
 					description: 'Lorem Ipsum',
 				},

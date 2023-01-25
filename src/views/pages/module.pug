@@ -91,9 +91,31 @@ block main
 
 						tbody
 							each item in module.data
+								if typeof item.type === 'string'
+									- item.type = [item.type]
+
 								tr
 									th(class=(item.required === true ? 'required' : null))= item.name
-									td= Array.isArray(item.type) ? item.type.join(', ') : item.type
+									td
+										each typeName, index in item.type
+											if typeName.includes('/')
+												- [type, id] = typeName.split('/')
+
+												if typeof data[type] === 'undefined'
+													- throw new Error(`Unrecognized namespace '${type}' for the data type '${typeName}'.`);
+
+												- object = data[type].list.find(item => item.id === id)
+
+												if typeof object === 'undefined'
+													- throw new Error(`Unrecognized ${type.endsWith('s') ? type.slice(0, -1) : type} ID for the data type '${typeName}'.`);
+
+												a(href=`../${type}/${id}.html`)= object.name
+											else
+												= typeName
+
+											if index < item.type.length - 1
+												| ,
+												|
 									td: .rte!= markdown(item.description)
 
 				if module.notes
