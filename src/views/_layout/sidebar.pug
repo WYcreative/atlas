@@ -64,7 +64,7 @@ mixin sidebar
 				each objectType in objectTypes
 					if data[objectType.name] && Array.isArray(data[objectType.name].list) && data[objectType.name].list.length > 0
 						li.sidebar__list-item
-							a.sidebar__page-name(href=`/${objectType.name}`)
+							a.sidebar__page-name(href=`/atlas/${objectType.name}`)
 								span.sidebar__page-name-wrapper-icon
 									span.icon.icon-chevron
 										+symbol(`icon-${objectType.icon}`)
