@@ -4,14 +4,34 @@
 	border-collapse: collapse
 	width: 100%
 
-	th,
-	td
+	&__cell
 		border: 1px solid abstracts.$color-cool-gray
 		padding: 4px
 		vertical-align: text-top
+		position: relative
+		padding-left: calc(4px + 1px * var(--level, 0) + 12px * var(--level, 0))
 
-	.required
-		&::after
-			content: '*'
-			color: red
-			font-weight: bold
+	&__line
+		border-left: 1px solid abstracts.$color-funky-purple
+		margin-left: 4px
+		position: absolute
+		top: -5px
+		left: calc(4px + 1px * var(--level, 0) + 12px * var(--level, 0))
+		bottom: 0
+
+		&--pointer
+			&::after
+				content: ""
+				border-bottom: 1px solid abstracts.$color-funky-purple
+				width: 5px
+				position: absolute
+				top: calc(5px + 4px + .75em - 1px)
+
+		&--last
+			bottom: calc(100% - (4px + .75em))
+
+	&__optional
+		font-size: .75em
+		font-weight: 400
+		opacity: .5
+		display: block

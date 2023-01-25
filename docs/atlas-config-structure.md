@@ -56,6 +56,7 @@ Properties marked with `*` are required.
       - `required` (__*Boolean*__): Wether the data entry is required in the component.
       - `type` (__*Array*__): The list of accepted data types.
       - `description` (__*String*__): The data entry description.
+      - `children` (__*Array*__): The list of child data entries. Follows the same structure as `data`, making it recursive.
   - `notes` (__*String*__): Additional notes for the module.
 
 ## `modules/*.js`
@@ -79,6 +80,7 @@ Properties marked with `*` are required.
       - `required` (__*Boolean*__): Wether the data entry is required in the module.
       - `type` (__*Array*__): The list of accepted data types.
       - `description` (__*String*__): The data entry description.
+      - `children` (__*Array*__): The list of child data entries. Follows the same structure as `data`, making it recursive.
   - `notes` (__*String*__): Additional notes for the module.
 
 ## `templates/*.js`
@@ -160,6 +162,7 @@ Properties marked with `*` are required.
           - `required` (__*Boolean*__): Wether the data entry is required in the component.
           - `type` (__*Array*__): The list of accepted data types.
           - `description` (__*String*__): The data entry description.
+          - `children` (__*Array*__): The list of child data entries. Follows the same structure as `data`, making it recursive.
       - `notes` (__*String*__): Additional notes for the component.
 - `modules` (__*Object*__): The project's modules.
   - `path` (__*String*__): The path where the examples' HTML files are located in the project.
@@ -184,6 +187,7 @@ Properties marked with `*` are required.
           - `required` (__*Boolean*__): Wether the data entry is required in the module.
           - `type` (__*Array*__): The list of accepted data types.
           - `description` (__*String*__): The data entry description.
+          - `children` (__*Array*__): The list of child data entries. Follows the same structure as `data`, making it recursive.
       - `notes` (__*String*__): Additional notes for the module.
 - `templates` (__*Object*__): The project's templates.
   - `path` (__*String*__): The path where the examples' HTML files are located in the project.

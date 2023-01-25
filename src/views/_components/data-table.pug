@@ -1,0 +1,64 @@
+mixin data-table(items, data)
+
+	table.data-table
+		thead
+			tr
+				th Name
+				th Type
+				th Description
+
+		tbody
+			each item in items
+				+data-table-row(item, data)
+
+
+
+mixin data-table-row(item, data, parents = [], lastParents = [])
+
+	if typeof item.type === 'string'
+		- item.type = [item.type]
+
+	tr
+		th.data-table__cell(style=`--level: ${parents.length}`)
+			each parent, index in parents
+				if (parent === lastParents[index] && index < parents.length - 1) === false
+					.data-table__line(
+						class=[
+							index === parents.length - 1 ? 'data-table__line--pointer' : null,
+							parent === lastParents[index] ? 'data-table__line--last' : null
+						]
+						style=`--level: ${index}`
+					)
+
+			= item.name
+
+			if !item.required
+				small.data-table__optional Optional
+
+		td.data-table__cell
+			each typeName, index in item.type
+				if typeName.includes('/')
+					- [type, id] = typeName.split('/')
+
+					if typeof data[type] === 'undefined'
+						- throw new Error(`Unrecognized namespace '${type}' for the data type '${typeName}'.`);
+
+					- object = data[type].list.find(item => item.id === id)
+
+					if typeof object === 'undefined'
+						- throw new Error(`Unrecognized ${type.endsWith('s') ? type.slice(0, -1) : type} ID for the data type '${typeName}'.`);
+
+					a(href=`../${type}/${id}.html`)= object.name
+				else
+					= typeName
+
+				if index < item.type.length - 1
+					| ,
+					|
+
+		td.data-table__cell
+			.rte!= markdown(item.description)
+
+		if item.children
+			each child, index in item.children
+				+data-table-row(child, data, [...parents, child.name], [...lastParents, item.children.at(-1).name])

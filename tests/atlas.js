@@ -225,20 +225,74 @@ const atlas = {
 					description: 'Lorem Ipsum',
 				},
 				{
-					name: 'Image',
-					required: true,
-					type: [
-						'components/picture',
-					],
+					name: 'Slides',
+					type: 'Array',
 					description: 'Lorem Ipsum',
-				},
-				{
-					name: 'isPrimary',
-					required: false,
-					type: [
-						'Boolean',
+					children: [
+						{
+							name: 'Image',
+							required: true,
+							type: 'components/picture',
+							description: 'Lorem Ipsum',
+							children: [
+								{
+									name: 'Width',
+									required: true,
+									type: 'Number',
+									description: 'Sit Dolor Amet',
+								},
+								{
+									name: 'Height',
+									type: 'Number',
+									description: 'Sit Dolor Amet',
+								},
+								{
+									name: 'Something',
+									type: 'Object',
+									description: '',
+									children: [
+										{
+											name: 'Else',
+											type: 'null',
+											description: '',
+											children: [
+												{
+													name: 'Wait for it',
+													type: 'null',
+													description: '',
+												},
+												{
+													name: '!!!',
+													type: 'null',
+													description: '',
+													children: [
+														{
+															name: '...',
+															type: 'null',
+															description: '',
+														},
+													],
+												},
+											],
+										},
+										{
+											name: 'Entirely',
+											type: 'null',
+											description: '',
+										},
+									],
+								},
+							],
+						},
+						{
+							name: 'isPrimary',
+							required: false,
+							type: [
+								'Boolean',
+							],
+							description: 'Sit Dolor Amet',
+						},
 					],
-					description: 'Sit Dolor Amet',
 				},
 			],
 			notes: 'lorem ipsum',
