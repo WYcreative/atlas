@@ -21,7 +21,7 @@ mixin sidebar
 								+symbol('icon-list')
 							| Overview
 
-				if data.tokens
+				if data.tokens && Object.keys(data.tokens).length > 0
 					li.sidebar__list-item
 						a.sidebar__page-name(href="/atlas/tokens/index.html")
 							span.sidebar__page-name-wrapper-icon
