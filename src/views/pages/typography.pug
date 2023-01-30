@@ -32,48 +32,49 @@ block main
 				]
 
 			mixin walkStyles(name, path, group, level = 0)
+				div(class=`wrapper wrapper-${1 + level}`)
+					#{`h${3 + level}`}(class=`heading-${3 + level}`)
+						img(src=`/atlas/assets/images/shapes/${levelColors[level]}.svg` width="24" height="24")
+						= name.replace(/(?:^|([\s_-]+))(\S)/g, (_, p1, p2) => (p1 ? ' ' : '') + p2.toUpperCase())
 
-				#{`h${3 + level}`}(class=`heading-${3 + level}`)
-					img(src=`/atlas/assets/images/shapes/${levelColors[level]}.svg` width="24" height="24")
-					= name.replace(/(?:^|([\s_-]+))(\S)/g, (_, p1, p2) => (p1 ? ' ' : '') + p2.toUpperCase())
+					if typeof Object.values(group)[0] === 'object'
 
-				if typeof Object.values(group)[0] === 'object'
+						each subgroup, subname in group
+							- const token = (typeof path === 'string' && path.length > 0 ? `${path} ` : '') + subname
 
-					each subgroup, subname in group
-						- const token = (typeof path === 'string' && path.length > 0 ? `${path} ` : '') + subname
+							+walkStyles(subname, token, subgroup, level + 1)
 
-						+walkStyles(subname, token, subgroup, level + 1)
+					else
+						.module-typography__overflow
+							table
+								tbody
+									tr
+										-
+											const properties = {
+												fontSize: 'font-size',
+												textDecoration: 'text-decoration',
+												fontFamily: 'font-family',
+												fontWeight: 'font-weight',
+												fontStyle: 'font-style',
+												fontStretch: 'font-stretch',
+												letterSpacing: 'letter-spacing',
+												lineHeight: 'line-height',
+												textCase: 'text-transform',
+											}
 
-				else
-					div.module-typography__overflow
-						table
-							tbody
-								tr
-									-
-										const properties = {
-											fontSize: 'font-size',
-											textDecoration: 'text-decoration',
-											fontFamily: 'font-family',
-											fontWeight: 'font-weight',
-											fontStyle: 'font-style',
-											fontStretch: 'font-stretch',
-											letterSpacing: 'letter-spacing',
-											lineHeight: 'line-height',
-											textCase: 'text-transform',
-										}
-
-									td
-										each value, property in group
-											= `${properties[property]}: ${value}`
-											br
-									td
-										- const preview = path.replace(/(?:^|([\s_-]+))(\S)/g, (_, p1, p2) => (p1 ? ' ' : '') + p2.toUpperCase())
-										span(style=Object.entries(group).map(([property, value]) => `${properties[property]}: ${value}`).join('; '))= preview
-									td
-										button.link-copy__button.js-styleCopy(data-style=path)
-											span.icon.icon-link
-												+symbol('icon-copy')
-
+										td
+											each value, property in group
+												strong= `${properties[property]}: `  
+												= `${value}`
+												br
+										td
+											- const preview = path.replace(/(?:^|([\s_-]+))(\S)/g, (_, p1, p2) => (p1 ? ' ' : '') + p2.toUpperCase())
+											span(style=Object.entries(group).map(([property, value]) => `${properties[property]}: ${value}`).join('; '))= preview
+										td
+											button.link-copy__button.js-styleCopy(data-style=path)
+												span.icon.icon-link
+													+symbol('icon-copy')
 
 			each group, name in data.tokens.typography
 				+walkStyles(name, name, group)
+				hr

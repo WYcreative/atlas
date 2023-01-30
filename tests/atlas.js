@@ -23,6 +23,7 @@ const atlas = {
 			neutrals: {
 				'chill-white': '#FFFFFF',
 				'cool-gray': '#CCCCCC',
+				'shy-gray': '#F3F3F3',
 				'badass-black': '#000000',
 			},
 			transparents: {
