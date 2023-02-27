@@ -1,5 +1,4 @@
 extends ../_layout/base
-include ../_modules/team
 include ../_modules/links
 include ../_modules/technology
 include ../_abstracts/mixins/symbol
@@ -23,7 +22,5 @@ block main
 				.rte!= markdown(data.description)
 
 	+links
-
-	+team
 
 	+technology

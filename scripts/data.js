@@ -1,7 +1,6 @@
 import generateBrowsers from './browsers.js';
 import generateEnvironments from './environments.js';
 import generateDependencies from './dependencies.js';
-import generateTeam from './team.js';
 import generateIcons from './icons.js';
 import generatePartials from './partials.js';
 
@@ -19,8 +18,6 @@ function generateData(options) {
 	if (!data.description && options.package.description) {
 		data.description = options.package.description;
 	}
-
-	data.team = generateTeam(options.atlas.team);
 
 	if (typeof data.tokens === 'undefined') {
 		data.tokens = {};

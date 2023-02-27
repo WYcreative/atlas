@@ -1,8 +1,5 @@
-import {members} from '@WYcreative/team';
-
 const atlas = {
 	name: 'Example',
-	team: members.slice(0, 10).map(({email}) => email),
 	url: {
 		design: 'https://design.com',
 		designLibrary: 'https://designlibrary.com',
