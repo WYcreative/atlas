@@ -1,11 +1,12 @@
 import gulp from 'gulp';
 import gulpSass from 'gulp-sass';
-import dartSass from 'sass';
+import * as dartSass from 'sass';
 import postcss from 'gulp-postcss';
 import presetEnv from 'postcss-preset-env';
 import cssnano from 'cssnano';
 
 import config from '../config/index.js';
+
 import {getBrowserSync, getDirectory} from './utilities.js';
 
 

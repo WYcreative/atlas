@@ -21,7 +21,7 @@ function generateIcons(symbolsPath) {
 		path = path === '.' ? '' : path;
 		name = name === '.' ? basename(getDirectory(symbolsPath)) : name;
 
-		if (typeof result.find(file => file.path === path && file.name === name) === 'undefined') {
+		if (result.some(file => file.path === path && file.name === name) === false) {
 			result.push({
 				name,
 				path,

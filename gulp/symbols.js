@@ -1,4 +1,5 @@
 import {dirname, basename, extname} from 'node:path/posix';
+
 import {globbySync} from 'globby';
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
@@ -7,6 +8,7 @@ import svgstore from 'gulp-svgstore';
 import rename from 'gulp-rename';
 
 import config from '../config/index.js';
+
 import {getDirectory} from './utilities.js';
 
 

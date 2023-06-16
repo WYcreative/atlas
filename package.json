@@ -31,16 +31,16 @@
 		"release": "np"
 	},
 	"dependencies": {
-		"browserslist": "^4.21.5",
-		"globby": "^13.1.3",
-		"marked": "^4.2.12",
+		"browserslist": "^4.21.9",
+		"globby": "^13.1.4",
+		"marked": "^5.1.0",
 		"pug": "^3.0.2"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.21.0",
-		"@babel/preset-env": "^7.20.2",
-		"browser-sync": "^2.27.12",
-		"cssnano": "^5.1.15",
+		"@babel/core": "^7.22.5",
+		"@babel/preset-env": "^7.22.5",
+		"browser-sync": "^2.29.3",
+		"cssnano": "^6.0.1",
 		"del": "^7.0.0",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
@@ -51,11 +51,11 @@
 		"gulp-sass": "^5.1.0",
 		"gulp-svgstore": "^9.0.0",
 		"gulp-uglify-es": "^3.0.0",
-		"np": "^7.6.3",
-		"postcss": "^8.4.21",
-		"postcss-preset-env": "^8.0.1",
-		"sass": "^1.58.3",
-		"xo": "^0.53.1"
+		"np": "^7.7.0",
+		"postcss": "^8.4.24",
+		"postcss-preset-env": "^8.5.0",
+		"sass": "^1.63.4",
+		"xo": "^0.54.2"
 	},
 	"browserslist": [
 		"defaults and last 2 years",
@@ -84,6 +84,12 @@
 				"warn",
 				{
 					"max": 3
+				}
+			],
+			"import/order": [
+				"error",
+				{
+					"newlines-between": "always"
 				}
 			],
 			"no-console": [

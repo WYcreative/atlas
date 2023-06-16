@@ -19,7 +19,7 @@ function generateData(options) {
 		data.description = options.package.description;
 	}
 
-	if (typeof data.tokens === 'undefined') {
+	if (data.tokens === undefined) {
 		data.tokens = {};
 	}
 
@@ -32,7 +32,7 @@ function generateData(options) {
 	}
 
 	for (const type of ['components', 'modules', 'templates']) {
-		if (typeof data[type] === 'undefined') {
+		if (data[type] === undefined) {
 			data[type] = [];
 		}
 

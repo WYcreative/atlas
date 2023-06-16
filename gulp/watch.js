@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 
 import config from '../config/index.js';
+
 import * as styles from './styles.js';
 import * as fonts from './fonts.js';
 import * as symbols from './symbols.js';

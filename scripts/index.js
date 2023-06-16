@@ -20,7 +20,7 @@ function generateAtlas(options) {
 	}
 
 	for (const path of ['components', 'modules', 'templates']) {
-		if (typeof options[path] === 'undefined') {
+		if (options[path] === undefined) {
 			options[path] = path;
 		}
 	}

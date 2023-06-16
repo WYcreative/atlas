@@ -33,7 +33,7 @@ function generatePartials(type, data, options) {
 
 		let item = result.list.find(({id}) => id === itemId);
 
-		if (typeof item === 'undefined') {
+		if (item === undefined) {
 			item = {
 				id: itemId,
 				name: itemId.replace(/(?:^|([\s_-]+))(\S)/g, (_, p1, p2) => (p1 ? ' ' : '') + p2.toUpperCase()),

@@ -4,6 +4,7 @@ import babel from 'gulp-babel';
 import uglifyEs from 'gulp-uglify-es';
 
 import config from '../config/index.js';
+
 import {getDirectory} from './utilities.js';
 
 

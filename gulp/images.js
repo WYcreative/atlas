@@ -3,6 +3,7 @@ import plumber from 'gulp-plumber';
 import imagemin from 'gulp-imagemin';
 
 import config from '../config/index.js';
+
 import {getDirectory} from './utilities.js';
 
 
