@@ -16,9 +16,6 @@
 		"type": "git",
 		"url": "git+https://github.com/WYcreative/atlas.git"
 	},
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com"
-	},
 	"engines": {
 		"gulp-cli": ">=2.3",
 		"node": ">=18.12",
