@@ -19,16 +19,15 @@ markdownUse({
 
 function generateFiles(data, options) {
 	const __dirname = fileURLToPath(new URL('.', import.meta.url));
-	const destination = resolve(options.config.build.base);
+	const destination = resolve(options.paths.destination);
 	const pagesDirectory = resolve(__dirname, '..', getDirectory(config.src.views[0]), 'pages');
 	const distDirectory = resolve(__dirname, '../dist');
 	const pugOptions = {
 		relative,
 		join,
 		markdown,
-		getDirectory,
 		data,
-		config: options.config,
+		paths: options.paths,
 	};
 
 	if (!existsSync(destination)) {

@@ -23,7 +23,7 @@ function generateData(options) {
 		data.tokens = {};
 	}
 
-	const icons = generateIcons(options.config.src.symbols);
+	const icons = generateIcons(options.paths.symbols);
 
 	if (icons.length > 0) {
 		data.tokens.icons = icons;

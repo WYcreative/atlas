@@ -1,6 +1,8 @@
 # WYcreative's Atlas
 
-> ⚠️ This is a Work In Progress. Don't use this is production.
+The WYcreative Engineering Team project documentation app.\
+It is intended to be used with [Genesis](https://github.com/WYcreative/genesis).
+
 
 ## Requirements
 
@@ -26,9 +28,16 @@ import atlas from './config/atlas.js';
 import config from './config/index.js';
 
 generateAtlas({
-	package: pkg,
-	atlas,
-	config,
+  package: pkg,
+  atlas,
+  paths: {
+    destination: getDirectory(config.build.atlas),
+    buildBase: config.build.base,
+    symbols: config.src.symbols,
+    symbolsBuild: getDirectory(config.build.images),
+    examples: config.examples.base,
+    views: config.examples.views,
+  },
 });
 ```
 
@@ -48,13 +57,51 @@ The `package.json` contents.
 
 Type `Object`
 
-The [Genesis](https://github.com/WYcreative/genesis)'s `config/*.js` export objects with Atlas configurations in a single object.
+The [Genesis](https://github.com/WYcreative/genesis)'s `config/atlas/*.js(on)` export objects with Atlas configurations in a single object.
 
-#### `options.config`
+#### `options.paths`
 
 Type `Object`
 
-The [Genesis](https://github.com/WYcreative/genesis)'s `config/index.js` export object with it's Gulp path configurations.
+The list of path configurations.
+
+##### `options.paths.destination`
+
+Type `String`
+
+The Atlas build destination path.
+
+##### `options.paths.buildBase`
+
+Type `String`
+
+The build base path.
+
+##### `options.paths.symbols`
+
+Type `String | Array`
+
+The path/glob or list of paths/globs of the source SVG symbols.
+
+##### `options.paths.symbolsBuild`
+
+Type `String`
+
+The path where the built SVG symbols are.
+
+##### `options.paths.examples`
+
+Type `String`
+
+The examples source base path.
+
+##### `options.paths.views`
+
+Type `String[]`
+
+The list of paths/globs of the examples source view files.\
+The first one will be extracted, its glob parent taken, and each object type appended to it with a glob for nested Pug files.
+
 
 ## Development
 

@@ -7,7 +7,7 @@ function generateAtlas(options) {
 		throw new TypeError(`The argument 'options' is not an object. Got the ${typeof options} '${typeof options}'.`);
 	}
 
-	for (const property of ['package', 'config', 'atlas']) {
+	for (const property of ['package', 'atlas', 'paths']) {
 		if (typeof options[property] !== 'object') {
 			throw new TypeError(`The property '${property}' is not an object. Got the ${typeof options[property]} '${options[property]}'.`);
 		}

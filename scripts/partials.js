@@ -1,4 +1,4 @@
-import {basename, relative, join} from 'node:path/posix';
+import {basename} from 'node:path/posix';
 
 import {globbySync} from 'globby';
 
@@ -7,8 +7,8 @@ import {getDirectory} from './utilities.js';
 
 function generatePartials(type, data, options) {
 	const files = globbySync([
-		`${getDirectory(options.config.src.views[0])}/${type}/**/*.pug`,
-		...options.config.src.views.slice(1),
+		`${getDirectory(options.paths.views[0])}/${type}/**/*.pug`,
+		...options.paths.views.slice(1),
 	]);
 
 	for (const {id} of data[type]) {
@@ -18,7 +18,7 @@ function generatePartials(type, data, options) {
 	}
 
 	const result = {
-		path: `/${relative(options.config.build.base, join(getDirectory(options.config.build.views), type))}`,
+		path: `/examples/${type}`,
 		list: data[type] || [],
 	};
 

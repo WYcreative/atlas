@@ -5,9 +5,9 @@ import {join} from 'node:path/posix';
 // TODO: Use import assertions once they become stable.
 const pkg = createRequire(import.meta.url)('../package.json');
 
-const src = './src';
-const build = './build';
-const dist = './dist';
+const src = './src/';
+const build = './build/';
+const dist = './dist/';
 
 const config = {
 	name: pkg.name,
