@@ -1,7 +1,6 @@
 import generateBrowsers from './browsers.js';
 import generateEnvironments from './environments.js';
 import generateDependencies from './dependencies.js';
-import generateIcons from './icons.js';
 import generatePartials from './partials.js';
 
 
@@ -23,10 +22,8 @@ function generateData(options) {
 		data.tokens = {};
 	}
 
-	const icons = generateIcons(options.paths.symbols);
-
-	if (icons.length > 0) {
-		data.tokens.icons = icons;
+	if (options.paths.symbols.length > 0) {
+		data.tokens.icons = options.paths.symbols;
 	} else {
 		delete data.tokens?.icons;
 	}

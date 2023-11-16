@@ -21,7 +21,7 @@ async function build(done) {
 				destination: config.build.base,
 				buildBase: config.build.base,
 				symbols: './tests/symbols/**/*.svg',
-				symbolsBuild: getDirectory(config.build.images),
+				symbolsRoot: getDirectory(config.build.images),
 				examples: './tests/',
 				views: [
 					'./tests/views/**/*.pug',

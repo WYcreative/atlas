@@ -34,7 +34,7 @@ generateAtlas({
     destination: getDirectory(config.build.atlas),
     buildBase: config.build.base,
     symbols: config.src.symbols,
-    symbolsBuild: getDirectory(config.build.images),
+    symbolsRoot: getDirectory(config.build.images),
     examples: config.examples.base,
     views: config.examples.views,
   },
@@ -83,7 +83,7 @@ Type `String | Array`
 
 The path/glob or list of paths/globs of the source SVG symbols.
 
-##### `options.paths.symbolsBuild`
+##### `options.paths.symbolsRoot`
 
 Type `String`
 
