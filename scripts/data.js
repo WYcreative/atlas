@@ -12,7 +12,7 @@ function generateData(options) {
 		lastUpdate: new Date(),
 		browsers: generateBrowsers(options.package.browserslist),
 		environments: generateEnvironments(options.package.engines),
-		dependencies: generateDependencies(options.package.dependencies),
+		dependencies: generateDependencies(options.package.dependencies || {}),
 	};
 
 	if (!data.description && options.package.description) {
